@@ -27,6 +27,7 @@ angular.module('starter', ['ionic', 'starter.services'])
       console.log(imageURI);
       pathimage = imageURI;
       alert(imageURI);
+      alert('path '+pathimage);
       $scope.lastPhoto = imageURI;
     }, function(err) {
       console.err(err);
