@@ -1,0 +1,56 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../css/style.css">
+	<script src="../../../../js/jQuery-2.1.3.min.js"></script>
+	<script src="../../../../js/flowtype.js"></script>
+	<script type="text/javascript">
+
+		function flashtext(ele,col) {
+            var tmpColCheck = document.getElementById( ele ).style.backgroundColor;
+            
+
+              if (tmpColCheck === 'black') {
+                document.getElementById( ele ).style.backgroundColor = 'rgba(0,0,0,0)';
+              } else {
+                document.getElementById( ele ).style.backgroundColor = col;
+              }
+            } 
+            
+            setInterval(function() {
+            	//alert('coba');
+                flashtext('flashingtext','black');
+            }, 1000 ); //set an interval timer up to repeat the function
+
+	</script>
+</head>
+<body class="halamanPetunjukTerapi">
+	<table border="0" width="100%" height="100%">
+	  <tr>
+	    <td align="center" height="70%" width="60%" colspan="3" id="gambarmain" style="background-image: url('../../../../img/Informasi/melabel.png');">
+	    </td>
+	    <td height="70%" width="40%" id="keteranganTerapi">
+	    	Modul terapi menjawab pertanyaan. <br>
+			Pengguna akan melihat suatu gambar/teks dan perintah suara, diharapkan pengguna dapat menjawab dengan berbicara.<br>
+			Jika berhasil menjawab pendamping harus menekan tombol 'Ya', jika tidak, harus menekan 'Tidak' untuk memberikan feedback.
+	    </td>
+	  </tr>
+	  <tr>
+	  	<td height="22%" width="20%"></td>
+	  	<td height="22%" width="20%"></td>
+	  	<td height="22%" width="20%"></td>
+	  	<td height="22%" width="40%"></td>
+	  </tr>
+	  <tr>
+	    <td height="8%" colspan="3"> </td>
+	    <td height="8%" align="right">
+	    	<div id="flashingtext">SKIP >></div>
+	    </td>
+	  </tr>
+	</table>
+	<script type="text/javascript">
+		$('#keteranganTerapi').flowtype({fontRatio:17});
+		$('.keteranganPanahPetunjukTerapi1').flowtype({fontRatio:10});
+		$('#flashingtext').flowtype({fontRatio:6});
+	</script>		
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="../js/jQuery-2.1.3.min.js"></script>
+	<script src="../js/flowtype.js"></script>
+	<script type="text/javascript">
+		function terapi() {
+			document.getElementById('terapiIndikasiIcon').style.backgroundColor = '#333333';
+			document.getElementById('terapiIndikasiKeterangan').style.backgroundColor = '#333333';
+			document.getElementById('kembaliIndikasiIcon').style.backgroundColor = '#000000';
+			document.getElementById('kembaliIndikasiKeterangan').style.backgroundColor = '#000000';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+				window.location.href = "kategori.html";
+			}, delay);
+		}
+		function kembali() {
+			document.getElementById('terapiIndikasiIcon').style.backgroundColor = '#000000';
+			document.getElementById('terapiIndikasiKeterangan').style.backgroundColor = '#000000';
+			document.getElementById('kembaliIndikasiIcon').style.backgroundColor = '#333333';
+			document.getElementById('kembaliIndikasiKeterangan').style.backgroundColor = '#333333';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+				window.location.href = "../utama.html";
+			}, delay);
+		}
+	</script>
+</head>
+<body>
+	<table width="100%" border="0" align="center" height="100%" id="halamanMenu">
+		<tr>
+			<td width="87.5%" rowspan="6" valign="middle" height="100%" id="konten" class="halamanIndikasi">
+				<table width="100%" height="50%" border="0">
+					<tr><td width="100%" align="center" height="10%" valign="bottom" id="judulIndikasi">Reva</td></tr>
+					<tr><td width="100%" align="center" height="10%" valign="top" id="subJudulIndikasi">Memiliki kemampuan aspek berikut</td></tr>
+					<tr><td width="100%" height="80%">
+						<table width="100%" id="recordIndikasi">
+							<tr>
+								<td class="atributIndikasi">Komunikasi</td>
+								<td class="valueIndikasi">75%</td>
+							</tr>
+							<tr>
+								<td class="atributIndikasi">Sosial</td>
+								<td class="valueIndikasi">42%</td>
+							</tr>
+							<tr>
+								<td class="atributIndikasi">Sensorik / Kognitif</td>
+								<td class="valueIndikasi">83%</td>
+							</tr>
+							<tr>
+								<td class="atributIndikasi">Kesehatan / Kebiasaan</td>
+								<td class="valueIndikasi">58%</td>
+							</tr>
+						</table>
+					</td></tr>
+				</table>
+			</td>
+			<td style="background-color:black;" width="12.5%" height="27%"></td>
+		</tr>
+		<tr style="background-color:black;">
+			<td id="terapiIndikasiIcon" width="12.5%" height="15%" onclick="javascript:terapi()">
+			</td>
+		</tr>
+		<tr style="background-color:black;">
+			<td id="terapiIndikasiKeterangan" width="12.5%" height="8%" onclick="javascript:terapi()">
+				Terapi
+			</td>
+		</tr>
+		<tr style="background-color:black;">
+			<td id="kembaliIndikasiIcon" width="12.5%" height="15%" onclick="javascript:kembali()">
+			</td>
+		</tr>
+		<tr style="background-color:black;">
+			<td id="kembaliIndikasiKeterangan" width="12.5%" height="8%" onclick="javascript:kembali()">
+				Kembali
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:black;" width="12.5%" height="27%"></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		$('#kembaliIndikasiKeterangan').flowtype({fontRatio: 5});
+		$('#terapiIndikasiKeterangan').flowtype({fontRatio: 5});
+		$('#subJudulIndikasi').flowtype({fontRatio: 33});
+		$('#judulIndikasi').flowtype({fontRatio: 23});
+		$('#recordIndikasi').flowtype({fontRatio: 30});
+	</script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+ body.pendaftaran  {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-image: url("../img/Daftar/back.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+ body.terapidasarkiri  {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-image: url("../img/menu/back.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.tabelterapi td {
+    font-size:35px;
+    color: #ffffff;    
+    font-weight:normal;
+    margin:10px;
+    overflow:visible;
+    padding:10px;
+    width: 100%;
+
+      transition: all 0.8s;
+      -moz-transition: all 0.8s;
+      -webkit-transition: all 0.8s;
+      -ms-transition: all 0.8s;
+      -o-transition: all 0.8s
+}
+
+
+
+.tabelterapi td:hover{
+  /*nilai perubahan*/
+  background-color: #aaa;
+  color: #000000
+}
+
+
+.foot 
+
+frame{
+    overflow:hidden;
+}
+
+
+.terapidasarkiri h1 {
+    font-size:30px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    color: #ffffff;
+}
+.terapidasarkiri h2 {
+    font-size:30px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    color: #ffffff;
+}
+
+h1 {
+    font-size:33px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.huruf h1{
+    font-size:500px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+/* header */
+.ui-header > .ui-btn {
+    padding: 7px 10px 11px;
+    background:none;
+    border:none;
+    /*overflow:;*/
+}
+.ui-header .ui-title{
+
+margin: .8em 30% .8em;
+
+}
+
+/* home page */
+
+#logo{
+    width:70%;
+    max-width:206px;
+    margin:35px 0 40px;
+}
+.centerText{
+    text-align:center;
+}
+
+#home-page a{
+    margin-top:20px;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+.ui-grid-a .ui-block-a .ui-btn{
+    margin-left: 0px;
+}
+
+.ui-grid-a .ui-block-b .ui-btn{
+    margin-right: 0px;
+}
+
+/* map */
+#second-page{
+   
+}
+.big-text{
+    font-size: 1.3em;
+}
+.small-text{
+    font-size:0.8em;
+}
+
+
+.ui-btn-active {
+    border: 1px solid       #1abc9c /*{global-active-border}*/;
+    background:             #1abc9c /*{global-active-background-color}*/;
+    font-weight: bold;
+    color:                  #ffffff /*{global-active-color}*/;
+    cursor: pointer;
+    text-decoration: none;
+  font-family: Lato, sans-serif
+}
+
+
+
+
+.formstyle input, .formstyle textarea {
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    border:#CC3030 1px solid;
+    outline:none;
+    padding: 2px;
+    border-radius: 5px;
+    
+    border:1px solid rgba(204,48,48, 0.5);
+    height: 30px;
+    width: 70%;
+    line-height:15px;
+    margin: 2px 6px 16px 0px;
+
+
+
+
+}
+ 
+.formstyle input:focus, .formstyle textarea:focus {
+    box-shadow: 0 0 5px 2px rgba(255,255,255,0.79);
+    -webkit-box-shadow: 0 0 5px 2px rgba(255,255,255,0.79);
+    -moz-box-shadow: 0 0 5px 2px rgba(255,255,255,0.79);
+    -o-box-shadow: 0 0 5px 2px rgba(255,255,255,0.79);
+    -ms-box-shadow: 0 0 5px 2px rgba(255,255,255,0.79);
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    border:1px solid rgba(204,48,48, 0.8);
+
+     font: 200 12px/25px Arial, Helvetica, sans-serif;
+    height: 30px;
+    line-height:15px;
+    margin: 2px 6px 16px 0px;
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;  
+
+}
+
+.formstyle, .formstyle  {background: none;
+    border: 0;}
+
+
+
+.formstyle {
+    margin-left:auto;
+    margin-right:auto;
+
+    max-width: 100%;
+    
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+.formstyle h1 {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 20px 10px 10px 20px;
+    margin: -20px -20px 15px;
+    color: :#ffffff;
+}
+.formstyle h1>span {
+    display: block;
+    font-size: 11px;
+}
+
+.formstyle label>span {
+    float: left;
+    margin-top: 10px;
+    color: #ffffff;
+}
+.formstyle label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.formstyle label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.identifikasi .ngisor select {
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 70%;
+}
+
+.formstyle select {
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 70%;
+}
+.formstyle .button{
+    padding: 10px 30px 10px 30px;
+    background: #66C1E4;
+    border: none;
+    color: #FFF;
+    box-shadow: 1px 1px 1px #4C6E91;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    text-shadow: 1px 1px 1px #5079A3;
+    
+}
+
+.formstyle .selesai{
+    padding-right: 250px;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    text-shadow: 1px 1px 1px #5079A3;
+    text-align:right;
+}
+
+.foot{
+    background-color: black;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+
+}
+
+.foot button {
+    -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    box-shadow:inset 0px 1px 0px 0px #f5978e;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+    background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+    background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+    background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+    background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+    background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+    background-color:#f24537;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #d02718;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #810e05;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.foot button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+    background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+    background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+    background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+    background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+    background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+    background-color:#c62d1f;
+}
+.foot button:active {
+    position:relative;
+    top:1px;
+}
+
+
+
+.formstyle .button:hover{
+    background: #3EB1DD;
+}
+
+.formstyle .boxed {
+  border: 5px solid green ;
+  color: #ffffff;
+}
+
+.formstyle input.button-add2 {
+    background-image: url("../img/Daftar/ambil.png"); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: center;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 60px;           /* make this the size of your image */
+    padding-left: 30px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;  
+}
+
+.formstyle input.button-add {
+    background-image: url("../img/Daftar/cari.png"); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: center; 
+    display: inline-block; /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 40px;
+    width: 20px           /* make this the size of your image */
+    padding-left: 10px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;  
+}
+
+
+
+.formstyle .button-add input[type="file"] {
+display: none;
+}
+
+.formstyle .button-add input[type="file"] + label { 
+background: url("../img/Daftar/cari.png") no-repeat;
+}
+
+.formstyle .button-add {
+display: inline-block;
+}
+.formstyle label.button-add  {
+display: none;
+width: 200px;
+height:500px;
+}
+
+
+.cari {
+    display: inline-block;
+    width: 300px;
+    height:100px;
+    padding-left: 20px;
+}
+
+.kamera {
+    display: inline-block;
+    width: 300px;
+    height:100px;
+    padding-left: 20px;
+}
+
+img.kamera {
+    display: inline-block;
+   
+    height: 30px;
+    width: 40px           /* make this the size of your image */
+    padding-left: 20px;     /* make text start to the right of the image */
+    vertical-align: left;
+}
+img.cari {
+    display: inline-block;
+   
+    height: 30px;
+    width: 40px           /* make this the size of your image */
+    padding-left: 10px;     /* make text start to the right of the image */
+    vertical-align: right;
+}
+.image-upload {
+    background-color: white;
+}
+.image-upload > input
+{
+    display: none;
+}

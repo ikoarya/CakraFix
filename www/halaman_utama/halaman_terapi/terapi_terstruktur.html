@@ -1,0 +1,60 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<script src="../../js/jQuery-2.1.3.min.js"></script>
+	<script src="../../js/flowtype.js"></script>
+	<script type="text/javascript">
+		var flag = 0;
+		function rincian () {
+
+			if (flag == 0) {
+				document.getElementById('rincianIcon').src = "../../img/Terstruktur/bawah.png";
+				document.getElementById('konten').innerHTML = '<iframe frameborder="0" scrolling="auto" src="tabel_terapi_terstruktur.html" width="100%" height="100%" ></iframe>';
+				flag = 1;
+			} else {
+				document.getElementById('rincianIcon').src = "../../img/Terstruktur/atas.png";
+				document.getElementById('konten').innerHTML = '<table width="100%" border="0" height="100%"><tr><td colspan="3" width="100%" height="30%" align="center" valign="bottom" style="padding-bottom:4px;"><font style="color: white;font-family:\'Segoe UI light\';font-size:15pt;">Terapi Selanjutnya : Identifikasi(1) Binatang - Dasar</font></td></tr><tr><td width="30%" height="70%"></td><td width="40%" height="70%" align="center"><div id="tombolStart" onclick="javascript:start()" class="tampilanTerapiTerstruktur"><br><br><img class="imageTerapiTerstruktur" src="../../img/Terstruktur/start.png"><br>Mulai</div></td><td width="30%" height="10%"></td></tr></table>';
+				flag = 0;
+			}
+		}
+		function start () {
+			document.getElementById('tombolStart').style.opacity = 0.7;
+		}
+	</script>
+</head>
+<body>
+	<table width="100%" border="0" align="center" height="100%" id="halamanMenu" class="halamanTerapiTerstruktur">
+		<tr>
+			<td colspan="3" height="86%" id="konten">
+				<table width="100%" border="0" height="100%">
+					<tr>
+						<td colspan="3" width="100%" height="30%" align="center" valign="bottom" style="padding-bottom:4px;">
+							<font style="color: white;font-family:'Segoe UI light';font-size:15pt;">Terapi Selanjutnya : Identifikasi(1) Binatang - Dasar</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="30%" height="70%"></td>
+						<td width="40%" height="70%" align="center">
+							<div id="tombolStart" onclick="javascript:start()" class="tampilanTerapiTerstruktur">
+								<img class="imageTerapiTerstruktur" src="../../img/Terstruktur/start.png">
+								<br>
+								Mulai
+							</div>
+						</td>
+						<td width="30%" height="70%"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="menuTerapiTerstruktur">
+			<td colspan="3" width="100%" height="7%" onclick="javascript:rincian()"><img id="rincianIcon" src="../../img/Terstruktur/atas.png"></td>
+		</tr>
+		<tr class="keteranganMenuTerapiTerstruktur">
+			<td colspan="3" id="rincianKeterangan" width="100%" height="7%" onclick="javascript:rincian()">Rincian</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		$('.tampilanTerapiTerstruktur').flowtype({fontRatio:15});
+	</script>
+</body>
+</html>

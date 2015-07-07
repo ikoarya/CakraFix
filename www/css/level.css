@@ -1,0 +1,344 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 30px;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+ line-height: 1.45;
+ color: #ffffff;
+  padding: 2%;
+}
+
+h1, h3 {
+  padding: 1%;
+  margin: 3% auto;
+}
+
+@font-face {
+  font-family: myUbuntu;
+  src: url('../font/Ubuntu-Title.ttf');
+}
+
+
+
+.hidden, .hidden2, .hidden3, .hidden4, .hidden5 {
+  display: none;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-top: none;
+  font-family: 'Segoe UI light';
+}
+
+.hidden .select, .hidden2 .select, .hidden3 .select, .hidden4 .select, .hidden5 .select  {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: 15%;
+  display: block;
+  text-align: center;
+  margin-left: 47.5%;
+  visibility: hidden;
+}
+
+.hidden:hover, .hidden2:hover, .hidden3:hover, .hidden4:hover, .hidden5:hover {
+  opacity: 0.8;
+}
+
+.hidden:hover .select, .hidden2:hover .select, .hidden3:hover .select, .hidden4:hover .select, .hidden5:hover .select {
+  visibility: visible;
+}
+
+.hidden .toggle, .hidden2 .toggle2, .hidden3 .toggle3, .hidden4 .toggle4, .hidden5 .toggle5 {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100%;
+  height: 80%;
+  display:block;
+  text-align:center;
+}
+
+
+/********************************************************************************************************************
+CSS UNTUK HALAMAN LEVEL**********************************************************************************************
+********************************************************************************************************************/
+
+
+
+.hidden, .hidden2, .hidden3 {
+  width: 33.33%;
+}
+
+.hidden {
+  background-image: url('../img/Terapi/awal.jpg');
+}
+.hidden2 {
+  background-image: url('../img/Terapi/menengah.jpg');
+}
+.hidden3 {
+  background-image: url('../img/Terapi/lanjut.jpg');
+}
+
+.toggle img, .toggle2 img, .toggle3 img {
+  margin-top: 15%;
+  height:50%;
+}
+ 
+/********************************************************************************************************************
+CSS UNTUK HALAMAN KATEGORI*******************************************************************************************
+********************************************************************************************************************/
+
+.hidden4, .hidden5 {
+  width: 50%;
+}
+
+.hidden4 {
+  background-image: url('../img/Terapi/freemode.jpg');
+}
+
+.hidden5 {
+  background-image: url('../img/Terapi/terstruktur.jpg');
+}
+
+.hidden4 .toggle4, .hidden5 .toggle5 {
+  height: 50%;
+}
+
+.tahap4, .tahap5 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.tahap4 p, .tahap5 p {
+  font-size: 54px;
+}
+
+.tahap4 h6, .tahap5 h6 {
+  /*margin-top: 2%;*/
+  margin-bottom: 2%;
+  font-size: 32px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+  height: 20%;
+  font-size: 22px;
+  color: white;
+}
+.redFooter {
+  background-color: red;
+}
+
+.greenFooter {
+  background-color: green;
+}
+
+/********************************************************************************************************************
+CSS UNTUK TABEL AKUN*************************************************************************************************
+********************************************************************************************************************/
+
+.tg {
+  margin:0px auto;
+  width: 50%;    
+}
+
+.tg td{
+  font-family:Arial, sans-serif;
+  font-size:25px;
+  padding:5px;
+  word-break:normal;
+  margin: 0;
+  color: #ffffff;
+}
+
+.tg td img {
+  max-height: 30%;
+}
+
+/********************************************************************************************************************
+CSS UNTUK FRAME AKUN*************************************************************************************************
+********************************************************************************************************************/
+
+.theFrame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 99%;
+  float: left;
+}
+
+/********************************************************************************************************************
+CSS UNTUK HALAMAN AKUN***********************************************************************************************
+********************************************************************************************************************/
+
+.theFrame {
+overflow: auto; 
+-webkit-overflow-scrolling:touch;
+}
+
+button#hapus {
+  float:left;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  margin-left: 0.5%;
+}
+
+.back-db {
+  background-image: url('../img/Akun/db.jpg');
+  width: 75%;
+  float: right;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 99%;
+  margin: 0 auto;
+  border-top: none;
+  text-align: center;
+}
+
+.back-db img {
+  display: block;
+  margin-bottom: 2%;
+  margin-left: 31%; 
+  max-width: 45% !important; 
+  max-height: 50% !important;
+}
+
+.back-db h5 {
+  font-family: 'Segoe UI light';
+  margin: 1% 1% 1% 1%;
+  padding: 0;
+
+}
+
+/********************************************************************************************************************
+CSS UNTUK HALAMAN REWARD*********************************************************************************************
+********************************************************************************************************************/
+
+.back-db2{
+   width: 75%;
+  float: right;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 99%;
+  margin: 0 auto;
+  border-top: none;
+  text-align: center;
+}
+
+.back-db2 img {
+  width: 90% !important; 
+  height: 90% !important;
+  margin-left: 1%;
+}
+
+.benar-salah{
+  width: 100%;
+  background-color: #45dab9;
+  margin-top: 3%;
+}
+
+.benar-salah img {
+  vertical-align: middle;
+  padding: 1%;
+  max-width: 3%;
+}
+
+.benar-salah p {
+  vertical-align: middle;
+  display: inline;
+  font-size: 20pt;
+}
+
+.menu-option {
+  margin-top: 20%;
+}
+
+figure {
+  display: inline-block;
+}
+
+figcaption {
+  margin: 1% 0 0 0;
+  color: #ffffff;
+}
+
+
+/********************************************************************************************************************
+CSS UNTUK HALAMAN IMITASI********************************************************************************************
+********************************************************************************************************************/
+.wrap {
+  min-height: 100%;
+  position: relative;
+}
+
+.quest{
+  background:#ffab62;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.quest p {
+  text-align: center;
+  display: inline;
+  float: left;
+  margin-left: 40%;
+  margin-right: 30%;
+}
+.quest button {
+  float: left;
+  display: inline;
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+
+/********************************************************************************************************************
+CSS MEDIA SETTINGS***************************************************************************************************
+********************************************************************************************************************/
+
+@media screen and (max-width: 767px) {
+  .tg {width: auto !important;}
+  .tg col {width: auto !important;}
+  .tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}
+  }
+
+@media (max-width: 1000px) {
+          .vid{
+            padding-bottom: 20px;
+          }
+          .vid-cen{
+            left:12.5%;
+            position:absolute;
+            width:75%;
+            text-align:center;
+            max-width:750px;
+            max-height:700px;
+          }
+      }
+      @media (min-width: 1000px) {
+          .vid{
+            left:50%;
+            position:absolute;
+            padding-bottom: 100px;
+          }
+          .vid-cen{
+            width:750px;
+            height:1000px;
+            margin-top: -72.5%;
+            margin-left:-350px;
+            text-align:center;
+            max-width:750px;
+          }
+      }

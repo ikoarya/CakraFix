@@ -1,0 +1,177 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            navigator.app.exitApp();
+	        }, false);
+	    }
+	</script>
+	<script src="js/jQuery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/isiterapi.js"></script>
+	<script type="text/javascript" src="js/querycakra.js"></script>
+	<script src="js/flowtype.js"></script>
+	<script type="text/javascript">
+	function hideMenu() {
+		document.getElementById('masukIcon').style.backgroundColor = document.getElementById('masukKeterangan').style.backgroundColor = document.getElementById('masukBatas').style.backgroundColor = '#333333';
+		document.getElementById('daftarIcon').style.backgroundColor = document.getElementById('daftarKeterangan').style.backgroundColor = document.getElementById('daftarBatas').style.backgroundColor = '#000000';
+		document.getElementById('petunjukIcon').style.backgroundColor = document.getElementById('petunjukKeterangan').style.backgroundColor = document.getElementById('petunjukBatas').style.backgroundColor = '#000000';
+		document.getElementById('tentangIcon').style.backgroundColor = document.getElementById('tentangKeterangan').style.backgroundColor = document.getElementById('tentangBatas').style.backgroundColor = '#000000';
+		document.getElementById('pengaturanIcon').style.backgroundColor = document.getElementById('pengaturanKeterangan').style.backgroundColor = document.getElementById('pengaturanBatas').style.backgroundColor = '#000000';
+		document.getElementById('keluarIcon').style.backgroundColor = document.getElementById('keluarKeterangan').style.backgroundColor = document.getElementById('keluarBatas').style.backgroundColor = '#000000';
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+		  	document.getElementById('keteranganMenu').innerHTML = '<br>';
+		  	document.getElementById('batasMenu').innerHTML = '<br>';
+			document.getElementById('menu').innerHTML = '<td colspan="8" height="14%" align="center"><table width="70%" height="100%" border="0" align="center" id="loginNama"><tr><td width="100%" height="30%" colpadding="0" colspan="3" align="center">masukkan nama</td></tr><tr><td width="15%" height="70%" id="outIcon" onclick="javascript:showMenu()"></td><td width="70%" height="70%"><input type="text" class="namaUserText" id="username"></td><td width="15%" height="70%" id="inIcon" onclick="javascript:login()"></td></tr></table></td>';
+			document.getElementById('menu').style.backgroundColor = document.getElementById('batasMenu').style.backgroundColor = document.getElementById('keteranganMenu').style.backgroundColor = 'transparent';
+			$('#loginNama').flowtype({fontRatio: 30});
+			$('#username').flowtype({fontRatio: 20});
+			//alert("hai");
+		}, delay);
+	}
+	function showMenu () {
+		document.getElementById('inIcon').style.opacity = 1;
+		document.getElementById('outIcon').style.opacity = 0.7;
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+			/*
+			document.getElementById('menu').innerHTML = '<td width="11%" height="20%"></td><td width="13%" id="masukIcon" height="20%"><img src="img/Login/masuk.png" width="90%" onclick="javascript:hideMenu()"></td><td width="13%" id="daftarIcon" height="20%"><img src="img/Login/daftar.png" width="90%" onclick="javascript:daftar()"></td><td width="13%" id="petunjukIcon" height="20%"><img src="img/Login/petunjuk.png" width="90%" onclick="javascript:petunjuk()"></td><td width="13%" id="tentangIcon" height="20%"><img src="img/Login/tentang.png" width="90%" onclick="javascript:tentang()"></td><td width="13%" id="pengaturanIcon" height="20%"><img src="img/Login/pengaturan.png" width="90%" onclick="javascript:pengaturan()"></td><td width="13%" id="keluarIcon" height="20%"><img src="img/Login/keluar.png" width="90%" onclick="javascript:keluar()"></td><td width="11%" height="20%"></td>';
+			document.getElementById('keteranganMenu').innerHTML = '<td width="11%" height="10%"></td><td width="13%" id="masukKeterangan" onclick="javascript:hideMenu()" height="10%">Masuk</td><td width="13%" id="daftarKeterangan" onclick="javascript:daftar()" height="10%">Daftar <img src="img/Top/lock.png" width="10px"></td><td width="13%" id="petunjukKeterangan" onclick="javascript:petunjuk()" height="10%">Petunjuk</td><td width="13%" id="tentangKeterangan" onclick="javascript:tentang()" height="10%">Tentang</td><td width="13%" id="pengaturanKeterangan" onclick="javascript:pengaturan()" height="10%">Pengaturan</td><td width="13%" id="keluarKeterangan" onclick="javascript:keluar()" height="10%">Keluar</td><td width="11%" height="10%"></td>';
+			document.getElementById('menu').style.backgroundColor = document.getElementById('keteranganMenu').style.backgroundColor = '#000000';
+			*/
+			window.location.reload();
+			//alert("hai");
+		}, delay);
+	}
+	function masuk () {
+		document.getElementById('inIcon').style.opacity = 0.7;
+		document.getElementById('outIcon').style.opacity = 1;
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+		  	window.location.href = "utama.html";
+		}, delay);
+	}
+	function daftar () {
+		document.getElementById('masukIcon').style.backgroundColor = document.getElementById('masukKeterangan').style.backgroundColor = document.getElementById('masukBatas').style.backgroundColor = '#000000';
+		document.getElementById('daftarIcon').style.backgroundColor = document.getElementById('daftarKeterangan').style.backgroundColor = document.getElementById('daftarBatas').style.backgroundColor = '#333333';
+		document.getElementById('petunjukIcon').style.backgroundColor = document.getElementById('petunjukKeterangan').style.backgroundColor = document.getElementById('petunjukBatas').style.backgroundColor = '#000000';
+		document.getElementById('tentangIcon').style.backgroundColor = document.getElementById('tentangKeterangan').style.backgroundColor = document.getElementById('tentangBatas').style.backgroundColor = '#000000';
+		document.getElementById('pengaturanIcon').style.backgroundColor = document.getElementById('pengaturanKeterangan').style.backgroundColor = document.getElementById('pengaturanBatas').style.backgroundColor = '#000000';
+		document.getElementById('keluarIcon').style.backgroundColor = document.getElementById('keluarKeterangan').style.backgroundColor = document.getElementById('keluarBatas').style.backgroundColor = '#000000';
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+		  	window.location.href = "daftar.html";
+		}, delay);
+	}
+	function petunjuk () {
+		document.getElementById('masukIcon').style.backgroundColor = document.getElementById('masukKeterangan').style.backgroundColor = document.getElementById('masukBatas').style.backgroundColor = '#000000';
+		document.getElementById('daftarIcon').style.backgroundColor = document.getElementById('daftarKeterangan').style.backgroundColor = document.getElementById('daftarBatas').style.backgroundColor = '#000000';
+		document.getElementById('petunjukIcon').style.backgroundColor = document.getElementById('petunjukKeterangan').style.backgroundColor = document.getElementById('petunjukBatas').style.backgroundColor = '#333333';
+		document.getElementById('tentangIcon').style.backgroundColor = document.getElementById('tentangKeterangan').style.backgroundColor = document.getElementById('tentangBatas').style.backgroundColor = '#000000';
+		document.getElementById('pengaturanIcon').style.backgroundColor = document.getElementById('pengaturanKeterangan').style.backgroundColor = document.getElementById('pengaturanBatas').style.backgroundColor = '#000000';
+		document.getElementById('keluarIcon').style.backgroundColor = document.getElementById('keluarKeterangan').style.backgroundColor = document.getElementById('keluarBatas').style.backgroundColor = '#000000';
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+		  	window.location.href = "petunjuk1.html";
+		}, delay);
+	}
+	function tentang () {
+		document.getElementById('masukIcon').style.backgroundColor = document.getElementById('masukKeterangan').style.backgroundColor = document.getElementById('masukBatas').style.backgroundColor = '#000000';
+		document.getElementById('daftarIcon').style.backgroundColor = document.getElementById('daftarKeterangan').style.backgroundColor = document.getElementById('daftarBatas').style.backgroundColor = '#000000';
+		document.getElementById('petunjukIcon').style.backgroundColor = document.getElementById('petunjukKeterangan').style.backgroundColor = document.getElementById('petunjukBatas').style.backgroundColor = '#000000';
+		document.getElementById('tentangIcon').style.backgroundColor = document.getElementById('tentangKeterangan').style.backgroundColor = document.getElementById('tentangBatas').style.backgroundColor = '#333333';
+		document.getElementById('pengaturanIcon').style.backgroundColor = document.getElementById('pengaturanKeterangan').style.backgroundColor = document.getElementById('pengaturanBatas').style.backgroundColor = '#000000';
+		document.getElementById('keluarIcon').style.backgroundColor = document.getElementById('keluarKeterangan').style.backgroundColor = document.getElementById('keluarBatas').style.backgroundColor = '#000000';
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+		  	window.location.href = "tentang.html";
+		}, delay);
+	}
+	function pengaturan () {
+		document.getElementById('masukIcon').style.backgroundColor = document.getElementById('masukKeterangan').style.backgroundColor = document.getElementById('masukBatas').style.backgroundColor = '#000000';
+		document.getElementById('daftarIcon').style.backgroundColor = document.getElementById('daftarKeterangan').style.backgroundColor = document.getElementById('daftarBatas').style.backgroundColor = '#000000';
+		document.getElementById('petunjukIcon').style.backgroundColor = document.getElementById('petunjukKeterangan').style.backgroundColor = document.getElementById('petunjukBatas').style.backgroundColor = '#000000';
+		document.getElementById('tentangIcon').style.backgroundColor = document.getElementById('tentangKeterangan').style.backgroundColor = document.getElementById('tentangBatas').style.backgroundColor = '#000000';
+		document.getElementById('pengaturanIcon').style.backgroundColor = document.getElementById('pengaturanKeterangan').style.backgroundColor = document.getElementById('pengaturanBatas').style.backgroundColor = '#333333';
+		document.getElementById('keluarIcon').style.backgroundColor = document.getElementById('keluarKeterangan').style.backgroundColor = document.getElementById('keluarBatas').style.backgroundColor = '#000000';
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+		  	window.location.href = "pengaturan.html";
+		}, delay);
+	}
+	function keluar () {
+		document.getElementById('masukIcon').style.backgroundColor = document.getElementById('masukKeterangan').style.backgroundColor = document.getElementById('masukBatas').style.backgroundColor = '#000000';
+		document.getElementById('daftarIcon').style.backgroundColor = document.getElementById('daftarKeterangan').style.backgroundColor = document.getElementById('daftarBatas').style.backgroundColor = '#000000';
+		document.getElementById('petunjukIcon').style.backgroundColor = document.getElementById('petunjukKeterangan').style.backgroundColor = document.getElementById('petunjukBatas').style.backgroundColor = '#000000';
+		document.getElementById('tentangIcon').style.backgroundColor = document.getElementById('tentangKeterangan').style.backgroundColor = document.getElementById('tentangBatas').style.backgroundColor = '#000000';
+		document.getElementById('pengaturanIcon').style.backgroundColor = document.getElementById('pengaturanKeterangan').style.backgroundColor = document.getElementById('pengaturanBatas').style.backgroundColor = '#000000';
+		document.getElementById('keluarIcon').style.backgroundColor = document.getElementById('keluarKeterangan').style.backgroundColor = document.getElementById('keluarBatas').style.backgroundColor = '#333333';
+		var delay=100; //1 seconds
+
+		setTimeout(function(){
+		  	navigator.app.exitApp();
+		}, delay);
+	}
+	</script>
+</head>
+<body>
+	<table width="100%" border="0" align="center" height="100%" id="halamanMenu" class="halamanLogin">
+		<tr id="konten">
+			<td colspan="8" height="75%">
+				<div id="judul">CAKRA</div>
+				<div id="deskripsiJudul">aplikasi terapi dan pelatihan untuk anak berkebutuhan khusus</div>
+				<div id="subDeskripsiJudul">(Autis, ADD/ADHD, Asperger, Sindrom Down, Retardasi Mental, Keterlambatan Belajar)</div>
+			</td>
+		</tr>
+		<tr id="batasMenu">
+			<td width="11%" height="3%"></td>
+			<td width="13%" id="masukBatas" height="3%" onclick="javascript:hideMenu()"></td>
+			<td width="13%" id="daftarBatas" height="3%" onclick="javascript:daftar()"></td>
+			<td width="13%" id="petunjukBatas" height="3%" onclick="javascript:petunjuk()"></td>
+			<td width="13%" id="tentangBatas" height="3%" onclick="javascript:tentang()"></td>
+			<td width="13%" id="pengaturanBatas" height="3%" onclick="javascript:pengaturan()"></td>
+			<td width="13%" id="keluarBatas" height="3%" onclick="javascript:keluar()"></td>
+			<td width="11%" height="3%"></td>
+		</tr>
+		<tr id="menu">
+			<td width="11%" height="14%"></td>
+			<td width="13%" id="masukIcon" height="14%" onclick="javascript:hideMenu()"></td>
+			<td width="13%" id="daftarIcon" height="14%" onclick="javascript:daftar()"></td>
+			<td width="13%" id="petunjukIcon" height="14%" onclick="javascript:petunjuk()"></td>
+			<td width="13%" id="tentangIcon" height="14%" onclick="javascript:tentang()"></td>
+			<td width="13%" id="pengaturanIcon" height="14%" onclick="javascript:pengaturan()"></td>
+			<td width="13%" id="keluarIcon" height="14%" onclick="javascript:keluar()"></td>
+			<td width="11%" height="14%"></td>
+		</tr>
+		<tr id="keteranganMenu">
+			<td width="11%" height="8%"></td>
+			<td width="13%" id="masukKeterangan" onclick="javascript:hideMenu()" height="8%">Masuk</td>
+			<td width="13%" id="daftarKeterangan" onclick="javascript:daftar()" height="8%">Daftar <img src="img/Top/lock.png" width="10%"></td>
+			<td width="13%" id="petunjukKeterangan" onclick="javascript:petunjuk()" height="8%">Petunjuk</td>
+			<td width="13%" id="tentangKeterangan" onclick="javascript:tentang()" height="8%">Tentang</td>
+			<td width="13%" id="pengaturanKeterangan" onclick="javascript:pengaturan()" height="8%">Pengaturan</td>
+			<td width="13%" id="keluarKeterangan" onclick="javascript:keluar()" height="8%">Keluar</td>
+			<td width="11%" height="8%"></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		$('#judul').flowtype({fontRatio: 5});
+		$('#deskripsiJudul').flowtype({fontRatio: 32});
+		$('#subDeskripsiJudul').flowtype({fontRatio: 45});
+		$('#menu').flowtype({fontRatio: 65});
+		$('#keteranganMenu').flowtype({fontRatio: 55});
+	</script>
+</body>
+</html>

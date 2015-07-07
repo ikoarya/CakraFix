@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>kategori</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="../js/jQuery-2.1.3.min.js"></script>
+	<script src="../js/flowtype.js"></script>
+	<script type="text/javascript">
+		function keHalamanLevel() () {
+			window.location.href = "level.html";
+		}
+	</script>
+</head>
+<body id="halamanKategori">
+	<table width="100%" height="100%" border="0" style="border-spacing:0px;">
+		<tr>
+			<td class="kategori1" onclick="keHalamanLevel()">
+				<table width="100%" height="100%" border="0">
+					<tr><td class="tandaKategori"></td></tr>
+					<tr><td class="judulKategori">Terapi<br>Freemode</td></tr>
+					<tr><td class="keteranganKategori keteranganKategori1">Cocok untuk terapis - Dapat memilih modul terapi - Dapat memilih konten modul - Terdapat modul pembelajaran - Merekap skor benar dan salah terapi</td></tr>
+					<tr><td class="batasKategori"></td></tr>
+				</table>
+			</td>
+			<td class="kategori2">
+				<table width="100%" height="100%" border="0" onclick="keHalamanTerapiTerstruktur()">
+					<tr><td class="tandaKategori"></td></tr>
+					<tr><td class="judulKategori">Terapi<br>Terstruktur</td></tr>
+					<tr><td class="keteranganKategori keteranganKategori2">Cocok untuk orang tua - Pemilihan modul terapi dan konten modul otomatis - Hanya terdapat modul latihan - Merekap progres perkembangan per modul - Single click</td></tr>
+					<tr><td class="batasKategori"></td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		$('.judulKategori').flowtype({fontRatio:13});
+		$('.keteranganKategori').flowtype({fontRatio:30});
+		//$('.keteranganKategori2').flowtype({fontRatio:40});
+	</script>
+</body>
+</html>

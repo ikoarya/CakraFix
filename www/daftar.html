@@ -1,0 +1,136 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="libs/fastclick.min.js"></script>
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+	<script src="js/jQuery-2.1.3.min.js"></script>
+	<script src="js/flowtype.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/jQuery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/isiterapi.js"></script>
+	<script type="text/javascript" src="js/querycakra.js"></script>
+	<script src="js/app.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            window.location.href = "index.html";
+	        }, false);
+	    }
+		function init () {
+			var isiTanggal;
+			for(var i = 1; i <= 31; i++){
+				isiTanggal += '<option value="' + i + '">' + i + '</option>';
+			}
+			document.getElementById('tanggal').innerHTML = isiTanggal;
+
+			var isiBulan, listBulan = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember"];
+			for(var i = 1; i <= 12; i++){
+				isiBulan += '<option value="' + i + '">' + listBulan[i] + '</option>';
+			}
+			document.getElementById('bul').innerHTML = isiBulan;
+
+			var isiTahun;
+			for(var i = new Date().getFullYear(); i >= 1900; i--){
+				isiTahun += '<option value="' + i + '">' + i + '</option>';
+			}
+			document.getElementById('tah').innerHTML = isiTahun;
+		}
+		function takePhotos () {
+			document.getElementById('takePhotos').click();
+			$('.image-upload span').text('\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Ambil Ulang Foto');
+		}
+		function uploadPhotos () {
+			document.getElementById('file-input').click();
+			alert($('#file-input').val());
+		}
+	</script>
+</head>
+<body onload="init()" ng-app="starter" ng-controller="MainCtrl">
+	<table class="halamanDaftar" height="100%" width="100%" border="0" id="app">
+		<tr>
+			<td width="100%" height="20%" valign="bottom">
+				<table width="90%" border="0" align="center" style="border-collapse: collapse;">
+					<tr>
+						<td id="judulDaftar">
+							Tuliskan identitas
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="50%" valign="top">
+				<table width="90%" border="0" align="center" height="60%" id="kontenDaftar">
+					<tr>
+						<td width="15%">Nama</td>
+						<td width="60%"><input type="text" name="nama" id="name" class="inputDaftar"></td>
+						<td width="25%" rowspan="4"><img ng-src="{{lastPhoto}}" style="max-width: 90%"></td>
+					</tr>
+					<tr>
+						<td width="15%">Tanggal Lahir</td>
+						<td width="60%">
+							<table width="100%">
+								<tr>
+									<td width="33%">
+										<select name="tanggal" id="tanggal" class="inputDaftar">
+										</select>
+									</td>
+									<td width="33%">
+										<select name="bulan" id="bul" class="inputDaftar">
+										</select>
+									</td>
+									<td width="33%">
+										<select name="tahun" id="tah" class="inputDaftar">
+										</select>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td width="15%">Jenis Kelamin</td>
+						<td width="60%">
+							<select name="jk" id="jk" class="inputDaftar">
+								<option value="L">Laki-laki</option>
+								<option value="P">Perempuan</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td width="15">Foto</td>
+						<td width="60%" class="image-upload" onclick="javascript:takePhotos()">
+							<img src="img/Daftar/ambil.png" height="40%"><span>&nbsp;&nbsp;&nbsp;&nbsp;Ambil Foto</span>
+							<input id="takePhotos" type="submit" ng-click="getPhoto()">
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="30%" valign="top" align="right">
+				<table width="90%" border="0" align="center">
+					<tr>
+						<td width="15%"></td>
+						<td width="60%"></td>
+						<td width="25%" align="center" valign="top" id="buttonSelesaiDaftar" onclick="EntryUser()">
+							Selesai
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		$('#judulDaftar').flowtype({fontRatio: 30});
+		$('#kontenDaftar').flowtype({fontRatio: 45});
+		$('#name').flowtype({fontRatio: 45});
+		$('#tanggal').flowtype({fontRatio: 45});
+		$('#bul').flowtype({fontRatio: 45});
+		$('#tah').flowtype({fontRatio: 45});
+		$('#jk').flowtype({fontRatio: 45});
+		$('#buttonSelesaiDaftar').flowtype({fontRatio: 3});
+	</script>
+</body>
+</html>

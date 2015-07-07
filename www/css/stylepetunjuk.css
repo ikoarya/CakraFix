@@ -1,0 +1,36 @@
+@font-face {
+	font-family: Trek;
+	src: url('../bootstrap/fonts/Trek-Disruptor-Blast.ttf');
+}
+@font-face {
+	font-family: Ubuntu;
+	src: url('../bootstrap/fonts/Ubuntu-Title.ttf');
+}
+html {
+	font-family: "Segoe UI light";
+	background: url("../img/Petunjuk/back.jpg")  no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+html body {
+	margin: 0px;
+	color: white;
+}
+table{
+	text-align: center;
+}
+
+.footer1{
+	font-size: 25pt;
+}
+
+.gambarPetunjuk {
+	max-height: 90%;
+	max-width: 70%;
+}
+
+#nav img{
+	max-width: 70%;
+	max-height: 70%;
+}

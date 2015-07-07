@@ -1,0 +1,774 @@
+@font-face {
+	font-family: Trek;
+	src: url('../font/Trek-Disruptor-Blast.ttf');
+}
+@font-face {
+	font-family: Ubuntu;
+	src: url('../font/Ubuntu-Title.ttf');
+}
+@font-face {
+	font-family: Segoe UI light;
+	src: url('../font/SEGOEUIL.ttf');
+}
+@font-face {
+	font-family: Segoe UI bold;
+	src: url('../font/ufonts.com_segoe-ui-bold.ttf');
+}
+html {
+	font-family: "Segoe UI light";
+}
+html body {
+	margin: 0px;
+	line-height: 1.45;
+}
+/*UMUM START*/
+#halamanMenu {
+	color:white;
+	text-align:center;
+	border-collapse: collapse;
+}
+#menu, #keteranganMenu, #batasMenu {
+	background-color: black;
+}
+#menu td img {
+	max-height: 60px;
+	max-width: 60px;
+}
+#menu td {
+	/*padding-top: 8px;*/
+}
+#keteranganMenu td {
+	padding-bottom: 8px;
+}
+.inputData {
+	display: block;
+	margin: 0;
+	width: 100%;
+	font-family: 'Segoe UI light';
+	font-size: 18px;
+	padding: 5px;
+	border: solid 1px #dcdcdc;
+	transition: box-shadow 0.3s, border 0.3s;
+}
+.inputData:focus {
+	outline: none;
+	border: solid 1px #707070;
+  	box-shadow: 0 0 5px 1px #A5D3F0;
+  	width: 100%;
+}
+.iconMenu {
+	background-size:Auto 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+/*UMUM END*/
+
+/* Login (index.html) START */
+.halamanLogin{
+	background-image: url('../img/Login/back.jpg');
+	background-size:100% 100%;
+}
+#judul {
+	font-family: "Trek";
+	font-size: 80pt;
+}
+#deskripsiJudul {
+	font-family: "Ubuntu";
+	font-size: 15pt;
+}
+#subDeskripsiJudul {
+	font-size: 10pt;
+}
+.namaUserText {
+	line-height: 2.0;
+	width: 100%;
+	border: solid 1px #dcdcdc;
+	transition: box-shadow 0.3s, border 0.3s;
+	background-color: white;
+	color: #000;
+	border-radius: 15px;
+	padding: 5px;
+	text-overflow:ellipsis;
+}
+.namaUserText:focus {
+	outline: none;
+	border: solid 1px #707070;
+  	box-shadow: 0 0 8px 2px #A5D3F0;
+}
+#loginNama {
+	color: white;
+	font-size: 15pt;
+	font-family: "Segoe UI light";
+	border-collapse: separate;
+}
+#loginNama tr td {
+}
+#masukIcon {
+	background-image:url('../img/Login/masuk.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#daftarIcon {
+	background-image:url('../img/Login/daftar.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#petunjukIcon {
+	background-image:url('../img/Login/petunjuk.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#tentangIcon {
+	background-image:url('../img/Login/tentang.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#pengaturanIcon {
+	background-image:url('../img/Login/pengaturan.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#keluarIcon {
+	background-image:url('../img/Login/keluar.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#inIcon {
+	height: 70%;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-image:url('../img/Login/in.png');
+}
+#outIcon {
+	height: 70%;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-image:url('../img/Login/out.png');
+}
+/* Login (index.html) END */
+
+/* PENGATURAN START */
+.halamanPengaturan{
+	background-image: url('../img/Pengaturan/back.jpg');
+	background-size:100% 100%;
+}
+.opsiPengaturan {
+	font-family:'Segoe UI light';
+	padding: 0px;
+	height: 50%;
+	font-size: 12pt;
+}
+.menuPengaturan {
+	padding: 5px;
+	color:white;
+	font-family:'Segoe UI light';
+}
+/* PENGATURAN END */
+
+/* UTAMA START */
+.halamanUtama{
+	background-image: url('../img/utama/back.jpg');
+	background-size:100% 100%;
+}
+.tampilanProfil {
+	color:white;
+}
+.tampilanProfil tr td img {
+	max-width: 60%;
+	max-height: 50%;
+}
+.tampilanProfil tr td {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+#informasiIcon {
+	padding-top: 15px;
+	background-image: url('../img/Utama/autis.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#evaluasiIcon {
+	padding-top: 15px;
+	background-image: url('../img/Utama/diagnosa.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#terapiIcon {
+	padding-top: 15px;
+	background-image: url('../img/Utama/terapi.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#laporanIcon {
+	padding-top: 15px;
+	background-image: url('../img/Utama/laporan.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#catatanIcon {
+	padding-top: 15px;
+	background-image: url('../img/Utama/ikonnotes.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fotoProfil {
+	background-size: contain;
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+#haloText, #hasil {
+	font-family: 'Segoe UI bold';
+}
+#umurText {
+	font-family: 'Segoe UI light';
+}
+/* UTAMA END */
+
+/* daftar START */
+.halamanDaftar{
+	background-image: url('../img/Daftar/back.jpg');
+	background-size:100% 100%;
+}
+#judulDaftar {
+	font-family:'Segoe UI bold';
+	color: white;
+	width: 100%;
+}
+#kontenDaftar {
+	font-family:'Segoe UI light';
+	color:white;
+	text-align:left;
+	border-collapse: collapse;
+}
+.inputDaftar {
+	line-height: 2.0;
+	width: 100%;
+	border: solid 1px #dcdcdc;
+	transition: box-shadow 0.3s, border 0.3s;
+	background-color: white;
+	color: #000;
+	border-radius: 15px;
+	padding: 5px;
+	text-overflow:ellipsis;
+}
+.inputDaftar:focus {
+	outline: none;
+	border: solid 1px rgb(242,32,150);
+  	box-shadow: 0 0 8px 2px rgba(242,32,32,.7);
+}
+.image-upload {
+	text-align: center;
+	width: 50%;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+.image-upload > input {
+    display: none;
+}
+#buttonSelesaiDaftar {
+	background-color: rgb(247,34,141);
+	border: 0px;
+	color: white;
+	font-family: 'Segoe UI light';
+	padding-left: 7%;
+	padding-right: 7%;
+}
+#buttonSelesaiDaftar:hover {
+	background-color: blue;
+}
+/* daftar END */
+
+/* terapi terstruktur START */
+.halamanUtama{
+	background-image: url('../img/Utama/back.jpg');
+	background-size:100% 100%;
+}
+.tampilanProfil {
+	color:white;
+	font-family:'Segoe UI bold';
+}
+.tampilanProfil tr td img {
+	max-width: 60%;
+	max-height: 45%;
+}
+.tampilanProfil tr td {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+/* terapi terstruktur END */
+
+/* TERAPI TERSTRUKTUR START */
+
+.menuTerapiTerstruktur, .keteranganMenuTerapiTerstruktur {
+	background-color: white;
+	color: blue;
+	font-size: 12pt;
+}
+.menuTerapiTerstruktur td img {
+	max-height: 60px;
+	max-width: 60px;
+}
+.menuTerapiTerstruktur td {
+	padding-top: 8px;
+}
+.halamanTerapiTerstruktur{
+	background-image: url('../img/Terstruktur/back.jpg');
+	background-size:100% 100%;
+}
+.tampilanTerapiTerstruktur {
+	/*
+	background-image: url('../img/Terstruktur/circle.png');
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	*/
+	background-color: white;
+	border-radius: 80%;
+	/*border: 2x solid red;*/
+	width: 80%;
+	height: 0;
+	padding-bottom: 80%;
+	padding-top: 80%;
+}
+.imageTerapiTerstruktur {
+	/*border: 1px solid blue;*/
+	width: 35%;
+}
+#rincianIcon {
+	height: 30%;
+	max-height: 30%;
+	max-width: 30%;
+}
+.kontenTerapiTerstruktur{
+	height: 100%;
+	max-height: 100%
+	overflow: auto;
+	max-height: 100%;
+}
+.recordTerapiTerstruktur td {
+	background-color:#2A4178;
+	border-bottom:1px solid white;
+	color:white;
+	font-family:'Segoe UI light';
+	font-size: 12pt;
+}
+.atributTerapiTerstruktur td {
+	color: black;
+	background-color:white;
+	border-right:0.1px solid grey;
+	border-bottom:1px solid white;
+	text-align:center;
+	font-family:'Segoe UI light';
+	font-size: 12pt;
+}
+/* TERAPI TERSTRUKTUR START */
+
+/* laporan START */
+.halamanLaporan{
+	margin: 0px;
+	padding: 0px;
+	background-image: url('../img/Indikasi/back.jpg');
+	background-size:100% 100%;
+	/*background-color: rgb(80.30.101);*/
+	background-repeat: no-repeat;
+	color: white;
+	width: 100%;
+	height: 100%;
+}
+#totalIcon, #aspekIcon, #bulananIcon, #persentaseIcon {
+	background-color: black;
+}
+/* laporan END */
+
+/* INDIKASI START */
+.halamanIndikasi{
+	text-align: center;
+	background-image: url('../img/Indikasi/back.jpg');
+	background-size:100% 100%;
+	/*background-color: rgb(80.30.101);*/
+	background-repeat: no-repeat;
+	color: white;
+}
+#judulIndikasi {
+	color: white;
+	font-family: 'Segoe UI light';
+	font-size: 25pt;
+}
+#subJudulIndikasi {
+	color: white;
+	font-family: 'Segoe UI bold';
+	font-size: 13pt;
+}
+#recordIndikasi {
+	color: white;
+	background-color: rgb(158,55,158);
+}
+#terapiIndikasiIcon {
+	background-image: url('../img/Indikasi/terapi.png');
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	vertical-align: bottom;
+}
+#kembaliIndikasiIcon {
+	background-image: url('../img/Indikasi/kembali.png');
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	vertical-align: bottom;
+}
+.atributIndikasi {
+	font-family: 'Segoe UI light';
+	text-align: left;
+	width: 50%;
+	padding-top: 0.5%;
+	padding-left: 1%;
+}
+.valueIndikasi {
+	font-family: 'Segoe UI bold';
+	text-align: right;
+	width: 50%;
+	padding-top: 0.5%;
+	padding-left: 1%;
+}
+/* INDIKASI END */
+
+/* PERSENTASE START */
+.halamanPersentase{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	background-image: url('../img/Indikasi/back.jpg');
+	background-size:100% 100%;
+	/*background-color: rgb(80.30.101);*/
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-family: 'Segoe UI light';
+}
+.persentase {
+	font-family: 'Segoe UI light';
+	width: 45%;
+	text-align: center;
+}
+.poin {
+	width: 100%;
+	/*background-color: rgb(127,61,158);*/
+}
+.kanan {
+	margin-right: 15px;
+	float: right;
+}
+.kiri {
+	margin-left: 15px;
+	float: left;
+}
+.bgUngu {
+	width: 100%;
+	padding: 3px;
+	background-color: rgb(127,61,158);
+}
+/* PERSENTASE START */
+
+/* KATEGORI START */
+
+#halamanKategori table {
+	border-spacing:0px;
+	border-collapse: collapse;
+}
+
+.kategori1 {
+	margin: 0px;
+	padding: 0px;
+	background-image: url('../img/Terapi/freemode.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 50%;
+	height: 100%;
+}
+.kategori1:hover, .kategori2:hover {
+	opacity: 0.8;
+}
+.kategori1:hover .tandaKategori, .kategori2:hover .tandaKategori{
+	visibility: visible;
+}
+.kategori2 {
+	margin: 0px;
+	padding: 0px;
+	background-image: url('../img/Terapi/terstruktur.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 50%;
+	height: 100%;
+}
+.tandaKategori {
+	width: 100%;
+	height: 15%;
+	background-image: url('../img/Terapi/selectedkategori.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	visibility: hidden;
+}
+.judulKategori{
+	width: 100%;
+	height: 35%;
+	color: white;
+	font-family: 'Segoe UI light';
+	text-align: center;
+	vertical-align: top;
+}
+.keteranganKategori{
+	width: 100%;
+	height: 20%;
+	color: white;
+	font-family: 'Segoe UI light';
+	text-align: center;
+}
+.keteranganKategori1 {
+	background-color: red;
+}
+.keteranganKategori2 {
+	background-color: green;
+}
+.batasKategori{
+	width: 100%;
+	height: 30%;
+}
+/* KATEGORI END */
+
+/* LEVEL START */
+
+#halamanKategori table {
+	border-spacing:0px;
+	border-collapse: collapse;
+}
+
+.level1 {
+	margin: 0px;
+	padding: 0px;
+	background-image: url('../img/Terapi/awal.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 33.3%;
+	height: 100%;
+}
+.level1:hover{
+	opacity: 0.9;
+	background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../img/Terapi/awal.jpg');
+}
+.level2:hover{
+	opacity: 0.9;
+	background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../img/Terapi/menengah.jpg');
+}
+.level3:hover{
+	opacity: 0.9;
+	background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../img/Terapi/lanjut.jpg');
+}
+.level1:hover .tandaLevel1, .level2:hover .tandaLevel2, .level3:hover .tandaLevel3{
+	visibility: visible;
+}
+.level2 {
+	margin: 0px;
+	padding: 0px;
+	background-image: url('../img/Terapi/menengah.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 33.3%;
+	height: 100%;
+}
+.level3 {
+	margin: 0px;
+	padding: 0px;
+	background-image: url('../img/Terapi/lanjut.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 33.3%;
+	height: 100%;
+}
+.tandaLevel1 {
+	width: 100%;
+	height: 15%;
+	background-image: url('../img/Terapi/selected1a.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	visibility: hidden;
+}
+.tandaLevel2 {
+	width: 100%;
+	height: 15%;
+	background-image: url('../img/Terapi/selected2a.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	visibility: hidden;
+}
+.tandaLevel3 {
+	width: 100%;
+	height: 15%;
+	background-image: url('../img/Terapi/selected3a.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	visibility: hidden;
+}
+.gambarLevel1 {
+	width: 100%;
+	height: 45%;
+	background-image: url('../img/Level/gambarawal.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+.gambarLevel2 {
+	width: 100%;
+	height: 45%;
+	background-image: url('../img/Level/gambarmenengah.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+.gambarLevel3 {
+	width: 100%;
+	height: 45%;
+	background-image: url('../img/Level/gambarlanjut.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+.keteranganLevel{
+	width: 100%;
+	height: 40%;
+	color: white;
+	font-family: 'Segoe UI light';
+	text-align: center;
+}
+/* LEVEL END */
+
+/*PETUNJUK TERAPI 1 START*/
+.halamanPetunjukTerapi {
+	background-size: 100% 100%;
+	background-image: url('../img/Informasi/back.jpg');
+	color: white;
+}
+#gambarmain {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#flashingtext {
+	background-color:black;
+	width: 40%;
+	padding:1%;
+	text-align:center;
+}
+/*PETUNJUK TERAPI 1 END*/
+
+/*LIST TERAPI DASAR START*/
+.halamanListTerapiDasar {
+	background-size: 100% 100%;
+	background-image: url('../img/Menu/back.jpg');
+	color: white;
+}
+#jenisTerapiDasar {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	/*border: 1px solid yellow;*/
+	margin: 0px;
+}
+#listTerapiDasar {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	/*border: 1px solid red;*/
+}
+#listTerapiDasar img {
+	max-width: 40%;
+	max-height: 100%;
+}
+#listTerapiDasar  table tr td{
+	/*border:1px solid red;*/
+}
+#jenisTerapiDasar table tr td {
+	color: white;
+    font-weight:normal;
+}
+#jenisTerapiDasar table tr td:hover {
+	/*nilai perubahan*/
+	background-color: #aaa;
+	color: #000000;
+  	box-shadow: 0 0 5px 1px #fff;
+      transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+      -ms-transition: all 0.4s;
+      -o-transition: all 0.4s;
+}
+#jenisTerapiDasar table tr td:active {
+	background-color: yellow;
+    color: #000000;
+}
+#tabel td {
+    color: #2F4F4F;    
+    font-weight:normal;
+    overflow:visible;
+}
+#tabel tr:hover{
+  /*nilai perubahan*/
+  background-color: #aaa;
+  color: #000000;
+  box-shadow: 0 0 5px 1px #fff;
+      transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+      -ms-transition: all 0.4s;
+      -o-transition: all 0.4s;
+}
+.tabel_tanpa_jeda {
+	border-collapse: collapse;
+	border-spacing: 0px;
+	-webkit-border-horizontal-spacing: 0px;
+  	-webkit-border-vertical-spacing: 0px;
+}
+#judulTerapiDasar h1, #judulTerapiDasar h2 {
+	color: #ddd;
+}
+#judulTerapiDasar h1 {
+	font-family: 'Segoe UI bold';
+}
+#judulTerapiDasar h2 {
+	font-family: 'Segoe UI light';
+}
+/*LIST TERAPI DASAR END*/

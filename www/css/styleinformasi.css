@@ -1,0 +1,50 @@
+@font-face {
+	font-family: Trek;
+	src: url('../fonts/Trek-Disruptor-Blast.ttf');
+}
+@font-face {
+	font-family: Ubuntu;
+	src: url('../fonts/Ubuntu-Title.ttf');
+}
+html {
+	font-family: "Segoe UI light";
+	background: url("../img/Informasi/back.jpg")  no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+html body {
+	margin: 0px;
+	height: 100%;
+	color: black;
+}
+table{
+	text-align: left;
+	border-color: white;
+}
+
+#header{
+	padding-top: 30px;
+	padding-left: 4%;
+	padding-bottom: 0px;
+	font-weight: bold;
+	font-size: 20pt;
+	color: white;
+}
+#utama{
+	background-color: white;
+}
+
+#footer{
+	background-color: white;
+}
+
+#merah{
+	color: red;
+	font-weight: bold;
+}
+
+.arah img{
+	max-width: 50%;
+	max-height: 30%;
+}

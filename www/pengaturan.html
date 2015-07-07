@@ -1,0 +1,96 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="js/jQuery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/isiterapi.js"></script>
+	<script type="text/javascript" src="js/querycakra.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            window.location.href = "index.html";
+	        }, false);
+	    }
+	    function main(){
+			var jmlakun = GetJmlAkun();
+			document.getElementById('jumlahakun').innerHTML = jmlakun + ' anak';
+		}
+		function akun () {
+			document.getElementById('akunIcon').style.backgroundColor = document.getElementById('akunKeterangan').style.backgroundColor = '#333333';
+			document.getElementById('rewardIcon').style.backgroundColor = document.getElementById('rewardKeterangan').style.backgroundColor = '#000000';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+			  	//code
+			}, delay);
+		}
+		function reward () {
+			document.getElementById('akunIcon').style.backgroundColor = document.getElementById('akunKeterangan').style.backgroundColor = '#000000';
+			document.getElementById('rewardIcon').style.backgroundColor = document.getElementById('rewardKeterangan').style.backgroundColor = '#333333';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+			  	//code
+			}, delay);
+		}
+	</script>
+</head>
+<body onload="GetJmlAkun()">
+	<table width="100%" border="0" align="center" height="100%" id="halamanMenu" class="halamanPengaturan">
+		<tr id="konten">
+			<td colspan="4" height="70%">
+				<table width="100%" height="100%" class="menuPengaturan">
+					<tr>
+						<td width="25%">Jumlah Akun</td>
+						<td width="25%" id="jumlahakun"></td>
+						<td width="50%"></td>
+					</tr>
+					<tr>
+						<td width="25%">Musik</td>
+						<td width="25%">
+							<select name="musikOnOff" class=" inputData opsiPengaturan">
+								<option>ON</option>
+								<option>OFF</option>
+							</select>
+						</td>
+						<td width="50%"></td>
+					</tr>
+					<tr>
+						<td width="25%">Quick Tutorial</td>
+						<td width="25%">
+							<select name="tutorialOnOff" class=" inputData opsiPengaturan">
+								<option>ON</option>
+								<option>OFF</option>
+							</select>
+						</td>
+						<td width="50%"></td>
+					</tr>
+					<tr>
+						<td width="25%">Reward</td>
+						<td width="25%">
+							<select name="rewardSuaraVideo" class=" inputData opsiPengaturan">
+								<option>Suara</option>
+								<option>Video</option>
+							</select>
+						</td>
+						<td width="50%"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr id="menu">
+			<td width="37%" height="20%"></td>
+			<td width="13%" height="20%" id="akunIcon" onclick="javascript:akun()"><img src="img/Pengaturan/database.png" width="70%"></td>
+			<td width="13%" height="20%" id="rewardIcon" onclick="javascript:reward()"><img src="img/Pengaturan/rekaman.png" width="70%"></td>
+			<td width="37%" height="20%"></td>
+		</tr>
+		<tr id="keteranganMenu">
+			<td width="37%" height="10%"></td>
+			<td width="13%" height="10%" id="akunKeterangan" onclick="javascript:akun()">Akun</td>
+			<td width="13%" height="10%" id="rewardKeterangan" onclick="javascript:reward()">Reward</td>
+			<td width="37%" height="10%"></td>
+		</tr>
+	</table>
+</body>
+</html>

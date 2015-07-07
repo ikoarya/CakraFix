@@ -1,0 +1,146 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+    background: url('../img/Diagnosa/back.jpg') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    margin: 0 auto;
+
+}
+@font-face {
+  font-family: myUbuntu;
+  src: url('../font/Ubuntu-Title.ttf');
+}
+h1 {
+    text-align: center;
+}
+h2,h3,h4,p {
+    display: inline;
+    font-family: 'Segoe UI light';
+}
+h2 {
+    /*font-size: 44pt;*/
+    font-weight: bold;
+    font-family: 'Segoe UI light';
+} 
+h3 {
+    /*font-size: 48pt;*/
+    font-weight: normal;
+}
+h4 {
+    /*font-size: 40pt;*/
+    font-weight: normal;
+}
+p {
+    /*font-size: 32pt;*/
+}
+
+#quiz {
+    display:none;
+    padding: 0;
+    margin: 0;
+}
+
+.button {
+    position: relative;
+    float:right;
+    color: black;
+    margin-right: 5%;
+}
+
+.button.active {
+    background-color: #F8F8FF;
+    color: #525252;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+    font-size: 40pt;
+    background-color: lightgrey;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
+    border: 1px solid red;
+}
+
+#question p{
+    display: inline;
+    float: left;
+}
+
+#questionBox {
+    background-color: lightgrey;
+    color: black;
+    font-family: 'Segoe UI light';
+    padding: 2%;
+}
+
+#judul {
+    padding-left: 6%;
+}
+
+#judul h3 {
+    font-family: 'Segoe UI bold';
+}
+
+#judul h4 {
+    font-family: 'Segoe UI light';
+}
+
+#next {
+    color:black;
+    background-color: #dddddd;
+    padding: 5px;
+    font-family: 'Segoe UI light';
+}
+
+#next:active {
+    background-color: #333333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+input[type=radio]{
+    margin-left: 0%;
+    border: 0px;
+    width: 100%;
+    height: 25pt;
+    vertical-align: middle;
+
+    -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+    -moz-appearance: checkbox;    /* Firefox */
+    -ms-appearance: checkbox;     /* not currently supported */
+}
+
+#choice0, #choice1, #choice2, #choice3 {
+    transition: all 0.3s ease-in;
+}
+
+#choice0:hover, #choice1:hover, #choice2:hover, #choice3:hover {
+    -webkit-stroke-width: 5.3px;
+      -webkit-stroke-color: #FFFFFF;
+      -webkit-fill-color: #FFFFFF;
+      text-shadow: 1px 0px 20px white;
+}

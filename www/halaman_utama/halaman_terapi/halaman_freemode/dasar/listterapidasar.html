@@ -1,0 +1,65 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../css/style.css">
+	<script src="../../../../js/jQuery-2.1.3.min.js"></script>
+	<script src="../../../../js/flowtype.js"></script>
+	<script type="text/javascript" src="../../../../js/isiterapi.js"></script>
+    <script type="text/javascript" src="../../../../js/querycakra.js"></script>
+</head>
+<body style="width:100%;height:100%;" onload="terapi(1)">
+	<table width="100%" height="100%" cellspacing="0" cellpadding="0" class="tabel_tanpa_jeda">
+		<tr>
+			<td width="40%" height="100%" class="halamanListTerapiDasar">
+				<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" class="tabel_tanpa_jeda">
+					<tr>
+						<td id="judulTerapiDasar" width="100%" height="30%">
+							<h1>Terapi</h1>
+							<h2>Dasar</h2>
+						</td>
+					</tr>
+					<tr>
+						<td width="100%" height="70%">
+							<div id="jenisTerapiDasar">
+								<table width="100%" height="100%" class="tabel_tanpa_jeda">
+									<tr>
+										<td width="100%" onclick="javascript:terapi(1)">Belajar</td>
+									</tr>
+									<tr>
+										<td width="100%" onclick="javascript:terapi(2)">Identifikasi(1)</td>
+									</tr>
+									<tr>
+										<td width="100%" onclick="javascript:terapi(3)">Identifikasi(2)</td>
+									</tr>
+									<tr>
+										<td width="100%" onclick="javascript:terapi(4)">Melabel</td>
+									</tr>
+									<tr>
+										<td width="100%" onclick="javascript:terapi(5)">Matching</td>
+									</tr>
+									<tr>
+										<td width="100%" onclick="javascript:terapi(6)">Imitasi GM Kasar</td>
+									</tr>
+									<tr>
+										<td width="100%" onclick="javascript:terapi(7)">Imitasi GM Halus</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="60%" height="100%">
+				<div id="listTerapiDasar">
+					<TABLE id="tabel" width="100%" cellspacing="0" cellpadding="0" class="tabel_tanpa_jeda">
+	                   
+		            </TABLE>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		$('#jenisTerapiDasar table tr td').flowtype({fontRatio:9});
+		$('#judulTerapiDasar').flowtype({fontRatio:20});
+	</script>
+</body>
+</html>

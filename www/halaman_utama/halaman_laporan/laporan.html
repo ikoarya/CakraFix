@@ -1,0 +1,92 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<script src="../../js/jQuery-2.1.3.min.js"></script>
+	<script src="../../js/flowtype.js"></script>
+	<script type="text/javascript">
+		function total() {
+			document.getElementById('totalIcon').style.backgroundColor = '#333333';
+			document.getElementById('aspekIcon').style.backgroundColor = '#000000';
+			document.getElementById('bulananIcon').style.backgroundColor = '#000000';
+			document.getElementById('persentaseIcon').style.backgroundColor = '#000000';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+			  	document.getElementById('frame').src = "total.html";
+				//alert("hai");
+			}, delay);
+		}
+		function aspek() {
+			document.getElementById('totalIcon').style.backgroundColor = '#000000';
+			document.getElementById('aspekIcon').style.backgroundColor = '#333333';
+			document.getElementById('bulananIcon').style.backgroundColor = '#000000';
+			document.getElementById('persentaseIcon').style.backgroundColor = '#000000';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+			  	document.getElementById('frame').src = "aspek.html";
+				//alert("hai");
+			}, delay);
+		}
+		function bulanan() {
+			document.getElementById('totalIcon').style.backgroundColor = '#000000';
+			document.getElementById('aspekIcon').style.backgroundColor = '#000000';
+			document.getElementById('bulananIcon').style.backgroundColor = '#333333';
+			document.getElementById('persentaseIcon').style.backgroundColor = '#000000';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+			  	document.getElementById('frame').src = "bulanan.html";
+				//alert("hai");
+			}, delay);
+		}
+		function persentase() {
+			document.getElementById('totalIcon').style.backgroundColor = '#000000';
+			document.getElementById('aspekIcon').style.backgroundColor = '#000000';
+			document.getElementById('bulananIcon').style.backgroundColor = '#000000';
+			document.getElementById('persentaseIcon').style.backgroundColor = '#333333';
+			var delay=100; //1 seconds
+
+			setTimeout(function(){
+			  	document.getElementById('frame').src = "persentase.html";
+				//alert("hai");
+			}, delay);
+		}
+	</script>
+</head>
+<body onload="javascript:total()">
+	<table width="100%" border="0" align="center" height="100%" id="halamanMenu">
+		<tr>
+			<td width="87%" rowspan="4" height="100%" id="konten">
+				<iframe id="frame" src="" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>
+			</td>
+			<td id="totalIcon" height="25%" onclick="javascript:total()">
+				<img src="../../img/Laporan/total.png" width="70%">
+				<br>
+				Total
+			</td>
+		</tr>
+		<tr>
+			<td id="aspekIcon" height="25%" onclick="javascript:aspek()">
+				<img src="../../img/Laporan/detailtotal.png" width="70%">
+				<br>
+				Aspek
+			</td>
+		</tr>
+		<tr>
+			<td id="bulananIcon" height="25%" onclick="javascript:bulanan()">
+				<img src="../../img/Laporan/spesifik.png" width="70%">
+				<br>
+				Bulanan
+			</td>
+		</tr>
+		<tr>
+			<td id="persentaseIcon" height="25%" onclick="javascript:persentase()">
+				<img src="../../img/Laporan/checklist.png" width="70%">
+				<br>
+				Persentase
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

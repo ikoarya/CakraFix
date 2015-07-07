@@ -1,0 +1,51 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/styleinformasi.css">
+	<script src="../js/jQuery-2.1.3.min.js"></script>
+	<script src="../js/flowtype.js"></script>
+	<script type="text/javascript" src="../js/info.js"></script> 
+</head>
+<body onload="main(flag)">
+		
+	<table  width="100%" height="100%" border="0">
+		<tr>
+			<td id="header" height="27%" valign="bottom">
+				Informasi
+			</td>
+		</tr>
+		<tr >
+			<td height="73%">
+				<table id="utama" height="100%" width="100%" border="0">
+					<tr>
+						<td id="konten" height="80%">
+							
+						</td>
+					</tr>
+					<tr>
+						<td height="20%">
+							<table id="utama" height="100%" width="100%" border="0" >
+								<tr>
+									<td width="70%" >
+										
+									</td>
+									<td width="15%" id="prev" class="arah" align="right" onclick="mundur()">
+										<img src="../img/Informasi/kiri.jpg">
+									</td>
+									<td width="15%" id="next" class="arah" align="center" onclick="maju()">
+										<img src="../img/Informasi/kanan.jpg">
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+	</table>
+	<script type="text/javascript">
+		$('#konten').flowtype({fontRatio: 25});
+		$('#header').flowtype({fontRatio: 15});
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic JS Quiz</title>
+  <link rel="stylesheet" href="../css/diagnosa.css">
+  <script src="../js/jQuery-2.1.3.min.js"></script>
+	<script src="../js/flowtype.js"></script>
+</head>
+
+<body>
+	<table id="container">
+    <tr>
+      <td colspan="2" height="20%"></td>
+    </tr>
+    <tr>
+    	<td colspan="2" id='quiz' width="100%" height="60%"></td>
+    </tr>
+    <tr>
+      <td></td>
+    	<td align="right" id='linkNext' height="20%">
+    		<a id='next'>Lanjut</a>
+        <a id='start'>Ke Indikasi</a>
+    	</td>
+    </tr>
+ </table>
+
+	<script src="../js/diagnosa.js"></script>
+  <script type="text/javascript">
+    $('#linkNext').flowtype({fontRatio:27});
+    /*
+    $('#questionBox').flowtype({fontRatio:7});
+    $('#choice0').flowtype({fontRatio:13});
+    $('#choice1').flowtype({fontRatio:13});
+    $('#choice2').flowtype({fontRatio:13});
+    $('#choice3').flowtype({fontRatio:13});
+    */
+  </script>
+</body>
+</html>
