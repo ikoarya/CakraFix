@@ -134,10 +134,20 @@ function filterquery(){
           var tah = document.getElementById('tah').value;
 
           var getBirth = tanggal + '-' + bul + '-'+ tah;
-          var link = pathimage;
+          var link = "pathimage";
 
          	db.transaction(function(transaction){
-         		transaction.executeSql('INSERT INTO AKUN(NAMA, TTL, JK, LINKFOTO) VALUES (?,?,?,?)',[$('#name').val(), getBirth, $('#jk').val(),link ],nullHandler,errorHandler);
+
+            transaction.executeSql('INSERT INTO AKUN(NAMA, TTL, JK, LINKFOTO) VALUES (?,?,?,?)',[$('#name').val(), getBirth, $('#jk').val(),link ],nullHandler,errorHandler);
+
+            transaction.executeSql('SELECT NAMA FROM AKUN;', [],
+             function(transaction, result) {
+              var keluar = result.rows.length;
+              if (keluar > 0) {
+                alert("Selamat Anda berhasil terdaftar di Aplikasi CAKRA");  
+                window.location.href = "index.html";
+              }
+             },errorHandler);
          	});
 		}
 
@@ -310,6 +320,12 @@ function filterquery(){
             if (result != null && result.rows != null) {
                 row = result.rows.length;
                 $('#jumlahakun').append(row +' Anak');
+                if(row>0){
+                  document.getElementById('daftarKeterangan').innerHTML = 'Daftar '+' <img src="img/Top/lock.png" width="10%">';
+                }
+                else{
+                  document.getElementById('daftarKeterangan').innerHTML = 'Daftar';
+                }
             }
            },errorHandler);
        },errorHandler,nullHandler);

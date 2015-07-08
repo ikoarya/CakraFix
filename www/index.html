@@ -69,7 +69,25 @@
 		var delay=100; //1 seconds
 
 		setTimeout(function(){
-		  	window.location.href = "daftar.html";
+			db.transaction(function(transaction) {
+
+	         transaction.executeSql('SELECT NAMA FROM AKUN ;',  [],
+	           function(transaction, result) {
+
+	            if (result != null && result.rows != null) {
+	                row = result.rows.length;
+	                $('#jumlahakun').append(row +' Anak');
+	                if(row>0){
+	                  alert("Anda Telah Terdaftar di Aplikasi CAKRA");
+	                }
+	                else{
+	                  window.location.href = "daftar.html";
+	                }
+	            }
+	           },errorHandler);
+	       	},errorHandler,nullHandler);
+
+		  	
 		}, delay);
 	}
 	function petunjuk () {
@@ -126,7 +144,7 @@
 	}
 	</script>
 </head>
-<body onload="RunBody()">
+<body onload="GetJmlAkun()">
 	<table width="100%" border="0" align="center" height="100%" id="halamanMenu" class="halamanLogin">
 		<tr id="konten">
 			<td colspan="8" height="75%">
@@ -158,7 +176,7 @@
 		<tr id="keteranganMenu">
 			<td width="11%" height="8%"></td>
 			<td width="13%" id="masukKeterangan" onclick="javascript:hideMenu()" height="8%">Masuk</td>
-			<td width="13%" id="daftarKeterangan" onclick="javascript:daftar()" height="8%">Daftar <img src="img/Top/lock.png" width="10%"></td>
+			<td width="13%" id="daftarKeterangan" onclick="javascript:daftar()" height="8%"></td>
 			<td width="13%" id="petunjukKeterangan" onclick="javascript:petunjuk()" height="8%">Petunjuk</td>
 			<td width="13%" id="tentangKeterangan" onclick="javascript:tentang()" height="8%">Tentang</td>
 			<td width="13%" id="pengaturanKeterangan" onclick="javascript:pengaturan()" height="8%">Pengaturan</td>
