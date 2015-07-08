@@ -9,28 +9,32 @@
             var tmpColCheck = document.getElementById( ele ).style.backgroundColor;
             
 
-              if (tmpColCheck === 'black') {
+            if (tmpColCheck === 'black') {
                 document.getElementById( ele ).style.backgroundColor = 'rgba(0,0,0,0)';
-              } else {
+            } else {
                 document.getElementById( ele ).style.backgroundColor = col;
-              }
-            } 
+            }
+        } 
             
-            setInterval(function() {
-            	//alert('coba');
-                flashtext('flashingtext','black');
-            }, 1000 ); //set an interval timer up to repeat the function
+        setInterval(function() {
+        	//alert('coba');
+            flashtext('flashingtext','black');
+        }, 1000 ); //set an interval timer up to repeat the function
 
+        function skip () {
+        	window.location.href = "DasarIdentifikasi(1)Benda.html";
+        }
 	</script>
 </head>
 <body class="halamanPetunjukTerapi">
 	<table border="0" width="100%" height="100%">
 	  <tr>
-	    <td align="center" height="70%" width="60%" colspan="3" id="gambarmain" style="background-image: url('../../../../img/Informasi/belajar.png');">
+	    <td align="center" height="70%" width="60%" colspan="3" id="gambarmain" style="background-image: url('../../../../img/Informasi/identifikasi.png');">
 	    </td>
 	    <td height="70%" width="40%" id="keteranganTerapi">
 	    	Modul terapi belajar pengenalan lingkungan sekitar. <br>
-			Pengguna hanya akan mendengarkan informasi yang ada dan diharapkan dapat menirukan ejaannya.
+			Pengguna akan melihat suatu gambar dan perintah suara, diharapkan pengguna dapat menekan tombol proton dengan benar sesuai perintah.<br>
+			Pendamping dapat mengganti jumlah tombol proton dan modul resource yang digunakan dengan menu yang berada di atas layar.
 	    </td>
 	  </tr>
 	  <tr>
@@ -42,7 +46,7 @@
 	  <tr>
 	    <td height="8%" colspan="3"> </td>
 	    <td height="8%" align="right">
-	    	<div id="flashingtext">SKIP >></div>
+	    	<div id="flashingtext" onclick="javascript:skip();">SKIP >></div>
 	    </td>
 	  </tr>
 	</table>

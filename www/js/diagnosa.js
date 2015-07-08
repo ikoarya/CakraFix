@@ -674,11 +674,10 @@
       }
     }
     
+    var nTotal = nKomunikasi + nSosial + nKognitif +nKebiasaan;
 
+    tesEvaluasi(nKomunikasi, nSosial, nKognitif, nKebiasaan, nTotal);
 
-    score.append('Komunikasi:' + nKomunikasi + '<br />Sosial:' + nSosial +
-                 '<br />Kognitif:' + nKognitif + '<br />Kebiasaan:' + nKebiasaan
-                 );
-    return score;
+    window.location.href = "indikasi.html";
   }
 })();

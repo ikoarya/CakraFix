@@ -8,11 +8,12 @@
 		function flashtext(ele,col) {
             var tmpColCheck = document.getElementById( ele ).style.backgroundColor;
             
-        	if (tmpColCheck === 'black') {
-            	document.getElementById( ele ).style.backgroundColor = 'rgba(0,0,0,0)';
-          	} else {
-            	document.getElementById( ele ).style.backgroundColor = col;
-          	}
+
+            if (tmpColCheck === 'black') {
+                document.getElementById( ele ).style.backgroundColor = 'rgba(0,0,0,0)';
+            } else {
+                document.getElementById( ele ).style.backgroundColor = col;
+            }
         } 
             
         setInterval(function() {
@@ -21,19 +22,19 @@
         }, 1000 ); //set an interval timer up to repeat the function
 
         function skip () {
-        	window.location.href = "";
+        	window.location.href = "DasarBelajarHuruf%20Kecil.html";
         }
+
 	</script>
 </head>
 <body class="halamanPetunjukTerapi">
 	<table border="0" width="100%" height="100%">
 	  <tr>
-	    <td align="center" height="70%" width="60%" colspan="3" id="gambarmain" style="background-image: url('../../../../img/Informasi/imitasi.png');">
+	    <td align="center" height="70%" width="60%" colspan="3" id="gambarmain" style="background-image: url('../../../../img/Informasi/belajar.png');">
 	    </td>
 	    <td height="70%" width="40%" id="keteranganTerapi">
-	    	Modul terapi menjawab pertanyaan. <br>
-			Pengguna akan melihat suatu video gearkan seseorang dan diharapkan pengguna dapat menirukan gerakannya.<br>
-			Jika berhasil menirukan, pendamping harus menekan tombol 'Ya', jika tidak harus menekan tombol 'Tidak'.
+	    	Modul terapi belajar pengenalan lingkungan sekitar. <br>
+			Pengguna hanya akan mendengarkan informasi yang ada dan diharapkan dapat menirukan ejaannya.
 	    </td>
 	  </tr>
 	  <tr>
@@ -50,7 +51,8 @@
 	  </tr>
 	</table>
 	<script type="text/javascript">
-		$('#keteranganTerapi').flowtype({fontRatio:29});
+		$('#keteranganTerapi').flowtype({fontRatio:17});
+		$('.keteranganPanahPetunjukTerapi1').flowtype({fontRatio:10});
 		$('#flashingtext').flowtype({fontRatio:6});
 	</script>		
 </body>

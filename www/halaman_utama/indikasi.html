@@ -2,6 +2,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<script src="../js/jQuery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="../js/isiterapi.js"></script>
+  	<script type="text/javascript" src="../js/querycakra.js"></script>
 	<script src="../js/flowtype.js"></script>
 	<script type="text/javascript">
 		function terapi() {
@@ -28,30 +30,30 @@
 		}
 	</script>
 </head>
-<body>
+<body onload="DisplayEval()">
 	<table width="100%" border="0" align="center" height="100%" id="halamanMenu">
 		<tr>
 			<td width="87.5%" rowspan="6" valign="middle" height="100%" id="konten" class="halamanIndikasi">
 				<table width="100%" height="50%" border="0">
-					<tr><td width="100%" align="center" height="10%" valign="bottom" id="judulIndikasi">Reva</td></tr>
+					<tr><td width="100%" align="center" height="10%" valign="bottom" id="judulIndikasi"></td></tr>
 					<tr><td width="100%" align="center" height="10%" valign="top" id="subJudulIndikasi">Memiliki kemampuan aspek berikut</td></tr>
 					<tr><td width="100%" height="80%">
 						<table width="100%" id="recordIndikasi">
 							<tr>
 								<td class="atributIndikasi">Komunikasi</td>
-								<td class="valueIndikasi">75%</td>
+								<td class="valueIndikasi" id="hasilKom"></td>
 							</tr>
 							<tr>
 								<td class="atributIndikasi">Sosial</td>
-								<td class="valueIndikasi">42%</td>
+								<td class="valueIndikasi" id="hasilSos"></td>
 							</tr>
 							<tr>
 								<td class="atributIndikasi">Sensorik / Kognitif</td>
-								<td class="valueIndikasi">83%</td>
+								<td class="valueIndikasi" id="hasilKog"></td>
 							</tr>
 							<tr>
 								<td class="atributIndikasi">Kesehatan / Kebiasaan</td>
-								<td class="valueIndikasi">58%</td>
+								<td class="valueIndikasi" id="hasilKeb"></td>
 							</tr>
 						</table>
 					</td></tr>

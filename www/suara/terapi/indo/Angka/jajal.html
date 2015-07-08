@@ -1,0 +1,29 @@
+  <!DOCTYPE HTML>
+    <html>
+    <head>
+    </head>
+    <body>
+
+    <script language="javascript" type="text/javascript">
+
+        audio = new Array('1.mp3','2.mp3','3.mp3');
+        index = 0;
+
+        function playSound() {
+        index=index+1;
+        if(index>2){
+            index=0
+            
+        }
+
+        document.getElementById("start").innerHTML="<embed src=\""+audio[index]+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+
+    }
+
+     </script>
+
+                <button id="start" type = "button" onclick="playSound();">Start</button>
+
+    </body>
+
+</html>

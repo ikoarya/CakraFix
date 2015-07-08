@@ -9,18 +9,21 @@
             var tmpColCheck = document.getElementById( ele ).style.backgroundColor;
             
 
-              if (tmpColCheck === 'black') {
+            if (tmpColCheck === 'black') {
                 document.getElementById( ele ).style.backgroundColor = 'rgba(0,0,0,0)';
-              } else {
+            } else {
                 document.getElementById( ele ).style.backgroundColor = col;
-              }
-            } 
+            }
+        } 
             
-            setInterval(function() {
-            	//alert('coba');
-                flashtext('flashingtext','black');
-            }, 1000 ); //set an interval timer up to repeat the function
+        setInterval(function() {
+        	//alert('coba');
+            flashtext('flashingtext','black');
+        }, 1000 ); //set an interval timer up to repeat the function
 
+        function skip () {
+        	window.location.href = "DasarMatchingBentuk%20-%202.html";
+        }
 	</script>
 </head>
 <body class="halamanPetunjukTerapi">
@@ -43,7 +46,7 @@
 	  <tr>
 	    <td height="8%" colspan="3"> </td>
 	    <td height="8%" align="right">
-	    	<div id="flashingtext">SKIP >></div>
+	    	<div id="flashingtext" onclick="javascript:skip();">SKIP >></div>
 	    </td>
 	  </tr>
 	</table>

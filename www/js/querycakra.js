@@ -124,7 +124,6 @@ function filterquery(){
 		function EntryUser(){
 
 			alert("DEBUGGING: we are in the EntryUser() function");
-
 	    	if (!window.openDatabase) {
 	           alert('Databases are not supported in this browser.');
 	           return;
@@ -136,7 +135,6 @@ function filterquery(){
 
           var getBirth = tanggal + '-' + bul + '-'+ tah;
           var link = pathimage;
-          alert('link: '+link);
 
          	db.transaction(function(transaction){
          		transaction.executeSql('INSERT INTO AKUN(NAMA, TTL, JK, LINKFOTO) VALUES (?,?,?,?)',[$('#name').val(), getBirth, $('#jk').val(),link ],nullHandler,errorHandler);
@@ -164,8 +162,7 @@ function filterquery(){
   function HapusUser(){
 
     db.transaction(function(transaction) {
-      var namaedit = "Aku";
-
+      
       transaction.executeSql('DELETE FROM AKUN WHERE ID_AKUN=?', ["1"]);
       
     },errorHandler,nullHandler);
@@ -191,7 +188,7 @@ function filterquery(){
          transaction.executeSql('SELECT NAMA FROM AKUN WHERE NAMA=?;', [val],
            function(transaction, result) {
             var jml = result.rows.length;
-            alert(jml);
+            //alert(jml);
             if (jml == 1) {
               window.location.href = "utama.html";
             }
@@ -214,13 +211,13 @@ function filterquery(){
 
         var jml, thnlahir;
         db.transaction(function(transaction) {
-         transaction.executeSql('SELECT TTL FROM AKUN;', [],
+         transaction.executeSql('SELECT TTL FROM AKUN WHERE ID=?;', ["1"],
            function(transaction, result) {
             jml = result.rows.item(0);
             thnlahir = jml.TTL;
             var panjang = thnlahir.length;
             
-            var monthBirth = parseInt(thnlahir[panjang-9] + thnlahir[panjang-8]);
+            var monthBirth = Math.abs(parseInt(thnlahir[panjang-7] + thnlahir[panjang-6]));
             var yearBirth = parseInt(thnlahir[panjang-4] + thnlahir[panjang-3] + thnlahir[panjang-2] + thnlahir[panjang-1]);
 
             var now = new Date();
@@ -236,7 +233,7 @@ function filterquery(){
             }
             
 
-            alert(age + ' Tahun');
+           // alert(age + ' Tahun');
             document.getElementById('umurText').innerHTML = age + ' Tahun';
 
 
@@ -272,6 +269,7 @@ function filterquery(){
 
       RunBody();
       $('#hasil').html('');
+      $('#judulIndikasi').html('');
        
        db.transaction(function(transaction) {
 
@@ -281,6 +279,7 @@ function filterquery(){
             if (result != null && result.rows != null) {
                 var row = result.rows.item(0);
                 $('#hasil').append(row.NAMA );
+                $('#judulIndikasi').append(row.NAMA );
             }
            },errorHandler);
        },errorHandler,nullHandler);
@@ -334,13 +333,13 @@ function GetPicture(){
       //$("#gambar").css("");
        
        db.transaction(function(transaction) {
-        alert('masuk picture lebih dalam');
+        //alert('masuk picture lebih dalam');
          transaction.executeSql('SELECT LINKFOTO FROM AKUN ;',  [],
            function(transaction, result) {
 
             if (result != null && result.rows != null) {
                 var row = result.rows.item(0);
-                alert('Aku adalah link di dalam '+row.LINKFOTO);
+                //alert('Aku adalah link di dalam '+row.LINKFOTO);
                 $('#gambar').css('background-image', 'url("' + row.LINKFOTO +'")');
             }
            },errorHandler);
@@ -365,19 +364,27 @@ function GetPicture(){
 
             if (result != null && result.rows != null) {
               var waktutes = result.rows.length;
-              if (waktutes >0) {
-                var row = result.rows.item(waktutes-1);
-                var hasil = row.waktu;
-                var bulantes = parseInt(hasil[3] + hasil[4]);
+              if (waktutes == 0) {
+                alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+                
               }
               else{
 
-                 alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi')
+                var row = result.rows.item(waktutes-1).waktu;
+                var rowLength = row.length;
+                var bulantes = Math.abs(parseInt(row[rowLength-6] + row[rowLength-7]));
+
+                var now = new Date();
+                var monthNow = now.getMonth()+1;
+
+                if ( bulantes != monthNow) {
+                  alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+                }
+                 
               }
 
             }
             
-             
             
            },errorHandler);
        },errorHandler,nullHandler);
@@ -410,12 +417,10 @@ function GetPicture(){
 
       var waktu = dateNow + '-' + monthNow + '-' + yearNow;
 
+
       db.transaction(function(transaction){
 
-          
-
           transaction.executeSql('INSERT INTO LAPORAN(waktu, komunikasi, sosial, kognitif, kebiasaan, total) VALUES (?,?,?,?,?,?)',[waktu, kom, sos, kog, keb, tot],nullHandler,errorHandler);
-
           
       });
   }
@@ -468,17 +473,36 @@ function DisplayEval(){
     while(node.hasChildNodes()){
       node.removeChild(node.firstChild);
     }
-
+    document.getElementById('dasarTerapi1').style.backgroundColor = '';
+    document.getElementById('dasarTerapi1').style.color = '#ffffff';
+    document.getElementById('dasarTerapi2').style.backgroundColor = '';
+    document.getElementById('dasarTerapi2').style.color = '#ffffff';
+    document.getElementById('dasarTerapi3').style.backgroundColor = '';
+    document.getElementById('dasarTerapi3').style.color = '#ffffff';
+    document.getElementById('dasarTerapi4').style.backgroundColor = '';
+    document.getElementById('dasarTerapi4').style.color = '#ffffff';
+    document.getElementById('dasarTerapi5').style.backgroundColor = '';
+    document.getElementById('dasarTerapi5').style.color = '#ffffff';
     if(bre == 1){
       kategori = "Belajar";
+      document.getElementById('dasarTerapi1').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi1').style.color = '#000000';
     } else if(bre == 2){
       kategori = "Identifikasi(1)";
+      document.getElementById('dasarTerapi2').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi2').style.color = '#000000';
     } else if(bre == 3){
       kategori = "Identifikasi(2)";
+      document.getElementById('dasarTerapi3').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi3').style.color = '#000000';
     } else if(bre == 4){
       kategori = "Melabel";
+      document.getElementById('dasarTerapi4').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi4').style.color = '#000000';
     } else if(bre == 5){
       kategori = "Matching";
+      document.getElementById('dasarTerapi5').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi5').style.color = '#000000';
     }
 
     document.getElementById("tabel").style.display = '';
@@ -493,13 +517,14 @@ function DisplayEval(){
               for (var i = 0; i < result.rows.length; i++) 
               {
                 var row = result.rows.item(i);
-                $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi(\''+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
+                $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi(\'Petunjuk'+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
               }
               $('#tabel tr td').flowtype({fontRatio:14});
           }
         },errorHandler);
     },errorHandler,nullHandler);
   }
+  
   
      
 //================================================== Link Petunjuk Terapi (linkPetTerapi()) ============================================

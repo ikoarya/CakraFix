@@ -1,0 +1,57 @@
+
+ <audio id="suara" >
+          <source  src="../../../../suara/terapi/indo/Huruf/intro.mp3" type="audio/mpeg"> 
+          <script type="text/javascript"> document.getElementById("suara").play();</script>
+</audio>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../../../../css/style.css" />
+    <script src="../../../../cordova.js"></script>
+    <script src="../../../../js/warna.js"></script>
+    
+    <title>Cakra</title>
+  </head>
+  
+  <body class="huruf">
+    <div id="suara1x">
+      <audio id="suara1" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" >
+        <source id="suara1"  src="../../../../suara/terapi/indo/Ini.mp3" type="audio/mpeg">  
+      </audio>
+    </div>
+
+    <div id="suara2x">
+      <audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 5000)" >
+        <source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg">  
+      </audio>
+    </div>
+     
+    <div id="suara3x"> 
+      <audio id="suara3" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6000)" >
+        <source id="suara3" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div id="suara4x">
+      <audio id="suara4" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 7000)" >
+        <source id="suara4" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    
+    <h1 id="demo" ></h1>
+
+    <script>
+      var huruf = ["A", "B", "C"];
+      document.getElementById("demo").innerHTML = huruf[0];
+    </script>
+
+    <div class="foot" >
+      <button onclick="onclick_huruf1()">Sebelumnya</button>
+      <button onclick="onclick_huruf2()">Setelahnya</button>
+    </div>
+  </body>
+</html>
