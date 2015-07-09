@@ -770,13 +770,16 @@ html body {
 /*LIST TERAPI DASAR END*/
 
 /* TERAPI DASAR START */
-.huruf h1{
-    font-size:500px;
+/*.huruf h1{
+    font-size:400px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
     padding:0px;
     text-align:center;
+}*/
+#demo {
+	text-align: center;
 }
 .foot{
     background-color: black;
@@ -786,46 +789,43 @@ html body {
 }
 
 .foot button {
-    -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
-    -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
-    box-shadow:inset 0px 1px 0px 0px #f5978e;
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
-    background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
-    background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
-    background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
-    background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
-    background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
-    background-color:#f24537;
+    -moz-box-shadow:inset 0px 1px 0px 0px #bbbbbb;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #bbbbbb;
+    box-shadow:inset 0px 1px 0px 0px #bbbbbb;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bbbbbb), color-stop(1, #666666));
+    background:-moz-linear-gradient(top, #bbbbbb 5%, #666666 100%);
+    background:-webkit-linear-gradient(top, #bbbbbb 5%, #666666 100%);
+    background:-o-linear-gradient(top, #bbbbbb 5%, #666666 100%);
+    background:-ms-linear-gradient(top, #bbbbbb 5%, #666666 100%);
+    background:linear-gradient(to bottom, #bbbbbb 5%, #666666 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbbbbb', endColorstr='#666666',GradientType=0);
+    background-color:#dddddd;
     -moz-border-radius:6px;
     -webkit-border-radius:6px;
     border-radius:6px;
-    border:1px solid #d02718;
+    border:1px solid #666666;
     display:inline-block;
     cursor:pointer;
-    color:#ffffff;
+    color:#000000;
     font-family:Arial;
-    font-size:15px;
+    font-size:20px;
     font-weight:bold;
-    padding:6px 24px;
+    padding:4px 20px;
     text-decoration:none;
-    text-shadow:0px 1px 0px #810e05;
-    margin-left: 40px;
-    margin-right: 40px;
+    text-shadow:0px 1px 0px #666666;
 }
 .foot button:hover {
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
-    background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
-    background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
-    background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
-    background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
-    background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
-    background-color:#c62d1f;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #333333), color-stop(1, #bbbbbb));
+    background:-moz-linear-gradient(top, #333333 5%, #bbbbbb 100%);
+    background:-webkit-linear-gradient(top, #333333 5%, #bbbbbb 100%);
+    background:-o-linear-gradient(top, #333333 5%, #bbbbbb 100%);
+    background:-ms-linear-gradient(top, #333333 5%, #bbbbbb 100%);
+    background:linear-gradient(to bottom, #333333 5%, #bbbbbb 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#bbbbbb',GradientType=0);
+    background-color:#333333;
 }
 .foot button:active {
     position:relative;
-    top:1px;
 }
 
 /* TERAPI DASAR END */

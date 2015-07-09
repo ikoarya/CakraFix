@@ -27,12 +27,12 @@
 // =================
       changes = function(el) {
          var $el = $(el),
-            elw = $el.width(),
-            width = elw > settings.maximum ? settings.maximum : elw < settings.minimum ? settings.minimum : elw,
-            fontBase = width / settings.fontRatio,
+            elh = $el.height(),
+            height = elh > settings.maximum ? settings.maximum : elh < settings.minimum ? settings.minimum : elh,
+            fontBase = height / settings.fontRatio,
             fontSize = fontBase > settings.maxFont ? settings.maxFont : fontBase < settings.minFont ? settings.minFont : fontBase;
          $el.css('font-size', fontSize + 'px');
-         //alert(elw + '-' + $(el));
+         //alert(elh + '-' + $(el));
       };
 // Make the magic visible
 // ======================

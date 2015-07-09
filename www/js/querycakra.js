@@ -28,7 +28,8 @@
       
       var count1 = 0, count2 = 0, index1 = 0, index2 = 0;
       var putus1 = [], putus2 = [], gabung1 = [], gabung2 = [];
-      var benar1, salah1 ;
+      var benar1, salah1, flag ;
+      //var idn = [], disbenar = [], dissalah = [], distotal = [], bentotal = [], idhtml = [];
 //============================================= notification error =======================================================
 
 	    // this is called when an error happens in a transaction
@@ -134,7 +135,7 @@ function filterquery(){
           var tah = document.getElementById('tah').value;
 
           var getBirth = tanggal + '-' + bul + '-'+ tah;
-          var link = "pathimage";
+          var link = pathimage;
 
          	db.transaction(function(transaction){
 
@@ -477,7 +478,7 @@ function DisplayEval(){
 
 
 
-//=================================================== Terapi =========================================================================
+//=================================================== Terapi===============================================
 
   function terapi(bro){
     var bre = bro;
@@ -535,7 +536,9 @@ function DisplayEval(){
               for (var i = 0; i < result.rows.length; i++) 
               {
                 var row = result.rows.item(i);
-                $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi(\'Petunjuk'+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
+                var idmasuk = row.ID_TERAPI;
+                $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi('+idmasuk+',\'Petunjuk'+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
+                
               }
               $('#tabel tr td').flowtype({fontRatio:14});
           }
@@ -547,10 +550,10 @@ function DisplayEval(){
      
 //================================================== Link Petunjuk Terapi (linkPetTerapi()) ============================================
 
-  function linkPetTerapi(a){
+  function linkPetTerapi(id,a){
 
 
-
+      sessionStorage.setItem("idterapidasar",id);
       linkPT = a;  
       sessionStorage.setItem('pilihan', linkPT);
       //alert(linkPT +'.html');
@@ -744,7 +747,7 @@ function ambilData(){
          },errorHandler,nullHandler);
       }
 
-//===================================================== Tampil Laporan Aspek ======================================================
+//===================================================== Tampil Laporan Aspek =====================================
 
 
     function displayAspek(){
@@ -880,10 +883,10 @@ function ambilData(){
                   lineChartOptions.datasetFill = false;
                   lineChart.Line(areaChartData, lineChartOptions);
                   //then you just need to generate the legend
-              var legendTable = lineChart.generateLegend();
+            //  var legendTable = lineChart.generateLegend();
               //and append it to your page somewhere
-              document.getElementById('legend').innerHTML = legendTable;
-              alert(legendTable);
+            //  document.getElementById('legend').innerHTML = legendTable;
+             // alert(legendTable);
 
 
 
@@ -895,7 +898,7 @@ function ambilData(){
 
 
 
-//============================================================ Display Per Bulan ===========================================================
+//======================================================= Display Per Bulan ======================================
 
 function displayBulan(){
 
@@ -1016,7 +1019,7 @@ function displayBulan(){
 }
 
 
-//================================================= Ambil nilai =====================================================================
+//================================================= Ambil nilai =============================================
 
 
   function ambilNilaiLaporan(index1, index2){
@@ -1133,6 +1136,42 @@ function persentase(){
     },errorHandler,nullHandler);
  
 }
+
+
+//============================================ DISPLAY PERSENTASE ================================================
+/*
+function displayPersentase(){
+  RunBody();
+    db.transaction(function(transaction) {
+      transaction.executeSql('SELECT ID_NILAI, BENAR, SALAH FROM NILAI;',  [],
+        function(transaction, result) {
+          if (result != null && result.rows != null) {
+             
+              for (var i = 0; i < result.rows.length; i++) {
+                  idn[i] = result.rows.item(i).ID_NILAI;
+                  disbenar[i] = parseInt(result.rows.item(i).BENAR);
+                  dissalah[i] = parseInt(result.rows.item(i).SALAH);
+                  distotal[i] = parseInt(disbenar[i] + dissalah[i]);
+                  bentotal[i] = parseInt(disbenar[i] / distotal[i] * 100);
+                  idhtml[i] = 'a'+parseInt(i-1);
+                  //saltotal[i] = parseInt(dissalah[i] / distotal[i] * 100);
+
+              }
+
+              
+              for (var i = 0; i < 2; i++) {
+                 document.getElementById(idhtml[i]).setAttribute("aria-valuenow", bentotal[i]);
+
+              }
+              //alert(disbenar[31]);
+
+            }
+              
+      },errorHandler);
+    },errorHandler,nullHandler);
+}
+
+*/
 
 //======================================================== SET DEFAULT REWARD ====================================================
 

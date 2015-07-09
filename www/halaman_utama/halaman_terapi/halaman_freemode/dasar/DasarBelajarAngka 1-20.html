@@ -1,6 +1,6 @@
 
 <audio id="suara" >
-  <source  src="../../../../suara/terapi/indo/Huruf/intro.mp3" type="audio/mpeg"> 
+  <source  src="../../../../suara/terapi/indo/Angka/intro.mp3" type="audio/mpeg"> 
   <script type="text/javascript"> document.getElementById("suara").play();</script>
 </audio>
 
@@ -27,19 +27,19 @@
 
     <div id="suara2x">
       <audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 5000)" >
-        <source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg">  
+        <source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg">  
       </audio>
     </div>
 
     <div id="suara3x"> 
       <audio id="suara3" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6000)" >
-        <source id="suara3" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg">
+        <source id="suara3" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg">
       </audio>
     </div>
 
     <div id="suara4x">
       <audio id="suara4" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 7000)" >
-        <source id="suara4" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg">
+        <source id="suara4" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg">
       </audio>
     </div>
     <table width="100%" height="100%" border="0" style="border-collapse:collapse;">
@@ -48,14 +48,14 @@
           <!--<h1 id="demo" ></h1>-->
           <script>
             //var huruf = ["A", "B", "C"];
-            document.getElementById("demo").innerHTML = huruf[index];
+            document.getElementById("demo").innerHTML = angka[index];
           </script>
         </td>
       </tr>
       <tr class="foot">
-        <td width="43%" height="10%" align="right"><button onclick="onclick_huruf1()">Sebelumnya</button></td>
+        <td width="43%" height="10%" align="right"><button onclick="onclick_angka1()">Sebelumnya</button></td>
         <td width="14%" height="10%"></td>
-        <td width="43%" height="10%" align="left"><button onclick="onclick_huruf2()">Setelahnya</button></td>
+        <td width="43%" height="10%" align="left"><button onclick="onclick_angka2()">Setelahnya</button></td>
       </tr>
     </table>
     <script type="text/javascript">
