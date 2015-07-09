@@ -33,7 +33,7 @@
 
          			//-------------------------------------------------------------------------------------
 
-         			transaction.executeSql('INSERT INTO TERAPI(LEVEL, KATEGORI_TANYATERAPI, PILIHAN, ASPEK1, ASPEK2) VALUES (?,?,?,?,?)',["Dasar","Identifikasi(2)", "Suara LI Sekitar","BN|BD" ,"KO|RE|MH|LI|IJ" ],nullHandler,errorHandler);
+         			transaction.executeSql('INSERT INTO TERAPI(LEVEL, KATEGORI_TANYATERAPI, PILIHAN, ASPEK1, ASPEK2) VALUES (?,?,?,?,?)',["Dasar","Identifikasi(2)", "Suara Lingkungan Sekitar","BN|BD" ,"KO|RE|MH|LI|IJ" ],nullHandler,errorHandler);
          			transaction.executeSql('INSERT INTO TERAPI(LEVEL, KATEGORI_TANYATERAPI, PILIHAN, ASPEK1, ASPEK2) VALUES (?,?,?,?,?)',["Dasar","Identifikasi(2)", "Benda Menurut Fungsinya", "BD|KK" ,"KO|RE|MH|LI|IJ|LO" ],nullHandler,errorHandler);
 
          			//-------------------------------------------------------------------------------------------

@@ -134,7 +134,7 @@ function filterquery(){
           var tah = document.getElementById('tah').value;
 
           var getBirth = tanggal + '-' + bul + '-'+ tah;
-          var link = pathimage;
+          var link = "pathimage";
 
          	db.transaction(function(transaction){
 
@@ -220,6 +220,7 @@ function filterquery(){
     function hitungumur(){
 
         var jml, thnlahir;
+        $('#umurText').html('');
         db.transaction(function(transaction) {
          transaction.executeSql('SELECT TTL FROM AKUN WHERE ID=?;', ["1"],
            function(transaction, result) {
@@ -244,7 +245,8 @@ function filterquery(){
             
 
            // alert(age + ' Tahun');
-            document.getElementById('umurText').innerHTML = age + ' Tahun';
+           // document.getElementById('umurText').innerHTML = age + ' Tahun';
+            $('#umurText').append(age + ' Tahun' );
 
 
 
@@ -453,22 +455,22 @@ function DisplayEval(){
  
  db.transaction(function(transaction) {
   transaction.executeSql('SELECT komunikasi, sosial, kognitif, kebiasaan, total  FROM LAPORAN ;',  [],
-               function(transaction, result) {
+   function(transaction, result) {
 
-                if (result != null && result.rows != null) {
-                  var last = result.rows.length;
-                    var row = result.rows.item(last-1);
-                    var komResult = row.komunikasi;
-                    var sosResult = row.sosial;
-                    var kogResult = row.kognitif;
-                    var kebResult = row.kebiasaan;
+    if (result != null && result.rows != null) {
+        var last = result.rows.length;
+        var row = result.rows.item(last-1);
+        var komResult = row.komunikasi;
+        var sosResult = row.sosial;
+        var kogResult = row.kognitif;
+        var kebResult = row.kebiasaan;
 
-                    $('#hasilKom').append(parseInt(100-row.komunikasi*100/28) + '%');
-                    $('#hasilSos').append(parseInt(100-row.sosial*100/40) + '%');
-                    $('#hasilKog').append(parseInt(100-row.kognitif*100/36) + '%');
-                    $('#hasilKeb').append(parseInt(100-row.kebiasaan*100/75) + '%');
-                }
-               },errorHandler);
+        $('#hasilKom').append(parseInt(100-row.komunikasi*100/28) + '%');
+        $('#hasilSos').append(parseInt(100-row.sosial*100/40) + '%');
+        $('#hasilKog').append(parseInt(100-row.kognitif*100/36) + '%');
+        $('#hasilKeb').append(parseInt(100-row.kebiasaan*100/75) + '%');
+    }
+   },errorHandler);
   },errorHandler,nullHandler);
 }
 
@@ -660,7 +662,7 @@ function ambilData(){
 
                   if (panjangdat == 1) {                                  //misal data di db hanya 1, maka akan ditambahkan bulan selanjutnya
                     arrLabel[i] = '0'+ arrMonth[i] + '/' + arrYear[i];  
-                    arrLabel[panjangdat] = '0'+ arrMonth[i]+1 +'/' + arrYear[i];
+                    arrLabel[panjangdat] = '0'+ parseInt(arrMonth[i]+1) +'/' + arrYear[i];
                   }
                   else{
                     arrLabel[i] = '0'+ arrMonth[i] + '/' + arrYear[i];
@@ -770,7 +772,7 @@ function ambilData(){
 
                   if (panjangdat == 1) {                                  //misal data di db hanya 1, maka akan ditambahkan bulan selanjutnya
                     arrLabel[i] = '0'+ arrMonth[i] + '/' + arrYear[i];  
-                    arrLabel[panjangdat] = '0'+ arrMonth[i]+1 +'/' + arrYear[i];
+                    arrLabel[panjangdat] = '0'+ parseInt(arrMonth[i]+1) +'/' + arrYear[i];
                   }
                   else{
                     arrLabel[i] = '0'+ arrMonth[i] + '/' + arrYear[i];
@@ -964,7 +966,7 @@ function displayBulan(){
 
 
                     var barChartCanvas = $("#barChart").get(0).getContext("2d");
-                    barChart = new Chart(barChartCanvas);
+                   // barChart = new Chart(barChartCanvas);
                     var barChartData = areaChartData;
                             
                             
@@ -1013,72 +1015,6 @@ function displayBulan(){
 
 }
 
-function displayGrafBulan(){
-
-    var e = document.getElementById("pilihbulan");
-    indexbulan = e.options[e.selectedIndex].value - 1;
-    barChart.destroy();
-     
-          areaChartData = {
-            labels: ["komunikasi", "sosial", "kognitif", "kebiasaan"],
-            datasets: [
-            {
-              label: "komunikasi",
-              fillColor: "rgb(136,160,185)",
-              strokeColor: "#ffffff",
-              pointColor: "#000000",
-              pointStrokeColor: "rgba(60,141,188,1)",
-              pointHighlightFill: "#ffffff",
-              pointHighlightStroke: "rgba(255,255,255,1)",
-              data: [arrKomunikasi[indexbulan], arrSosial[indexbulan], arrKognitif[indexbulan], arrKebiasaan[indexbulan]]
-            }
-           ]
-          };
-
-          
-
-          var barChartCanvas = $("#barChart").get(0).getContext("2d");
-          
-          var barChartData = areaChartData;
-          
-          
-
-       //   barChart.datasets.data[2].value = 50;
-          // Would update the first dataset's value of 'March' to be 50
-         // myLineChart.update();              
-                  
-          var barChartOptions = {
-              //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-              scaleBeginAtZero: true,
-              //Boolean - Whether grid lines are shown across the chart
-              scaleShowGridLines: true,
-              //String - Colour of the grid lines
-              scaleGridLineColor: "rgba(0,0,0,.05)",
-              //Number - Width of the grid lines
-              scaleGridLineWidth: 1,
-              //Boolean - Whether to show horizontal lines (except X axis)
-              scaleShowHorizontalLines: true,
-              //Boolean - Whether to show vertical lines (except Y axis)
-              scaleShowVerticalLines: true,
-              //Boolean - If there is a stroke on each bar
-              barShowStroke: true,
-              //Number - Pixel width of the bar stroke
-              barStrokeWidth: 2,
-              //Number - Spacing between each of the X value sets
-              barValueSpacing: 5,
-              //Number - Spacing between data sets within X values
-              barDatasetSpacing: 1,
-              //String - A legend template
-              legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
-                    //Boolean - whether to make the chart responsive
-              responsive: true,
-              maintainAspectRatio: false
-          };
-
-          barChartOptions.datasetFill = false;
-          barChart = new Chart(barChartCanvas).Bar(barChartData, barChartOptions);
-          //barChart.Bar(barChartData, barChartOptions);
-}
 
 //================================================= Ambil nilai =====================================================================
 

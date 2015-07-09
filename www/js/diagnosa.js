@@ -8,7 +8,7 @@
     correctAnswer3: 2
   }, {
     question: "Mau berhenti jika disuruh untuk berhenti",
-    choices: ["Benar", "Kadang benar", "Tidak benar", "Tidak benar"],
+    choices: ["Benar", "Kadang benar", "Tidak benar"],
     correctAnswer: 0,
     correctAnswer2: 1,
     correctAnswer3: 2
@@ -88,123 +88,123 @@
 /************************#15SOSIAL********************************/
     question: "Kepribadian tertutup",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Mengabaikan orang lain di sekitarnya (seperti sendirian)",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-     correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak perhatian atau sedikit perhatian saat dipanggil",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Anti kerja sama dan cenderung menolak",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak ada kontak mata saat diajak bicara",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-   correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Lebih suka ditinggal sendiri",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Kelihatan tidak ada rasa kasih sayang",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak bisa memberi salam pada orangtua",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Menghindari kontak orang lain",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak bisa meniru jika disuruh menirukan",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak suka dipegang/dipeluk",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak suka berbagi, atau malah sangat suka berbagi",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak membalas lambaian 'selamat tinggal' saat berpisah",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak mau mengalah dan suka marah-marah",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Berwatak pemarah",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Kekurangan teman/sahabat",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Jarang tersenyum",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak sensitif pada perasaan orang lain",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Sering bersikap acuh tak acuh",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
     question: "Tidak peduli atau acuh tak acuh saat ditinggal orangtua",
     choices: ["Benar", "Kadang benar", "Tidak benar"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     correctAnswer2: 1,
-    correctAnswer3: 0
+    correctAnswer3: 2
   }, {
 /*********************#35SENSORIK/KOGNITIF***************************/
   question: "Menanggapi saat disebut/dipanggil namanya",
@@ -548,9 +548,9 @@
       questionCategory = 'Komunikasi';
     else if (index >= 14 && index < 34)
       questionCategory = 'Sosial';
-    else if (index >= 34 && index < 53)
+    else if (index >= 34 && index < 52)
       questionCategory = 'Sensorik/Kognitif';
-    else if (index >= 53)
+    else if (index >= 52)
       questionCategory = 'Kesehatan/Kebiasaan';
 
     var radioList = '<td width="60%">';
@@ -640,9 +640,9 @@
           ;
         else if (i >= 14 && i < 34)
           nSosial += 2;
-        else if (i >= 34 && i < 53)
+        else if (i >= 34 && i < 52)
           ;
-        else if (i >= 53)
+        else if (i >= 52)
           nKebiasaan += 2;
       }
       else if (selections[i] === questions[i].correctAnswer2)
@@ -651,9 +651,9 @@
           nKomunikasi++;
         else if (i >= 14 && i < 34)
           nSosial++;
-        else if (i >= 34 && i < 53)
+        else if (i >= 34 && i < 52)
           nKognitif++;
-        else if (i >= 53)
+        else if (i >= 52)
           nKebiasaan++;
       }
       else if (selections[i] === questions[i].correctAnswer3)
@@ -662,22 +662,36 @@
           nKomunikasi += 2;
         else if (i >= 14 && i < 34)
           ;
-        else if (i >= 34 && i < 53)
+        else if (i >= 34 && i < 52)
           nKognitif += 2;
-        else if (i >= 53)
+        else if (i >= 52)
           ;
       }
       else if (selections[i] === questions[i].correctAnswer0)
       {
-        if (i >= 53)
+        if (i >= 52)
           nKebiasaan += 3;
       }
     }
     
     var nTotal = nKomunikasi + nSosial + nKognitif +nKebiasaan;
+    alert('Kom '+nKomunikasi);
+    alert('Sos '+nSosial);
+    alert('Kog '+nKognitif);
+    alert('Keb '+nKebiasaan);
 
     tesEvaluasi(nKomunikasi, nSosial, nKognitif, nKebiasaan, nTotal);
 
-    window.location.href = "indikasi.html";
+    db.transaction(function(transaction){
+
+        transaction.executeSql('SELECT total FROM LAPORAN;', [],
+         function(transaction, result) {
+          var keluar = result.rows.length;
+          if (keluar > 0) {
+            alert("Terima Kasih Sudah Melakukan Evaluasi");  
+            window.location.href = "indikasi.html";
+          }
+         },errorHandler);
+    });
   }
 })();

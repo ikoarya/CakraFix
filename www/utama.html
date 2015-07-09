@@ -49,7 +49,44 @@
 			var delay=100; //1 seconds
 
 			setTimeout(function(){
-			  	window.location.href = "halaman_utama/kategori.html";
+
+				db.transaction(function(transaction) {
+
+		         transaction.executeSql('SELECT waktu FROM LAPORAN ;',  [],
+		           function(transaction, result) {
+
+		            if (result != null && result.rows != null) {
+		              var waktutes = result.rows.length;
+		              if (waktutes == 0) {
+		                alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+		                
+		              }
+		              else{
+
+		                var row = result.rows.item(waktutes-1).waktu;
+		                var rowLength = row.length;
+		                var bulantes = Math.abs(parseInt(row[rowLength-6] + row[rowLength-7]));
+
+		                var now = new Date();
+		                var monthNow = now.getMonth()+1;
+
+		                if ( bulantes != monthNow) {
+		                  alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+		                }
+		                else
+		                {
+		                	window.location.href = "halaman_laporan/laporan.html";
+		              	}
+
+		              }
+
+		            }
+		            
+		            
+		           },errorHandler);
+		       	},errorHandler,nullHandler);
+
+			  	
 			}, delay);
 		}
 		function laporan () {
@@ -61,7 +98,28 @@
 			var delay=100; //1 seconds
 
 			setTimeout(function(){
-			  	window.location.href = "halaman_laporan/laporan.html";
+
+				db.transaction(function(transaction) {
+
+		         transaction.executeSql('SELECT ID_LAPORAN FROM LAPORAN ;',  [],
+		           function(transaction, result) {
+
+		            if (result != null && result.rows != null) {
+		              var jmlrow = result.rows.length;
+		              if (jmlrow == 0) {
+		                alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+		              }
+		              else{
+		                window.location.href = "halaman_utama/halaman_laporan/laporan.html";
+		              }
+
+		            }
+		            
+		            
+		           },errorHandler);
+		       	},errorHandler,nullHandler);
+
+			  	
 			}, delay);
 		}
 		function catatan () {
