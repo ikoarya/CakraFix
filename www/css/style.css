@@ -833,6 +833,6 @@ html body {
     position:relative;
 }
 .vid-cen {
-	-o-object-fit: contain;
+	height: 1px;
 }
 /* TERAPI DASAR END */
