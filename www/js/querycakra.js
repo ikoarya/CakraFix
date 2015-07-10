@@ -146,7 +146,7 @@ function filterquery(){
               var keluar = result.rows.length;
               if (keluar > 0) {
                 alert("Selamat Anda berhasil terdaftar di Aplikasi CAKRA");  
-                window.location.href = "index.html";
+                window.location.href = "utama.html";
               }
              },errorHandler);
          	});
@@ -399,7 +399,11 @@ function GetPicture(){
                 if ( bulantes != monthNow) {
                   alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
                 }
-                 
+                else
+                {
+                  document.getElementById('fontterapi').style.color="white";
+                  document.getElementById('fontlaporan').style.color="white";   
+                }
               }
 
             }

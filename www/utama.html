@@ -75,6 +75,7 @@
 		                }
 		                else
 		                {
+		                	
 		                	window.location.href = "halaman_utama/kategori.html";
 		              	}
 
@@ -131,7 +132,7 @@
 			var delay=100; //1 seconds
 
 			setTimeout(function(){
-			  	//code
+			  	alert("Fitur ini tidak tersedia dalam Edisi Bronze");
 			}, delay);
 		}
 	</script>
@@ -176,8 +177,8 @@
 			<td width="17.5%" height="8%"></td>
 			<td width="13%" height="8%" id="informasiKeterangan" onclick="javascript:informasi()">Informasi</td>
 			<td width="13%" height="8%" id="evaluasiKeterangan" onclick="javascript:evaluasi()">Evaluasi</td>
-			<td width="13%" height="8%" id="terapiKeterangan" onclick="javascript:terapi()"><font style="color:red;">Terapi</font></td>
-			<td width="13%" height="8%" id="laporanKeterangan" onclick="javascript:laporan()"><font style="color:red;">Laporan</font></td>
+			<td width="13%" height="8%" id="terapiKeterangan" onclick="javascript:terapi()"><font id="fontterapi" style="color:red;">Terapi</font></td>
+			<td width="13%" height="8%" id="laporanKeterangan" onclick="javascript:laporan()"><font id="fontlaporan" style="color:red;">Laporan</font></td>
 			<td width="13%" height="8%" id="catatanKeterangan" onclick="javascript:catatan()">Catatan <img src="img/Top/lock.png" width="10%"></td>
 			<td width="17.5%" height="8%"></td>
 		</tr>

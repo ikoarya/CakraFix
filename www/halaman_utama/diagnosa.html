@@ -4,10 +4,19 @@
   <meta charset="UTF-8">
   <title>Dynamic JS Quiz</title>
   <link rel="stylesheet" href="../css/diagnosa.css">
+  <script type="text/javascript" src="../cordova.js"></script>
   <script src="../js/jQuery-2.1.3.min.js"></script>
   <script type="text/javascript" src="../js/isiterapi.js"></script>
   <script type="text/javascript" src="../js/querycakra.js"></script>
 	<script src="../js/flowtype.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("deviceready", onDeviceReady, false);
+      function onDeviceReady(){
+          document.addEventListener("backbutton", function(e){
+              window.location.href = "../utama.html";
+          }, false);
+      }
+  </script>
 </head>
 
 <body onload="RunBody()">
