@@ -20,15 +20,7 @@ binatang[2] = new Image(50, 50);
 binatang[2].src = "../../../../img_terapi/hewan/2.png";
 
 
-function muni(){
-  document.getElementById("button1").disabled = true;
-  document.getElementById("button2").disabled = true;
-}
 
-function muni1(){
-  document.getElementById("button1").disabled = false;
-  document.getElementById("button2").disabled = false;
-}
 
 function onclick_binatang1() {
 
@@ -45,19 +37,19 @@ function onclick_binatang1() {
 
   document.getElementById("suara1").play();
   if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -76,19 +68,19 @@ function onclick_binatang2() {
 
   document.getElementById("suara1").play();
   if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -108,19 +100,19 @@ function onclick_buah1() {
 
   document.getElementById("suara1").play();
   if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -139,19 +131,19 @@ function onclick_buah2() {
 
   document.getElementById("suara1").play();
   if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/2.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/1.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Buah/0.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -168,19 +160,19 @@ function onclick_warna1() {
 
   document.getElementById("suara1").play();
   if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -197,19 +189,19 @@ function onclick_warna2() {
 
   document.getElementById("suara1").play();
   if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/2.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/1.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Warna/0.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -226,19 +218,19 @@ function onclick_huruf1() {
   $('#demo').flowtype({fontRatio:2,maxFont:400});
   document.getElementById("suara1").play();
   if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -254,19 +246,19 @@ function onclick_huruf2() {
   $('#demo').flowtype({fontRatio:2,maxFont:400});
   document.getElementById("suara1").play();
   if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/C.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/B.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Huruf/A.mp3" type="audio/mpeg"></audio>'
   }
 }
 
@@ -281,19 +273,19 @@ function onclick_angka1() {
   $('#demo').flowtype({fontRatio:2,maxFont:400});
   document.getElementById("suara1").play();
   if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
   }
 
 }
@@ -310,119 +302,320 @@ function onclick_angka2() {
   $('#demo').flowtype({fontRatio:2,maxFont:400});
   document.getElementById("suara1").play();
   if(index==2){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/3.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==1){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/2.mp3" type="audio/mpeg"></audio>'
   }
   else if(index==0){
-    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
-    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara3x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
+    document.getElementById("suara4x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 6500)" ><source id="suara2" src="../../../../suara/terapi/indo/Angka/1.mp3" type="audio/mpeg"></audio>'
   }
 }
 
+
+var p=0;
+sessionStorage.setItem('benarsimpan', p);
+                   
+var q=0;
+sessionStorage.setItem('salahsimpan', q);
 
 function gambarx(i)  {
 
-  var a=i;
+      var a=i;
 
-  if(a==2){
 
-    var a1=document.getElementById("gambar2").src;
+      if(a==2){
 
-    var x=document.getElementById("gambary").src;
+        var a1=document.getElementById("gambar2").src;
 
-    if(a1==x){
-      document.getElementById("suarax").play();
-      iden();
-    }
-    else{
-     document.getElementById("suaray").play();
-   }
+        var x=document.getElementById("gambary").src;
+          
+            if(a1==x){
+                document.getElementById("suarax").play();
+                var f= document.getElementById("tombol").value;
+                if(f==3){
+                      iden(3);
+                }
 
- }
+                if(f==10){
+                  iden(10);
+                }
 
- if(a==3){
+                if(f==11){
+                  iden(11);
+                }
 
-  var a1=document.getElementById("gambar3").src;
+                if(f==12){
+                  iden(12);
+                }
 
-  var x=document.getElementById("gambary").src;
+                if(f==21){
+                  iden(21);
+                }
+
+                if(f==22){
+                  iden(22);
+                }
+                //iden(3);
+                //banding();
+                 p++;
+                alert(p);
+                sessionStorage.setItem('benarsimpan', p);
+                }
+            else{
+               document.getElementById("suaray").play();
+                q++;
+                alert(q);
+                sessionStorage.setItem('salahsimpan', q);
+              }
+       
+      }
+      
+       if(a==3){
+
+        var a1=document.getElementById("gambar3").src;
+
+        var x=document.getElementById("gambary").src;
 
   
-  if(a1==x){
-    document.getElementById("suarax").play();
-    iden();
+            if(a1==x){
+                document.getElementById("suarax").play();
+
+                var f= document.getElementById("tombol").value;
+                if(f==3){
+                      iden(3);
+                }
+
+                if(f==10){
+                  iden(10);
+                }
+
+                if(f==11){
+                  iden(11);
+                }
+
+                if(f==12){
+                  iden(12);
+                }
+
+                if(f==21){
+                  iden(21);
+                }
+
+                if(f==22){
+                  iden(22);
+                }
+
+                //iden(3);
+                //banding();
+                 p++;
+                alert(p);
+                sessionStorage.setItem('benarsimpan', p);
+                
+            }
+            else{
+               document.getElementById("suaray").play();
+                 q++;
+                alert(q);
+                sessionStorage.setItem('salahsimpan', q);
+              
+            }
+       
+      }
+
+       if(a==4){
+
+        var a1=document.getElementById("gambar4").src;
+
+        var x=document.getElementById("gambary").src;
+
+       
+            if(a1==x){
+                document.getElementById("suarax").play();
+                var f= document.getElementById("tombol").value;
+                if(f==3){
+                      iden(3);
+                }
+
+                if(f==10){
+                  iden(10);
+                }
+
+                if(f==11){
+                  iden(11);
+                }
+
+                if(f==12){
+                  iden(12);
+                }
+
+                if(f==21){
+                  iden(21);
+                }
+
+                if(f==22){
+                  iden(22);
+                }
+               // iden(3);
+               // banding();
+                 p++;
+                alert(p);
+                sessionStorage.setItem('benarsimpan', p);
+                
+            }
+            else{
+               document.getElementById("suaray").play();
+                 q++;
+                alert(q);
+                sessionStorage.setItem('salahsimpan', q);
+              
+            }
+       
+      }
+
+    
   }
-  else{
-   document.getElementById("suaray").play();
- }
 
-}
+  function pro1(){
+    
+    var tidak="tidak ada dalam fitur ini";
+    var selectBox = document.getElementById("selectBox");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+   
+    if(selectedValue==1){
+      document.getElementById("m1").style.display="";
+      document.getElementById("m2").style.display="";
+      document.getElementById("m3").style.display="";
 
-if(a==4){
-
-  var a1=document.getElementById("gambar4").src;
-
-  var x=document.getElementById("gambary").src;
 
 
-  if(a1==x){
-    document.getElementById("suarax").play();
-    iden();
+    
+
+      document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" ><img id="gambar2"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100></td><td width="20%"  ><img id="gambar4"  height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>'
+
+    }
+    if(selectedValue==2){
+      document.getElementById("m1").style.display="";
+      document.getElementById("m2").style.display="";
+      document.getElementById("m3").style.display="none";
+
+       document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" onclick="javascript:gambarx(2)" ><img id="gambar2" src="../../../../img_terapi/hewan/1.png"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100></td><td width="20%"  ><img id="gambar4"  height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>'
+
+    }
+    if(selectedValue==3){
+      document.getElementById("m1").style.display="";
+      document.getElementById("m2").style.display="none";
+      document.getElementById("m3").style.display="none";
+
+    document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" onclick="javascript:gambarx(2)" ><img id="gambar2" src="../../../../img_terapi/hewan/1.png"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100></td><td width="20%" onclick="javascript:gambarx(4)" ><img id="gambar4" src="../../../../img_terapi/hewan/2.png" height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>'
+
+
+    }
+    if(selectedValue==4){
+      alert(tidak);
+    }
+    if(selectedValue==5){
+      alert(tidak);
+    }
   }
-  else{
-   document.getElementById("suaray").play();
- }
-
-}
-
-
-}
-
-function pro1(){
-
-  var tidak="tidak ada dalam fitur ini";
-  var selectBox = document.getElementById("selectBox");
-  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-
-  if(selectedValue==1){
-    document.getElementById("m1").style.display="";
-    document.getElementById("m2").style.display="";
-    document.getElementById("m3").style.display="";
-  }
-  if(selectedValue==2){
-    document.getElementById("m1").style.display="";
-    document.getElementById("m2").style.display="";
-    document.getElementById("m3").style.display="none";
-
-
-  }
-  if(selectedValue==3){
-    document.getElementById("m1").style.display="";
-    document.getElementById("m2").style.display="none";
-    document.getElementById("m3").style.display="none";
-  }
-  if(selectedValue==4){
-    alert(tidak);
-  }
-  if(selectedValue==5){
-    alert(tidak);
-  }
-}
 
 function mod(){
+    
 
-  var selectBox = document.getElementById("selectMod");
-  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-  alert(selectedValue);
+    var selectMod = document.getElementById("selectMod");
+    var selectedMod = selectMod.options[selectMod.selectedIndex].value;
+    
 
-  var selectMod= document.getElementById("selectBox");
-  var selectedMod = selectMod.options[selectMod.selectedIndex].value;
-  alert(selectedMod);
+    var selectBox= document.getElementById("selectBox");
+    var selectedBox = selectBox.options[selectBox.selectedIndex].value;
 
-}
+
+    
+   
+    if(selectedMod=='m1'){
+
+      if(selectedBox==1){
+          setTimeout( function(){document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" ><img id="gambar2"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100></td><td width="20%"  ><img id="gambar4"  height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>';},1000);
+
+          document.getElementById("ngisor").innerHTML='<button id="tombol" value="10" onclick="iden(10)">Ganti</button>'
+
+          setTimeout( function(){document.getElementById("nduwur").innerHTML='<img id="gambary" name="gambar" align="center" src="../../../../img_terapi/hewan/0.png" height = 450 width = 600 >';},1000);
+
+             setTimeout( function(){document.getElementById("suara1").play();},1000);
+      setTimeout( function(){   document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>';},2000);
+
+      }
+
+      if(selectedBox==2){
+          setTimeout( function(){document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" onclick="javascript:gambarx(2)" ><img id="gambar2" src="../../../../img_terapi/hewan/1.png"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100></td><td width="20%"  ><img id="gambar4"  height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>';},1000);
+          document.getElementById("ngisor").innerHTML='<button id="tombol" value="21" onclick="iden(21)">Ganti</button>'
+
+         setTimeout( function(){ document.getElementById("nduwur").innerHTML='<img id="gambary" name="gambar" align="center" src="img/hewan/1.png" height = 450 width = 600 >';},1000);
+
+          setTimeout( function(){document.getElementById("suara1").play();},1000);
+      setTimeout( function(){document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>';},2000);
+        
+      }
+
+      if(selectedBox==3){
+        setTimeout( function(){document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" onclick="javascript:gambarx(2)" ><img id="gambar2" src="../../../../img_terapi/hewan/1.png"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100></td><td width="20%" onclick="javascript:gambarx(4)" ><img id="gambar4" src="../../../../img_terapi/hewan/2.png" height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>';},1000);
+        document.getElementById("ngisor").innerHTML='<button id="tombol" value="3" onclick="iden(3)">Ganti</button>'
+        setTimeout( function(){ document.getElementById("nduwur").innerHTML='<img id="gambary" name="gambar" align="center" src="../../../../img_terapi/hewan/0.png" height = 450 width = 600 >';},1000);
+      
+        setTimeout( function(){document.getElementById("suara1").play();},1000);
+      setTimeout(  function(){document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>';},2000);
+
+      }
+    }
+
+    if(selectedMod=='m2'){
+
+      if(selectedBox==1){
+         setTimeout( function(){ document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" ><img id="gambar2"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/1.png" height = 100 width = 100></td><td width="20%"  ><img id="gambar4"  height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>';},1000);
+
+          document.getElementById("ngisor").innerHTML='<button id="tombol" value="11" onclick="iden(11)">Ganti</button>'
+
+         setTimeout( function(){ document.getElementById("nduwur").innerHTML='<img id="gambary" name="gambar" align="center" src="../../../../img_terapi/hewan/1.png" height = 450 width = 600 >';},1000);
+
+               setTimeout( function(){document.getElementById("suara1").play();},1000);
+      setTimeout( function(){document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>';},2000);
+      }
+
+      if(selectedBox==2){
+        setTimeout( function(){ document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" onclick="javascript:gambarx(2)" ><img id="gambar2" src="../../../../img_terapi/hewan/2.png"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100></td><td width="20%"  ><img id="gambar4"  height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>';},1000);
+
+         document.getElementById("ngisor").innerHTML='<button id="tombol" value="22" onclick="iden(22)">Ganti</button>'
+
+        setTimeout( function(){ document.getElementById("nduwur").innerHTML='<img id="gambary" name="gambar" align="center" src="../../../../img_terapi/hewan/0.png" height = 450 width = 600 >';},1000);
+
+              setTimeout( function(){document.getElementById("suara1").play();},1000);
+      setTimeout( function(){ document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>';},2000);
+      }
+
+    }
+
+  
+    if(selectedMod=='m3'){
+
+      if(selectedBox==1){
+     setTimeout( function(){ document.getElementById("tabelopsi").innerHTML='<tr width="100%" align="center"><td width="20%" ><img id="gambar1"   height = 100 width = 100></td><td width="20%" ><img id="gambar2"   height = 100 width = 100></td><td width="20%"  onclick="javascript:gambarx(3)"><img id="gambar3"  src="../../../../img_terapi/hewan/2.png" height = 100 width = 100></td><td width="20%"  ><img id="gambar4"  height = 100 width = 100></td><td width="20%" ><img id="gambar5"   height = 100 width = 100></td></tr>';},1000);
+      document.getElementById("ngisor").innerHTML='<button id="tombol" value="12" onclick="iden(12)">Ganti</button>'
+     setTimeout( function(){ document.getElementById("nduwur").innerHTML='<img id="gambary" name="gambar" align="center" src="../../../../img_terapi/hewan/2.png" height = 450 width = 600 >';},1000);
+
+           setTimeout( function(){document.getElementById("suara1").play();},1000);
+      setTimeout( function(){document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>';},2000);
+
+
+      }
+
+    
+    }
+
+
+  }

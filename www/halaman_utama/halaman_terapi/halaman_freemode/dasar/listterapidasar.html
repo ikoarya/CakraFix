@@ -5,10 +5,19 @@
 	<script src="../../../../js/flowtype.js"></script>
 	<script type="text/javascript" src="../../../../js/isiterapi.js"></script>
     <script type="text/javascript" src="../../../../js/querycakra.js"></script>
-    <script type="text/javascript">
-    var kosong = 0;
-    sessionStorage.setItem('benarsimpan', kosong);
-    sessionStorage.setItem('salahsimpan', kosong);
+    <script type="text/javascript" src="../cordova.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            window.location.href = "../../utama.html";
+	        }, false);
+	    }
+    
+	    var kosong = 0;
+	    sessionStorage.setItem('benarsimpan', kosong);
+	    sessionStorage.setItem('salahsimpan', kosong);
+	    
     </script>
 </head>
 <body style="width:100%;height:100%;" onload="terapi(1)">

@@ -5,7 +5,14 @@
 	<script type="text/javascript" src="../js/isiterapi.js"></script>
   	<script type="text/javascript" src="../js/querycakra.js"></script>
 	<script src="../js/flowtype.js"></script>
+	<script type="text/javascript" src="../cordova.js"></script>
 	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            window.location.href = "../utama.html";
+	        }, false);
+	    }
 		function terapi() {
 			document.getElementById('terapiIndikasiIcon').style.backgroundColor = '#333333';
 			document.getElementById('terapiIndikasiKeterangan').style.backgroundColor = '#333333';

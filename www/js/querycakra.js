@@ -554,10 +554,11 @@ function DisplayEval(){
               {
                 var row = result.rows.item(i);
                 var idmasuk = row.ID_TERAPI;
-                $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi('+idmasuk+',\'Petunjuk'+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
+                $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi('+idmasuk+',\'Petunjuk'+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img width="100%" height="100%" src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
                 
               }
-              $('#tabel tr td').flowtype({fontRatio:14});
+              $('#tabel tr td').flowtype({fontRatio:15});
+              $('#tabel tr td').flowtype({fontSize:15});
           }
         },errorHandler);
     },errorHandler,nullHandler);

@@ -3,7 +3,14 @@
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<script src="../../js/jQuery-2.1.3.min.js"></script>
 	<script src="../../js/flowtype.js"></script>
+	<script type="text/javascript" src="../cordova.js"></script>
 	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            window.location.href = "../../utama.html";
+	        }, false);
+	    }
 		function total() {
 			document.getElementById('totalIcon').style.backgroundColor = '#333333';
 			document.getElementById('aspekIcon').style.backgroundColor = '#000000';
