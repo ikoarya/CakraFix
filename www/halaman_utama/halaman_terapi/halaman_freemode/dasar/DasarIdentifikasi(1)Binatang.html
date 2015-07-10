@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" href="../../../../css/index.css" />
+        <script type="text/javascript" src="../../../../libs/fastclick.min.js"></script>
+        <script type="text/javascript" src="../../../../js/index.js"></script>
+        <script type="text/javascript" charset="utf-8" src="../../../../js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="../../../../js/isiterapi.js"></script>
+        <script type="text/javascript" src="../../../../js/querycakra.js"></script>
+        <script src="../../../../js/warna.js"></script>
+     
+        
+       
+        <title>Cakra</title>
+    </head>
+    <body ng-app="starter" ng-controller="MainCtrl" class="identifikasi" onload="initialize()">
+        
+      <audio id="suara1"  onloadeddata="">
+          <source id="suara1"  src="../../../../suara/terapi/indo/Pilih.mp3" type="audio/mpeg" > 
+           <script type="text/javascript"> document.getElementById("suara1").play();
+
+          </script> 
+        </audio>
+
+
+        <div id="suara2x">
+             <audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" >
+              <source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg">  
+            </audio>
+        </div>
+
+
+
+
+        <table class = "tabeliden" cellspacing=10 width="100%" >
+        
+            <tr >
+              
+                <td  align="center" width="100%">
+                <div id="nduwur">
+                    <img id="gambary" name="gambar" align="center" src="../../../../img_terapi/hewan/0.png" height = 450 width = 600 >
+                </div>
+                </td>
+              
+            </tr>
+
+            
+           
+            <tr >
+              <td width="100%"> 
+                  Mode Proton
+                    <select id="selectBox" onchange="pro1()">
+                      <option id="p1" value="1">1</option>
+                      <option id="p2" value="2">2</option>
+                      <option id="p3" value="3" selected>3</option>
+                      <option id="p4" value="4">4</option>
+                      <option id="p5" value="5">5</option>
+                    </select>
+
+                     Modul
+                    
+                    <select id="selectMod" onchange="mod()">
+                      <option id="m1" value="m1" selected>Modul 1</option>
+                      <option id="m2" value="m2">Modul 2</option>
+                      <option id="m3" value="m3">Modul 3</option>
+                    </select>
+                  
+                  
+              </td>
+            </tr>
+           
+
+            <table width="100%" id="tabelopsi" border="1">
+            <tr width="100%" align="center">
+                  <td width="20%" >
+                     <img id="gambar1"   height = 100 width = 100>
+                  </td>
+                  <td width="20%" onclick="javascript:gambarx(2)">
+               
+                     <img id="gambar2"  src="../../../../img_terapi/hewan/1.png" height = 100 width = 100>
+                  </td>
+                  <td width="20%"  onclick="javascript:gambarx(3)">
+                     <img id="gambar3"  src="../../../../img_terapi/hewan/0.png" height = 100 width = 100>
+                  </td>
+                  <td width="20%"  onclick="javascript:gambarx(4)">
+                     <img id="gambar4"  src="../../../../img_terapi/hewan/2.png" height = 100 width = 100>
+                  </td>
+                  <td width="20%" >
+                     <img id="gambar5"   height = 100 width = 100>
+                  </td>
+            </tr> 
+            </table>
+
+            
+        
+
+        
+        </table> 
+
+        <audio id="suaray"  >
+              <source   src="../../../../suara/terapi/indo/Tidak.mp3" type="audio/mpeg"> 
+        </audio>
+
+        <audio id="suarax"  >
+              <source  src="../../../../suara/terapi/indo/Bagus.mp3" type="audio/mpeg"> 
+        </audio>
+
+        <div class="foot" id="ngisor">
+         
+          <button id="tombol" value="3" onclick="iden(3)">Ganti</button>
+        </div>
+
+
+          <script>
+
+              
+              var pictures = new Array(2);
+              var counter = 0;
+
+
+              function initialize(){
+                // sets up the array with some startin values
+                // Andy Harris
+                RunBody();
+                pictures[0] = new Image(50, 50);
+                pictures[0].src = "../../../../img_terapi/hewan/0.png";
+                pictures[1] = new Image(50, 50);
+                pictures[1].src = "../../../../img_terapi/hewan/1.png";
+                pictures[2] = new Image(50, 50);
+                pictures[2].src = "../../../../img_terapi/hewan/2.png";
+                pro1();
+
+                } // end initialize 
+
+                function iden(a){
+
+                  var b=a;
+                  if (b==3){
+                        
+                  //increments the counter and shows the next description
+                          counter++;
+                          if (counter > 2){
+                            counter = 0;
+                          } // end if
+                          setTimeout( function(){document.gambar.src = pictures[counter].src;}, 1000);
+                          setTimeout( function(){document.getElementById("suara1").play();},1000);
+                        if(counter==0){
+                        document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+                          }
+                          if(counter==1){
+                        document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+                          }
+                          if(counter==2){
+                        document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+                          }
+                    }
+
+                  if(b==10){
+                        counter=0;
+                         
+                          setTimeout( function(){document.gambar.src = pictures[counter].src;}, 1000);
+                          setTimeout( function(){document.getElementById("suara1").play();},1000);
+                          document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+                      
+                        }
+
+                   if(b==11){
+                        counter=1;
+                         
+                          setTimeout( function(){document.gambar.src = pictures[counter].src;}, 1000);
+                          setTimeout( function(){document.getElementById("suara1").play();},1000);
+                          document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+                       
+                        }
+                         
+                   if(b==12){
+                        counter=2;
+                         
+                          setTimeout( function(){document.gambar.src = pictures[counter].src;}, 1000);
+                          setTimeout( function(){document.getElementById("suara1").play();},1000);
+                          document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+                       
+                        }
+
+                    if (b==21){
+                        
+                  //increments the counter and shows the next description
+                          counter++;
+                          if (counter > 1){
+                            counter = 0;
+                          } // end if
+                          setTimeout( function(){document.gambar.src = pictures[counter].src;}, 1000);
+                          setTimeout( function(){document.getElementById("suara1").play();},1000);
+                        if(counter==0){
+                        document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+                          }
+                          if(counter==1){
+                        document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/1.mp3" type="audio/mpeg"></audio>'
+                          }
+                          
+                    }
+
+
+                     if (b==22){
+                        
+                  //increments the counter and shows the next description
+                          counter=counter+2;
+                          if (counter > 2){
+                            counter = 0;
+                          } // end if
+                          setTimeout( function(){document.gambar.src = pictures[counter].src;}, 1000);
+                          setTimeout( function(){document.getElementById("suara1").play();},1000);
+                        if(counter==0){
+                        document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/0.mp3" type="audio/mpeg"></audio>'
+                          }
+                        
+                          if(counter==2){
+                        document.getElementById("suara2x").innerHTML = '<audio id="suara2" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 2000)" ><source id="suara2" src="../../../../suara/terapi/indo/Binatang/2.mp3" type="audio/mpeg"></audio>'
+                          }
+                    }
+
+
+                  }
+
+                  function banding(){
+
+                    var k = document.getElementById("ngisor");
+                    alert(k);
+                  }
+
+                  
+               
+            </script>
+          
+       
+       
+    </body>
+</html>
+

@@ -1,0 +1,100 @@
+ <audio id="suara" >
+          <source  src="suara/terapi/indo/Tiru.mp3" type="audio/mpeg"> 
+          <script type="text/javascript"> document.getElementById("suara").play();
+            
+
+          </script>
+</audio>
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Cakra</title>
+		<link href="css/level.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/flowtype.js"></script>
+		  <link rel="stylesheet" href="css/index.css" />
+        <script type="text/javascript" src="libs/fastclick.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="cordova.js"></script>
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/isiterapi.js"></script>
+        <script type="text/javascript" src="js/querycakra.js"></script>
+          <script src="js/warna.js"></script>
+        <script src="js/jquery-1.11.3.min.js"></script>
+	</head>
+
+	<body bgcolor="dddddd">
+			<div class="vid">
+				<video id="imit" class="vid-cen" autoplay="autoplay"  >
+					<source src="video/Acungkan Jempol.mp4" type="video/mp4">
+					<source src="video/Acungkan Jempol.ogv" type="video/ogg">
+					Your device does not support the video tag.
+				</video>
+			</div>
+
+
+
+
+
+
+			 <div class="foot" >
+		            Dapatkah anak Anda menirukan gerak di atas?
+		              <button onclick="bagus()"> Ya </button>
+		              <audio id="suarax"  >
+		              <source id="suarax"  src="suara/terapi/indo/Bagus.mp3" type="audio/mpeg"> 
+		              </audio>
+		              <script type="text/javascript">
+		              var a=0;
+              		  sessionStorage.setItem('benarsimpan', a);
+		              function bagus(){
+		                    document.getElementById("suarax").play();
+		                    imitasi();
+		                     a++;
+		                    alert(a);
+
+		                    sessionStorage.setItem('benarsimpan', a);
+		                    
+		              }
+
+		              </script>
+
+		              <button onclick="tidak()"> Tidak </button>
+		               <audio id="suaray"  >
+		              <source id="suaray"  src="suara/terapi/indo/Tidak.mp3" type="audio/mpeg"> 
+		              </audio>
+		              <script type="text/javascript">
+		               var b=0;
+              		sessionStorage.setItem('salahsimpan', b);
+		              function tidak(){
+		                    document.getElementById("suaray").play();
+		                     imitasi();
+		                     b++;
+		                    alert(b);
+		                    sessionStorage.setItem('salahsimpan', b);
+		              }
+
+		              </script>
+
+		              <br>
+		            <button onclick="imitasi()">Ganti</button>
+		            <script type="text/javascript">
+
+		            function imitasi(){
+		            	 setTimeout( function(){document.getElementById("imit").play(); }, 2000);
+		            	setTimeout( function(){ document.getElementById("suara").play(); }, 2000);
+		            }
+		            </script> 
+          
+        
+			</div>
+
+		<script type="text/javascript">
+			$('body').flowtype();
+		</script>
+	</body>
+</html>
