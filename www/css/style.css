@@ -1,17 +1,17 @@
 @font-face {
-	font-family: Trek;
+	font-family: "Trek";
 	src: url('../font/Trek-Disruptor-Blast.ttf');
 }
 @font-face {
-	font-family: Ubuntu;
+	font-family: "Ubuntu";
 	src: url('../font/Ubuntu-Title.ttf');
 }
 @font-face {
-	font-family: Segoe UI light;
+	font-family: "Segoe UI light";
 	src: url('../font/SEGOEUIL.ttf');
 }
 @font-face {
-	font-family: Segoe UI bold;
+	font-family: "Segoe UI bold";
 	src: url('../font/ufonts.com_segoe-ui-bold.ttf');
 }
 html {
