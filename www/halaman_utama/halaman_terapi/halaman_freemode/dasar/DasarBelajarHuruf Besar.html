@@ -14,11 +14,14 @@
   <script src="../../../../cordova.js"></script>
   <script src="../../../../js/warna.js"></script>
   <script src="../../../../js/jQuery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="../../../../js/isiterapi.js"></script>
+  <script type="text/javascript" src="../../../../js/querycakra.js"></script>
   <script src="../../../../js/flowtype_height.js"></script>
+  
   <title>Cakra</title>
 </head>
 
-<body class="huruf">
+<body class="huruf" onload="persentase(bnr,slh)">
   <div id="suara1x">
     <audio id="suara1" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" >
       <source id="suara1"  src="../../../../suara/terapi/indo/Ini.mp3" type="audio/mpeg">  
@@ -59,8 +62,8 @@
       </tr>
     </table>
     <script type="text/javascript">
-      $('#demo').flowtype({fontRatio:2,maxFont:400});
-      $('.foot td').flowtype({fontRatio:22});
+      $('#demo').flowtype_height({fontRatio:2,maxFont:400});
+      $('.foot td').flowtype_height({fontRatio:22});
     </script>
   </body>
 </html>

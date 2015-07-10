@@ -5,6 +5,11 @@
 	<script src="../../../../js/flowtype.js"></script>
 	<script type="text/javascript" src="../../../../js/isiterapi.js"></script>
     <script type="text/javascript" src="../../../../js/querycakra.js"></script>
+    <script type="text/javascript">
+    var kosong = 0;
+    sessionStorage.setItem('benarsimpan', kosong);
+    sessionStorage.setItem('salahsimpan', kosong);
+    </script>
 </head>
 <body style="width:100%;height:100%;" onload="terapi(1)">
 	<table width="100%" height="100%" cellspacing="0" cellpadding="0" class="tabel_tanpa_jeda">
@@ -41,6 +46,9 @@
 									</tr>
 									<tr>
 										<td width="100%" id="dasarTerapi7" onclick="javascript:terapi(7)">Imitasi GM Halus</td>
+									</tr>
+									<tr>
+										<td width="100%" id="dasarTerapi8" onclick="javascript:terapi(8)">Imitasi GM Mulut</td>
 									</tr>
 								</table>
 							</div>

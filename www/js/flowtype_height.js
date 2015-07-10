@@ -11,7 +11,7 @@
 */
 
 (function($) {
-   $.fn.flowtype = function(options) {
+   $.fn.flowtype_height = function(options) {
 
 // Establish default settings/variables
 // ====================================

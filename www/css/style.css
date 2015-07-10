@@ -780,6 +780,11 @@ html body {
 }*/
 #demo {
 	text-align: center;
+	border:1px solid red;
+}
+.pertanyaan {
+	background-color: #000000;
+	color: white;
 }
 .foot{
     background-color: black;
@@ -827,5 +832,7 @@ html body {
 .foot button:active {
     position:relative;
 }
-
+.vid-cen {
+	-o-object-fit: contain;
+}
 /* TERAPI DASAR END */

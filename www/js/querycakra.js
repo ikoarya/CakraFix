@@ -522,7 +522,20 @@ function DisplayEval(){
       kategori = "Matching";
       document.getElementById('dasarTerapi5').style.backgroundColor = '#aaaaaa';
       document.getElementById('dasarTerapi5').style.color = '#000000';
+    } else if(bre == 6){
+      kategori = "Imitasi GM Kasar";
+      document.getElementById('dasarTerapi6').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi6').style.color = '#000000';
+    } else if(bre == 7){
+      kategori = "Imitasi GM Halus";
+      document.getElementById('dasarTerapi7').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi7').style.color = '#000000';
+    } else if(bre == 8){
+      kategori = "Imitasi GM Mulut";
+      document.getElementById('dasarTerapi8').style.backgroundColor = '#aaaaaa';
+      document.getElementById('dasarTerapi8').style.color = '#000000';
     }
+
 
     document.getElementById("tabel").style.display = '';
     db.transaction(function(transaction) 
@@ -586,7 +599,7 @@ function DisplayEval(){
          $('#lbUsers').html('');
           db.transaction(function(transaction) {
          transaction.executeSql('DROP TABLE AKUN', [], nullHandler,errorHandler);
-         transaction.executeSql('DROP TABLE CATATAN', [], nullHandler,errorHandler);
+        transaction.executeSql('DROP TABLE CATATAN', [], nullHandler,errorHandler);
          transaction.executeSql('DROP TABLE LAPORAN', [], nullHandler,errorHandler);
          transaction.executeSql('DROP TABLE NILAI', [], nullHandler,errorHandler);
          transaction.executeSql('DROP TABLE REWARD', [], nullHandler,errorHandler);
@@ -1022,10 +1035,10 @@ function displayBulan(){
 //================================================= Ambil nilai =============================================
 
 
-  function ambilNilaiLaporan(index1, index2){
+  function ambilNilaiLaporan(index1, index2, bnr, slh){
     var iter = 0, iter2 = 0;
     db.transaction(function(transaction) {
-
+    
     for (var i = 0; i < index1; i++) { 
       //alert('i: ' + i + 'gabung1[i]: ' + gabung1[i]);
       transaction.executeSql('SELECT BENAR, SALAH FROM NILAI WHERE KATEGORI_ASPEK = ? AND ASPEK = ?;',  ["1", gabung1[i]],
@@ -1036,16 +1049,16 @@ function displayBulan(){
         salah1 = parseInt(row.SALAH);
 
         
-        var inputben1 = benar1 + 20;
-        var inputsal1 = salah1 + 20;
-        alert('gabung: '+gabung1[iter]);
-        //alert('benar akhir ' + inputben1 + 'salah akhir ' + inputsal1);
-        
-        iter = iter + 1;
-       //transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben1, inputsal1, "1", gabung1[i]]); 
+        var inputben1 = parseInt(benar1 + bnr);
+        var inputsal1 = parseInt(salah1 + slh);
 
-        alert('i '+i);
-        alert('index: '+index1);
+        alert('gabung1: '+gabung1[iter]);
+        alert('benar1 akhir ' + inputben1 + 'salah1 akhir ' + inputsal1);
+        
+        
+       transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben1, inputsal1, "1", gabung1[iter]]); 
+       iter = iter + 1;
+        //alert('i '+i);
       },errorHandler);
     }
     
@@ -1059,17 +1072,17 @@ function displayBulan(){
             salah2 = parseInt(row.SALAH);
 
             
-            var inputben2 = benar2 + 20;
-            var inputsal2 = salah2 + 20;
-            alert('benar awal ' + inputben2 + 'salah awal ' + inputsal2);
-            alert(gabung2[iter2]);
+            var inputben2 = parseInt(benar2 + bnr);
+            var inputsal2 = parseInt(salah2 + slh);
+            alert('benar2 awal ' + inputben2 + 'salah2 awal ' + inputsal2);
+            alert('gabung2: ' +gabung2[iter2]);
+            
+           transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben2, inputsal2, "2", gabung2[iter2]]);
             iter2 = iter2+1;
-           // transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben2, inputsal2, "2", gabung2[i]]);
-          
         }
       },errorHandler);
     }
-
+  
 
 
     },errorHandler,nullHandler);
@@ -1079,11 +1092,12 @@ function displayBulan(){
 
 //================================================= Hitung persentase laporan =======================================================
 
-function persentase(){
+function persentase(bnr,slh,idp){
 
     RunBody();
+    
     db.transaction(function(transaction) {
-      transaction.executeSql('SELECT ID_TERAPI, ASPEK1, ASPEK2 FROM TERAPI WHERE ID_TERAPI = ?;',  ["17"],
+      transaction.executeSql('SELECT ID_TERAPI, ASPEK1, ASPEK2 FROM TERAPI WHERE ID_TERAPI = ?;',  [idp],
         function(transaction, result) {
           if (result != null && result.rows != null) {
              
@@ -1093,6 +1107,7 @@ function persentase(){
                   var panjang1 = result.rows.item(i).ASPEK1.length;
                   var panjang2 = result.rows.item(i).ASPEK2.length;
               }
+              
 
               for (var i = 0 ; i < panjang1; i++) {
                   if(target1[i] == "|"){
@@ -1128,10 +1143,9 @@ function persentase(){
 
                   }
               }
-              
           }
           
-          ambilNilaiLaporan(index1, index2);
+         ambilNilaiLaporan(index1, index2, bnr, slh);
       },errorHandler);
     },errorHandler,nullHandler);
  
