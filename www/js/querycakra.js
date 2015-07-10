@@ -51,7 +51,7 @@
 //================================================ buat database ==================================================
 	    function RunBody () {
 	    	
-	    	alert("DEBUGGING: we are in the onBodyLoad() function");
+	    	//alert("DEBUGGING: we are in the onBodyLoad() function");
 
 	    	if (!window.openDatabase) {
 	           alert('Databases are not supported in this browser.');
@@ -124,7 +124,7 @@ function filterquery(){
 
 		function EntryUser(){
 
-			alert("DEBUGGING: we are in the EntryUser() function");
+		//	alert("DEBUGGING: we are in the EntryUser() function");
 	    	if (!window.openDatabase) {
 	           alert('Databases are not supported in this browser.');
 	           return;
@@ -557,7 +557,7 @@ function DisplayEval(){
                 $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi('+idmasuk+',\'Petunjuk'+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img width="100%" height="100%" src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
                 
               }
-              $('#tabel tr td').flowtype({fontRatio:15});
+              $('#tabel tr td').flowtype({fontRatio:13});
               $('#tabel tr td').flowtype({fontSize:15});
           }
         },errorHandler);
@@ -585,7 +585,7 @@ function DisplayEval(){
   function linkterapi(){
 
     var data = sessionStorage.getItem('pilihan');
-    alert(data);
+   // alert(data);
 
 
   }
@@ -626,7 +626,7 @@ function addData(){
 
       var yearNow = now.getFullYear();
       var dateNow = now.getDate();
-       alert(dateNow);
+      // alert(dateNow);
 
       var waktu = dateNow + '-' + monthNow + '-' + yearNow;
 
@@ -651,7 +651,7 @@ function ambilData(){
         if (result != null && result.rows != null) {
           for (var i = 0; i < result.rows.length; i++) {
             panjangdat = result.rows.length;
-            alert('pjg '+panjangdat);
+           // alert('pjg '+panjangdat);
             rowTotal = result.rows.item(i).total;
             arrTotal[i] = rowTotal;
             //alert(arrTotal[i]);
@@ -660,7 +660,7 @@ function ambilData(){
         }
        },errorHandler);
    },errorHandler,nullHandler);
-    alert('selesai ambil data');
+   // alert('selesai ambil data');
 }
 
 //======================================== Tampil Laporan Total =====================================================
@@ -1057,8 +1057,8 @@ function displayBulan(){
         var inputben1 = parseInt(benar1 + bnr);
         var inputsal1 = parseInt(salah1 + slh);
 
-        alert('gabung1: '+gabung1[iter]);
-        alert('benar1 akhir ' + inputben1 + 'salah1 akhir ' + inputsal1);
+      //  alert('gabung1: '+gabung1[iter]);
+       // alert('benar1 akhir ' + inputben1 + 'salah1 akhir ' + inputsal1);
         
         
        transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben1, inputsal1, "1", gabung1[iter]]); 
@@ -1079,8 +1079,8 @@ function displayBulan(){
             
             var inputben2 = parseInt(benar2 + bnr);
             var inputsal2 = parseInt(salah2 + slh);
-            alert('benar2 awal ' + inputben2 + 'salah2 awal ' + inputsal2);
-            alert('gabung2: ' +gabung2[iter2]);
+           // alert('benar2 awal ' + inputben2 + 'salah2 awal ' + inputsal2);
+          //  alert('gabung2: ' +gabung2[iter2]);
             
            transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben2, inputsal2, "2", gabung2[iter2]]);
             iter2 = iter2+1;
