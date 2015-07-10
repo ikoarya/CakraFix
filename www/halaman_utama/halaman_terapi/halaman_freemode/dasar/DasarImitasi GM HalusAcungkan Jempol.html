@@ -13,11 +13,19 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <link rel="stylesheet" href="../../../../css/style.css" />
-  <script src="../../../../cordova.js"></script>
   <script src="../../../../js/warna.js"></script>
   <script src="../../../../js/jQuery-2.1.3.min.js"></script>
   <script src="../../../../js/flowtype.js"></script>
   <script type="text/javascript" src="../../../../js/video.js"></script>
+  <script src="../../../../cordova.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("deviceready", onDeviceReady, false);
+      function onDeviceReady(){
+          document.addEventListener("backbutton", function(e){
+              window.location.href = "listterapidasar.html";
+          }, false);
+      }
+  </script>
   <title>Cakra</title>
   <script type="text/javascript">
     function imitasi(){
