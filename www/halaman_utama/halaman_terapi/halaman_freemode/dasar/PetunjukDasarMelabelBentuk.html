@@ -25,6 +25,15 @@
         	window.location.href = "DasarMelabelBentuk.html";
         }
 	</script>
+	<script src="../../../../cordova.js"></script>
+	<script type="text/javascript">
+	    document.addEventListener("deviceready", onDeviceReady, false);
+	      function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	              window.location.href = "listterapidasar.html";
+	        }, false);
+	    }
+	</script>
 </head>
 <body class="halamanPetunjukTerapi">
 	<table border="0" width="100%" height="100%">
