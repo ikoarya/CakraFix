@@ -120,7 +120,7 @@ function filterquery(){
 
 
 
-//================================================= masukkan user baru =================================================
+//============================== masukkan user baru =================================================
 
 		function EntryUser(){
 
@@ -130,30 +130,39 @@ function filterquery(){
 	           return;
          	}
 
+          var maxdate = ["31", "29", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"];
+          var nama = document.getElementById('name').value;
           var tanggal = document.getElementById('tanggal').value;
           var bul = document.getElementById('bul').value;
           var tah = document.getElementById('tah').value;
 
           var getBirth = tanggal + '-' + bul + '-'+ tah;
-          var link = pathimage;
+          var link = "pathimage";
 
          	db.transaction(function(transaction){
 
-            transaction.executeSql('INSERT INTO AKUN(NAMA, TTL, JK, LINKFOTO) VALUES (?,?,?,?)',[$('#name').val(), getBirth, $('#jk').val(),link ],nullHandler,errorHandler);
+            if ( nama == "" || (tanggal > maxdate[bul-1])) {
+              alert("Mohon cek lagi Nama dan Tanggal Lahir");
+            }
 
-            transaction.executeSql('SELECT NAMA FROM AKUN;', [],
-             function(transaction, result) {
-              var keluar = result.rows.length;
-              if (keluar > 0) {
-                alert("Selamat Anda berhasil terdaftar di Aplikasi CAKRA");  
-                window.location.href = "utama.html";
-              }
-             },errorHandler);
+            else{
+              transaction.executeSql('INSERT INTO AKUN(NAMA, TTL, JK, LINKFOTO) VALUES (?,?,?,?)',[$('#name').val(), getBirth, $('#jk').val(),link ],nullHandler,errorHandler);
+
+              transaction.executeSql('SELECT NAMA FROM AKUN;', [],
+               function(transaction, result) {
+                var keluar = result.rows.length;
+                if (keluar > 0) {
+                  alert("Selamat Anda berhasil terdaftar di Aplikasi CAKRA");  
+                  window.location.href = "utama.html";
+                }
+               },errorHandler);
+            }
+            
          	});
 		}
 
 
-//================================================= UPDATE AKUN =============================================================
+//====================================== UPDATE AKUN ===============================================
 
   function EditUser(){
 
@@ -168,7 +177,7 @@ function filterquery(){
   }
 
 
-  //================================================= DELETE AKUN ============================================================
+  //=========================== DELETE AKUN ============================================================
 
   function HapusUser(){
 
@@ -180,7 +189,7 @@ function filterquery(){
   }
 
 
-//=============================================== login ================================================================
+//=============================== login ================================================================
 
     /* Beri nama id inputnya = username
     */
@@ -397,12 +406,14 @@ function GetPicture(){
                 var monthNow = now.getMonth()+1;
 
                 if ( bulantes != monthNow) {
+                  
                   alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
                 }
                 else
                 {
                   document.getElementById('fontterapi').style.color="white";
                   document.getElementById('fontlaporan').style.color="white";   
+                  document.getElementById('fontevaluasi').style.color="red";
                 }
               }
 

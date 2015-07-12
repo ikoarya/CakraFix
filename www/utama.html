@@ -37,7 +37,51 @@
 			var delay=100; //1 seconds
 
 			setTimeout(function(){
-			  	window.location.href = "halaman_utama/diagnosa.html";
+
+				db.transaction(function(transaction) {
+
+		         transaction.executeSql('SELECT waktu FROM LAPORAN ;',  [],
+		           function(transaction, result) {
+
+		            if (result != null && result.rows != null) {
+		              var waktutes = result.rows.length;
+
+		              if (waktutes == 0) {
+		              	window.location.href = "halaman_utama/diagnosa.html";
+		              }
+		              
+		              if (waktutes >= 1) {
+		              	var row = result.rows.item(waktutes-1).waktu;
+		                var rowLength = row.length;
+		                var bulantes = Math.abs(parseInt(row[rowLength-6] + row[rowLength-7]));
+
+		                var now = new Date();
+		                var monthNow = now.getMonth()+1;
+
+		                if ( bulantes == monthNow) {
+		                  alert('Anda sudah melakukan Evaluasi untuk bulan ini');
+		                }
+		                else
+		                {		                
+		                	window.location.href = "halaman_utama/diagnosa.html";
+		              	}
+
+		              }
+		              
+
+
+
+		            }
+		            
+		            
+		           },errorHandler);
+		       	},errorHandler,nullHandler);
+
+
+
+
+
+			  	
 			}, delay);
 		}
 		function terapi () {
@@ -176,7 +220,7 @@
 		<tr id="keteranganMenu">
 			<td width="17.5%" height="8%"></td>
 			<td width="13%" height="8%" id="informasiKeterangan" onclick="javascript:informasi()">Informasi</td>
-			<td width="13%" height="8%" id="evaluasiKeterangan" onclick="javascript:evaluasi()">Evaluasi</td>
+			<td width="13%" height="8%" id="evaluasiKeterangan" onclick="javascript:evaluasi()"><font id="fontevaluasi" style="color:white;">Evaluasi</font></td>
 			<td width="13%" height="8%" id="terapiKeterangan" onclick="javascript:terapi()"><font id="fontterapi" style="color:red;">Terapi</font></td>
 			<td width="13%" height="8%" id="laporanKeterangan" onclick="javascript:laporan()"><font id="fontlaporan" style="color:red;">Laporan</font></td>
 			<td width="13%" height="8%" id="catatanKeterangan" onclick="javascript:catatan()">Catatan <img src="img/Top/lock.png" width="10%"></td>

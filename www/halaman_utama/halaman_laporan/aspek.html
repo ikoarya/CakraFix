@@ -2,7 +2,15 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../../css/chart.css">
+	<script type="text/javascript" src="../cordova.js"></script>
 	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            window.location.href = "../../utama.html";
+	        }, false);
+	    }
+	
 		var flag = 0;
 		function keterangan () {
 			if(flag == 0){
