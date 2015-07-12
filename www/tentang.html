@@ -1,0 +1,126 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styletentang.css">
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="js/jQuery-2.1.3.min.js"></script>
+	<script src="js/flowtype.js"></script>
+	<script src="js/flowtype_height.js"></script>
+	<script type="text/javascript">
+		var flag=0;
+		document.addEventListener("deviceready", onDeviceReady, false);
+	    function onDeviceReady(){
+	        document.addEventListener("backbutton", function(e){
+	            window.location.href = "index.html";
+	        }, false);
+	    }
+		function kredit () {
+			if(flag == 0){
+				document.getElementById('copy').innerHTML = '<iframe id="frame" src="kreditkon.txt"></iframe>';	
+				flag = 1;
+			}
+			else{
+				document.getElementById('copy').innerHTML = '<p id="copyright">Copyright &copy; 2015 MrH Studio</p><p id="penjelasan">Aplikasi ini telah dilindungi hak cipta, aksi pembajakan akan dikenai sanksi yang berlaku</p>'
+				flag = 0;
+			}
+			$('#copy p').flowtype({fontRatio:18, minFont:8, maxFont:23});
+		}
+		function popup (){
+			alert('Layanan Tidak Tersedia untuk edisi Bronze');
+		}
+			
+	</script>
+</head>
+<body>
+	<table width="100%" height="100%" align="center" border="0">
+		<tr >
+			<td width="27%" height="65%" id="bordernya">  
+
+				<table width="100%" height="100%" border="0">
+					<tr >
+						<td width="100%" align="center" height="40%" style="background-image:url('img/Tentang/mrh.png');background-size:contain;background-repeat:no-repeat;background-position:center center;">
+						</td>
+					</tr>
+
+					<tr>
+						<td width="100%"  align="center" height="55%" style="background-image:url('img/Tentang/cakra.png');background-size:contain;background-repeat:no-repeat;background-position:center center;">
+						</td>
+					</tr>
+
+					<tr>
+						<td width="100%" >
+							<table width="75%" align="center">
+								<tr>
+									<td onclick="popup()" class="tombol tombol_kirim">
+										Kirim Data
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+			</td>
+			<!-- batas -->
+			<td colspan="3" width="73%" align="center"> 
+			 	
+				<div class="judul">CAKRA</div>
+				<div class="deskripsiJudul">aplikasi terapi dan pelatihan untuk anak berkebutuhan khusus</div>
+				<div class="subDeskripsiJudul">(Autis, ADD/ADHD, Asperger, Sindrom Down, Retardasi Mental, Keterlambatan Belajar)</div>
+				
+			 </td>
+		</tr>
+
+
+		<tr>
+
+			<td id="bordernya" colspan="2" width="37%" height="35%">
+				<table  border="0" height="100%" width="100%">
+					<tr >
+						<td id="copy" height="75%">
+							<p id="copyright">Copyright &copy; 2015 MrH Studio</p>
+							<p id="penjelasan">Aplikasi ini telah dilindungi hak cipta, aksi pembajakan akan dikenai sanksi yang berlaku</p>
+						</td>
+					</tr>	
+					<tr>
+						<td class="tombol tombol_kredit" onclick="kredit()" >
+							Kredit Konten
+						</td>
+					</tr>
+				</table>
+			</td>
+
+			
+			<td width="30%" id="bordernya"> 
+				<table width="100%" border="0">
+					<tr>
+						<td class="edisi" width="50%" align="center">Edisi</td>
+						<td class="versi" width="50%" align="center">Bronze</td>
+					</tr>
+					<tr >
+						<td class="edisi" width="50%" align="center">Versi</td>
+						<td class="versi" width="50%" align="center">1.0</td>
+					</tr>
+				</table>
+			</td>
+			
+			<td width="33%" align="center">
+			 	<p id="info"> Info Selengkapnya?<br> </p>
+			 	
+			 	<p id="link"><a href="cakra-app.com">http://cakra-app.com</a></td></tr></p>
+			 </td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		$('#copy p').flowtype({fontRatio:18, minFont:8, maxFont:23});
+		$('.judul').flowtype({fontRatio:4});
+		$('.deskripsiJudul').flowtype({fontRatio:25});
+		$('.subDeskripsiJudul').flowtype({fontRatio:40});
+		$('.edisi').flowtype({fontRatio:6});
+		$('.versi').flowtype({fontRatio:6});
+		$('#info').flowtype({fontRatio:13});
+		$('#link').flowtype({fontRatio:13});
+		$('.tombol_kirim').flowtype({fontRatio:10});
+		$('.tombol_kredit').flowtype({fontRatio:20});
+	</script>
+</body>
+</html>

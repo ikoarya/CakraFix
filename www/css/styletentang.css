@@ -1,0 +1,84 @@
+@font-face {
+	font-family: Trek;
+	src: url('../font/Trek-Disruptor-Blast.ttf');
+}
+@font-face {
+	font-family: Ubuntu;
+	src: url('../font/Ubuntu-Title.ttf');
+}
+html {
+	font-family: "Segoe UI light";
+	background: url("../img/Tentang/tentang.jpg")  no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+html body {
+	margin: 0px;
+	height: 100%;
+	color: white;
+}
+table{
+	text-align: left;
+	border-color: white;
+}
+
+.judul {
+	font-family: "Trek";
+	font-size: 70pt;
+}
+.deskripsiJudul {
+	font-family: "Ubuntu";
+	font-size: 12pt;
+}
+.subDeskripsiJudul {
+	font-size: 8pt;
+}
+
+
+#link a{
+	color: white;
+
+}
+#bordernya{
+	border-right: 3px solid;
+}
+
+#bordernya img{
+	max-width: 75%;
+	max-height: 75%;
+}
+
+.tombol{
+	background-color: white;
+	height: 75%;
+	width: 100%;
+	text-align: center;
+	color: black;
+}
+
+#copyright{
+	font-weight: bold;
+	text-align: left;
+	font-size: 10pt;
+}
+
+#penjelasan{
+	font-size: 6pt;
+}
+
+#info{
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+.edisi{
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+#frame{
+	background-color: white;
+	width: 97%;
+	height: 30%;
+}
