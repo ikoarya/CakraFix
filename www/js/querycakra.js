@@ -1,20 +1,3 @@
-/*
-    Versi 2
-
-    Upgrade:
-    a. Tambah kolom path gambar pada tabel user
-    b. Tambah GetJmlAkun
-    c. Tambah GetPicture
-    d. Penyesuaian Halaman Pendaftaran   ==> EntryUser()
-    e. Penyesuaian Halaman Utama  ==> HalamanUtama(), dan hitungUmur dan GetPicture
-    f. Penyesuaian Halaman Terapi  ==> penambahan fitur pilihan (penyesuaian dengan pilihan)
-    g. Penyesuaian Halaman evaluasi    ==> tesEvaluasi()
-    h. Penyesuaian Halaman Display Evaluasi   ==> DisplayEvaluasi()
-    i. Penyesuaian Halaman Pengaturan
-    j. Penyesuaian Halaman Login
-    
-*/
-
       var db;
 	    var shortName = 'Cakra';
 	    var version = '1.0';
@@ -29,7 +12,7 @@
       var count1 = 0, count2 = 0, index1 = 0, index2 = 0;
       var putus1 = [], putus2 = [], gabung1 = [], gabung2 = [];
       var benar1, salah1, flag ;
-      //var idn = [], disbenar = [], dissalah = [], distotal = [], bentotal = [], idhtml = [];
+     
 //============================================= notification error =======================================================
 
 	    // this is called when an error happens in a transaction
@@ -70,7 +53,6 @@
 
 	            tx.executeSql('CREATE TABLE IF NOT EXISTS LAPORAN(ID_LAPORAN INTEGER PRIMARY KEY autoincrement, waktu date not null, komunikasi integer, sosial integer, kognitif integer, kebiasaan integer, total integer, countlaporan integer)', [],nullHandler,errorHandler);
 
-	            //tx.executeSql('create table if not exists NILAI(ID_NILAI INTEGER PRIMARY KEY autoincrement, ID_AKUN REFERENCES AKUN(ID), BENAR integer not null, SALAH integer not null, DATA varchar(30) not null,TANGGAL date, COUNTNILAI integer)', [],nullHandler,errorHandler);
               tx.executeSql('create table if not exists NILAI(ID_NILAI INTEGER PRIMARY KEY autoincrement, BENAR integer not null, SALAH integer not null, KATEGORI_ASPEK integer not null, ASPEK varchar(30) not null, TANGGAL date)', [],nullHandler,errorHandler);
 	            
 	            tx.executeSql('create table if not exists PERTANYAAN (ID_PERTANYAAN integer primary key autoincrement, KATEGORI_TANYA varchar(50) not null, SOAL varchar(100) not null)', [],nullHandler,errorHandler);
@@ -103,6 +85,10 @@
 
 //=============================================== filter query ======================================================
 
+/*
+untuk menyaring agar entry terapi dilakukan hanya sekali dengan cara mengecek apabila terapi sudah ada isinya, maka selanjutnya tidak dapat diisi lagi.
+*/
+
 function filterquery(){
 
           db.transaction(function(transaction) {
@@ -120,7 +106,8 @@ function filterquery(){
 
 
 
-//============================== masukkan user baru =================================================
+
+//============================== MEMASUKKAN USER BARU =================================================
 
 		function EntryUser(){
 
@@ -130,17 +117,24 @@ function filterquery(){
 	           return;
          	}
 
+          //mengatur tanggal maksimal tiap bulan
           var maxdate = ["31", "29", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"];
+          
+          //mendapatkan value nama, tanggal, bulan dan tahun.
           var nama = document.getElementById('name').value;
           var tanggal = document.getElementById('tanggal').value;
           var bul = document.getElementById('bul').value;
           var tah = document.getElementById('tah').value;
 
+          //menggabungkan tanggal menjadi satu kesatuan
           var getBirth = tanggal + '-' + bul + '-'+ tah;
+
+          //mendapatkan path gambar dimana dia disimpan
           var link = pathimage;
 
          	db.transaction(function(transaction){
 
+            //menyaring apakah ada kesalahan input atau tidak
             if ( nama == "" || (tanggal > maxdate[bul-1])) {
               alert("Mohon cek lagi Nama dan Tanggal Lahir");
             }
@@ -164,20 +158,47 @@ function filterquery(){
 
 //====================================== UPDATE AKUN ===============================================
 
-  function EditUser(){
+/*
+  Update akun ini digunakan pada halaman pengaturan->akun. Saat tombol selesai ditekan maka akan memanggil EditUser dengan
+  passing parameter nama.
+*/
 
+  function EditUser(nama){
+    RunBody();
     db.transaction(function(transaction) {
-      var namaedit = "Aku";
+      
+      //mengupdate nama yang sudah diinputkan
+      transaction.executeSql('UPDATE AKUN SET NAMA=?', [nama]);
 
-      transaction.executeSql('UPDATE REWARD SET NAMA=?', [namaedit]);
-      
-      
+      //langsung menampilkan perubahan nama dengan cara select nama yang baru dengan nama yang ada di passing parameter
+      transaction.executeSql('SELECT NAMA FROM AKUN ;',  [],
+        function(transaction, result) {
+
+          if (result != null && result.rows != null) {
+              var row = result.rows.item(0);
+              var namabaru = row.NAMA;
+              
+              if(namabaru == nama){
+                window.location.reload();       //untuk reload atau menampilkan langsung perubahannya
+              }
+                
+                
+        }
+      },errorHandler);
+
     },errorHandler,nullHandler);
+    //untuk menyimpan nama di local storage
+    localStorage.setItem("nama",  nama);
 
   }
 
 
-  //=========================== DELETE AKUN ============================================================
+
+//=========================== DELETE AKUN ============================================================
+
+/*
+  Untuk menghapus user, fungsi ini dipanggil pada halaman pengaturan->akun
+*/
 
   function HapusUser(){
 
@@ -191,8 +212,9 @@ function filterquery(){
 
 //=============================== login ================================================================
 
-    /* Beri nama id inputnya = username
-    */
+/*
+  Fungsi login digunakan pada saat tombol masuk ditekan (index.html).
+*/
 
     function login(){
 
@@ -201,14 +223,15 @@ function filterquery(){
         return;
       }
 
-      //var value = document.getElementById('username').innerText;
+      //untuk mengambil nama yang diinputkan
       var val = document.getElementById('username').value;
 
+      //mengecek apakah nama yang diinputkan ada dalam database atau tidak
       db.transaction(function(transaction) {
          transaction.executeSql('SELECT NAMA FROM AKUN WHERE NAMA=?;', [val],
            function(transaction, result) {
             var jml = result.rows.length;
-            //alert(jml);
+
             if (jml == 1) {
               window.location.href = "utama.html";
             }
@@ -224,28 +247,34 @@ function filterquery(){
 
 //=========================================== Hitung Umur ========================================================
 
-    //dokumentasi = pada form tanggal, beri id = 'tanggal'
-    //silahkan pilih alert atau innerHTML(id = age) pada baris paling akhir
+/*
+  Menghitung umur yang digunakan pada halaman utama (utama.html)
+*/
 
     function hitungumur(){
 
         var jml, thnlahir;
         $('#umurText').html('');
+
+        //mengambil ttl user pertama
         db.transaction(function(transaction) {
          transaction.executeSql('SELECT TTL FROM AKUN WHERE ID=?;', ["1"],
            function(transaction, result) {
             jml = result.rows.item(0);
             thnlahir = jml.TTL;
-            var panjang = thnlahir.length;
+            var panjang = thnlahir.length;    //dihitung panjangnya ttlnya (d-m-yyyy) atau (dd-mm-yyyy)
             
+            //diambil bulan dan tahunnya, dengan cara di jadikan integer dan diabsolutkan. Perlu diabsolutkan karena menghindari tanda "-".      
             var monthBirth = Math.abs(parseInt(thnlahir[panjang-7] + thnlahir[panjang-6]));
             var yearBirth = parseInt(thnlahir[panjang-4] + thnlahir[panjang-3] + thnlahir[panjang-2] + thnlahir[panjang-1]);
 
+            //mengambil bulan dan tahun sekarang. Bulan harus ditambah 1 karena skalanya 0-11.
             var now = new Date();
             var monthNow = now.getMonth()+1;
             var yearNow = now.getFullYear();
 
-            
+            //menghitung umurnya
+            //apabila bulanlahir lebih besar, maka umur belum genap (tahunsekarang-tahunlahir-1), dan sebaliknya
             if (monthBirth >= monthNow) {
               age = yearNow - yearBirth -1;    
             }
@@ -253,34 +282,20 @@ function filterquery(){
               age = yearNow - yearBirth;
             }
             
-
-           // alert(age + ' Tahun');
-           // document.getElementById('umurText').innerHTML = age + ' Tahun';
+            //menuliskan di halaman utama
             $('#umurText').append(age + ' Tahun' );
 
 
 
            },errorHandler);
        },errorHandler,nullHandler);
-
-/*
-        var data = sessionStorage.getItem('BirthDate');
-        var yearBirth = parseInt(data[jml-3] + data[jml-2] + data[jml-1] + data[jml]);
-        //alert(yearBirth);
-
-        var now = new Date();
-        var monthNow = now.getMonth();
-        var yearNow = now.getFullYear();
-
-        age = yearNow - yearBirth;
-
-        alert(age + ' Tahun');
-        document.getElementById('umurText').innerHTML = age + ' Tahun';*/
       }
 
 //=============================================== Get Nama User ======================================================
 
-  //beri nama tempat nama dimunculkan dengan id hasil
+/*
+  untuk mencetak nama pada halaman utama dan hasil evaluasi.
+*/
 
   function getNama(){
 
@@ -290,9 +305,13 @@ function filterquery(){
       }
 
       RunBody();
+      //untuk mencetak pada halaman utama
       $('#hasil').html('');
+
+      //untuk mencetak pada halaman hasil evaluasi
       $('#judulIndikasi').html('');
        
+       //untuk mengambil nama pada database
        db.transaction(function(transaction) {
 
          transaction.executeSql('SELECT NAMA FROM AKUN ;',  [],
@@ -311,7 +330,9 @@ function filterquery(){
 
 
 //=================================================== Get Jumlah Akun ==========================================================
-  //Untuk mengambil jumlah akun, kegunaan saat ada di halaman pengaturan dan lock daftar jika sudah pernah mendaftar (akun > 0).
+/*
+  Untuk mengambil jumlah akun, digunakan saat ada di halaman pengaturan dan lock daftar jika sudah pernah mendaftar (akun > 0).
+*/
 
   var row;
   function GetJmlAkun(){
@@ -322,8 +343,10 @@ function filterquery(){
 
        
       RunBody();
+      //untuk mencetak pada halaman pengaturan (pengaturan.html)
       $('#jumlahakun').html('');
 
+      //menghitung jumlah akun
       db.transaction(function(transaction) {
 
          transaction.executeSql('SELECT NAMA FROM AKUN ;',  [],
@@ -331,7 +354,10 @@ function filterquery(){
 
             if (result != null && result.rows != null) {
                 row = result.rows.length;
+                //mencetak pada halaman pengaturan
                 $('#jumlahakun').append(row +' Anak');
+
+                //untuk mengunci daftar, apakah sudah pernah mendaftar atau belum. Kalau sudah maka akan muncul tanda gembok.
                 if(row>0){
                   document.getElementById('daftarKeterangan').innerHTML = 'Daftar '+' <img src="img/Top/lock.png" width="10%">';
                 }
@@ -349,6 +375,10 @@ function filterquery(){
 
 //=================================================== Get Picture =============================================================
 
+/*
+  Untuk menampilkan gambar user yang login.
+*/
+
 function GetPicture(){
 
       
@@ -358,16 +388,16 @@ function GetPicture(){
       }
 
       RunBody();
-      //$("#gambar").css("");
+      
        
        db.transaction(function(transaction) {
-        //alert('masuk picture lebih dalam');
          transaction.executeSql('SELECT LINKFOTO FROM AKUN ;',  [],
            function(transaction, result) {
 
             if (result != null && result.rows != null) {
                 var row = result.rows.item(0);
-                //alert('Aku adalah link di dalam '+row.LINKFOTO);
+
+                //menampilkan foto dengan cara mengubah background imagenya.
                 $('#gambar').css('background-image', 'url("' + row.LINKFOTO +'")');
             }
            },errorHandler);
@@ -379,38 +409,49 @@ function GetPicture(){
 
 //============================================= Get terakhir melakukan evaluasi ================================================
 
-  //untuk mengetahui terakhir melakukan evaluasi, jadi untuk menentukan bulan tersebut harus evaluasi atau tidak
-  //hasil disimpan dalam variabel bulantes
+/*
+  untuk mengetahui terakhir melakukan evaluasi, jadi untuk menentukan bulan tersebut harus evaluasi atau tidak
+  hasil disimpan dalam variabel bulantes
+*/
 
   function getTimeEvaluasi(){
 
-        
-
+        //mengambil waktu dari laporan
         db.transaction(function(transaction) {
         transaction.executeSql('SELECT waktu FROM LAPORAN ;',  [],
            function(transaction, result) {
 
             if (result != null && result.rows != null) {
+              //menghitung ada berapa record
               var waktutes = result.rows.length;
+
+              //apakah sudah ada record? apabila belum maka muncul alert
               if (waktutes == 0) {
                 alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
                 
               }
               else{
-
+                //mengambil record waktu yang paling akhir (waktutes-1)
                 var row = result.rows.item(waktutes-1).waktu;
+
+                //menghitung panjang character waktunya
                 var rowLength = row.length;
+
+                //diambil bulan
                 var bulantes = Math.abs(parseInt(row[rowLength-6] + row[rowLength-7]));
 
+                //mengambil bulan saat ini
                 var now = new Date();
                 var monthNow = now.getMonth()+1;
 
+                //melakukan pembandingan
                 if ( bulantes != monthNow) {
                   
                   alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
                 }
                 else
                 {
+                  //menyesuaikan warna font, apabila sudah melakukan evaluasi maka font terapi, laporan berwarna putih dan evaluasi berwarna merah
                   document.getElementById('fontterapi').style.color="white";
                   document.getElementById('fontlaporan').style.color="white";   
                   document.getElementById('fontevaluasi').style.color="red";
@@ -426,7 +467,9 @@ function GetPicture(){
   }
 
 //=============================================== Halaman Utama ======================================================
-  //kumpulan fungsi yang ada di halaman utama, ada getnama, getumur, get waktu terakhir evaluasi
+/*
+  Mengumpulkan beberapa fungsi yang bertugas di halaman utama
+*/
 
   function HalamanUtama(){
     RunBody();
@@ -438,20 +481,26 @@ function GetPicture(){
 
 //============================================== Halaman Evaluasi =====================================================
 
-//untuk menampilkan hasil dari evaluasi, berupa nama, nilai komunikasi, sosial, kognitif dan kebiasaan
-//sistem kerjanya pake passing parameter, jadi parameter variable hasil evaluasi di pass ke fungsinya.
-//nanti hasil dari evaluasi di simpan dulu dan di tampilkan .
+/*
+  untuk menampilkan hasil dari evaluasi pada indikasi.html, berupa nama, nilai komunikasi, sosial, kognitif dan kebiasaan
+  sistem kerjanya pake passing parameter, jadi parameter variable hasil evaluasi di passing ke fungsinya.
+*/
 
   function tesEvaluasi(kom, sos, kog, keb, tot){
 
+      //untuk mengambil waktu sekarang
       var now = new Date();
       var monthNow = now.getMonth()+1;
       var yearNow = now.getFullYear();
       var dateNow = now.getDate();
 
+      //mengagbungkan tanggal, bulan dan tahun
       var waktu = dateNow + '-' + monthNow + '-' + yearNow;
 
+      //menyimpan waktu untuk keperluan di terapi terstruktur. karena apabila tidak ada maka tanggal yang akan ditampilkan bernilai null
+      sessionStorage.setItem("simpantanggal",waktu);
 
+      //memasukkan ke database
       db.transaction(function(transaction){
 
           transaction.executeSql('INSERT INTO LAPORAN(waktu, komunikasi, sosial, kognitif, kebiasaan, total) VALUES (?,?,?,?,?,?)',[waktu, kom, sos, kog, keb, tot],nullHandler,errorHandler);
@@ -459,16 +508,23 @@ function GetPicture(){
       });
   }
 
+
 //===================================================== Display Evaluasi=================================================
 
+/*
+  Untuk menampilkan hasil dari evaluasi 
+*/
 function DisplayEval(){
   
+  //menampilkan nama user yang aktif
   getNama();
+
  $('#hasilKom').html('');
  $('#hasilSos').html('');
  $('#hasilKog').html('');
  $('#hasilKeb').html('');
  
+ //mengambil nilai komunikasi, sosial, kognitif, kebiasaan dan total yang ada
  db.transaction(function(transaction) {
   transaction.executeSql('SELECT komunikasi, sosial, kognitif, kebiasaan, total  FROM LAPORAN ;',  [],
    function(transaction, result) {
@@ -481,6 +537,7 @@ function DisplayEval(){
         var kogResult = row.kognitif;
         var kebResult = row.kebiasaan;
 
+        //menampilkan hasil dari evaluasi
         $('#hasilKom').append(parseInt(100-row.komunikasi*100/28) + '%');
         $('#hasilSos').append(parseInt(100-row.sosial*100/40) + '%');
         $('#hasilKog').append(parseInt(100-row.kognitif*100/36) + '%');
@@ -495,6 +552,9 @@ function DisplayEval(){
 
 //=================================================== Terapi===============================================
 
+/*
+  menampilkan list terapi yang ada. (pada listterapi.html) dan juga menyambungkannya ke petunjuk terapi.
+*/
   function terapi(bro){
     var bre = bro;
     var kategori;
@@ -507,6 +567,8 @@ function DisplayEval(){
     while(node.hasChildNodes()){
       node.removeChild(node.firstChild);
     }
+
+    //pengaturan font
     document.getElementById('dasarTerapi1').style.backgroundColor = '';
     document.getElementById('dasarTerapi1').style.color = '#ffffff';
     document.getElementById('dasarTerapi2').style.backgroundColor = '';
@@ -553,6 +615,8 @@ function DisplayEval(){
 
 
     document.getElementById("tabel").style.display = '';
+
+    //menyaring data-data berupa id terapi dll untuk selanjutnya ditampilkan dan juga untuk melanjutkan ke petunjuk terapi
     db.transaction(function(transaction) 
     {
       transaction.executeSql('SELECT ID_TERAPI,LEVEL,PILIHAN,KATEGORI_TANYATERAPI FROM TERAPI WHERE KATEGORI_TANYATERAPI="' + kategori + '" And LEVEL="Dasar"  ;',  [],
@@ -565,9 +629,13 @@ function DisplayEval(){
               {
                 var row = result.rows.item(i);
                 var idmasuk = row.ID_TERAPI;
+
+                //untuk menampilkan hasil ketika pilihan terapi dipilih, dan juga untuk menyimpan fungsi onclick().
                 $('#tabel').append('<tr><td width="60%" onClick="linkPetTerapi('+idmasuk+',\'Petunjuk'+row.LEVEL+row.KATEGORI_TANYATERAPI+row.PILIHAN+'\')">' + row.PILIHAN + '</td><td width="40%"><img width="100%" height="100%" src="../../../../img/Menu/'+  row.PILIHAN+'.png" align="right"></td></tr>');
                 
               }
+
+              //responsive font
               $('#tabel tr td').flowtype({fontRatio:13});
               $('#tabel tr td').flowtype({fontSize:15});
           }
@@ -577,28 +645,20 @@ function DisplayEval(){
   
   
      
-//================================================== Link Petunjuk Terapi (linkPetTerapi()) ============================================
-
+//================================= Link Petunjuk Terapi (linkPetTerapi()) ============================================
+/*
+  untuk menyimpan id terapi dan menghubungkan ke petunjuk terapi.
+*/
   function linkPetTerapi(id,a){
 
-
+      //menyimpan id terapi
       sessionStorage.setItem("idterapidasar",id);
+
+      //untuk menyimpan link html petunjuk terapi.
       linkPT = a;  
       sessionStorage.setItem('pilihan', linkPT);
-      //alert(linkPT +'.html');
       window.location.href = linkPT +'.html';
       
-  }
-
-
-//============================================= Link Terapi =================================================================
-
-  function linkterapi(){
-
-    var data = sessionStorage.getItem('pilihan');
-   // alert(data);
-
-
   }
 
 
@@ -614,13 +674,18 @@ function DisplayEval(){
 
          $('#lbUsers').html('');
           db.transaction(function(transaction) {
-         transaction.executeSql('DROP TABLE AKUN', [], nullHandler,errorHandler);
+        /* transaction.executeSql('DROP TABLE AKUN', [], nullHandler,errorHandler);
         transaction.executeSql('DROP TABLE CATATAN', [], nullHandler,errorHandler);
          transaction.executeSql('DROP TABLE LAPORAN', [], nullHandler,errorHandler);
          transaction.executeSql('DROP TABLE NILAI', [], nullHandler,errorHandler);
          transaction.executeSql('DROP TABLE REWARD', [], nullHandler,errorHandler);
          transaction.executeSql('DROP TABLE PERTANYAAN', [], nullHandler,errorHandler);
-         transaction.executeSql('DROP TABLE TERAPI', [], nullHandler,errorHandler);
+         transaction.executeSql('DROP TABLE TERAPI', [], nullHandler,errorHandler);*/
+         transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', ["4", "6", "1", "BN"]);
+         transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', ["9", "15", "1", "BD"]);
+         transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', ["15", "20", "1", "KK"]); 
+
+
          
 
          
@@ -674,7 +739,12 @@ function ambilData(){
    // alert('selesai ambil data');
 }
 
+
 //======================================== Tampil Laporan Total =====================================================
+/*
+  Untuk menampilkan laporan->total
+*/
+
       function displayTotal(){
         RunBody();
         db.transaction(function(transaction) {
@@ -776,8 +846,10 @@ function ambilData(){
          },errorHandler,nullHandler);
       }
 
-//===================================================== Tampil Laporan Aspek =====================================
-
+//=============================== Tampil Laporan Aspek =====================================
+/*
+  Untuk menampilkan laporan->aspek
+*/
 
     function displayAspek(){
         RunBody();
@@ -927,7 +999,11 @@ function ambilData(){
 
 
 
-//======================================================= Display Per Bulan ======================================
+//=================================== Display Per Bulan ======================================
+
+/*
+  Untuk menampilkan laporan->bulan
+*/
 
 function displayBulan(){
 
@@ -1050,13 +1126,17 @@ function displayBulan(){
 
 //================================================= Ambil nilai =============================================
 
+/*
+  Lanjutan dari persentase(bnr,slh,idp). Digunakan untuk mengambil nilai benar salah awal dan mengupdatenya dengan yang baru
+*/
 
   function ambilNilaiLaporan(index1, index2, bnr, slh){
     var iter = 0, iter2 = 0;
     db.transaction(function(transaction) {
     
     for (var i = 0; i < index1; i++) { 
-      //alert('i: ' + i + 'gabung1[i]: ' + gabung1[i]);
+      
+      //mengambil nilai benar dan salah yang awal (belum diupdate)
       transaction.executeSql('SELECT BENAR, SALAH FROM NILAI WHERE KATEGORI_ASPEK = ? AND ASPEK = ?;',  ["1", gabung1[i]],
       function(transaction, result) {
 
@@ -1064,20 +1144,19 @@ function displayBulan(){
         benar1 = parseInt(row.BENAR);
         salah1 = parseInt(row.SALAH);
 
-        
+        //menambahkan dengan yang terbaru
         var inputben1 = parseInt(benar1 + bnr);
         var inputsal1 = parseInt(salah1 + slh);
 
-      //  alert('gabung1: '+gabung1[iter]);
-       // alert('benar1 akhir ' + inputben1 + 'salah1 akhir ' + inputsal1);
-        
-        
+       //mengupdate nilai ke dalam tabel nilai 
        transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben1, inputsal1, "1", gabung1[iter]]); 
+
        iter = iter + 1;
-        //alert('i '+i);
       },errorHandler);
     }
     
+    //sama dengan atas
+
     for (var j = 0; j < index2; j++) {
       transaction.executeSql('SELECT BENAR, SALAH FROM NILAI WHERE KATEGORI_ASPEK = ? AND ASPEK = ?;',  ["2", gabung2[j]],
       function(transaction, result) {
@@ -1090,8 +1169,6 @@ function displayBulan(){
             
             var inputben2 = parseInt(benar2 + bnr);
             var inputsal2 = parseInt(salah2 + slh);
-           // alert('benar2 awal ' + inputben2 + 'salah2 awal ' + inputsal2);
-          //  alert('gabung2: ' +gabung2[iter2]);
             
            transaction.executeSql('UPDATE NILAI SET BENAR=?, SALAH=? WHERE KATEGORI_ASPEK=? AND ASPEK =?', [inputben2, inputsal2, "2", gabung2[iter2]]);
             iter2 = iter2+1;
@@ -1106,25 +1183,33 @@ function displayBulan(){
 
 
 
-//================================================= Hitung persentase laporan =======================================================
+//=================================== Hitung persentase laporan ========================================
+/*
+  Untuk memasukkan nilai benar dan salah pada terapi yang telah dilakukan.
+  idp adalah id terapi yang telah dilakukan.
+*/
 
 function persentase(bnr,slh,idp){
 
     RunBody();
     
+    //mengambil id terapi dan aspek dari terapi
     db.transaction(function(transaction) {
       transaction.executeSql('SELECT ID_TERAPI, ASPEK1, ASPEK2 FROM TERAPI WHERE ID_TERAPI = ?;',  [idp],
         function(transaction, result) {
           if (result != null && result.rows != null) {
-             
+
               for (var i = 0; i < result.rows.length; i++) {
+                  //mengambil aspek 1 dan 2
                   var target1 = result.rows.item(i).ASPEK1;
                   var target2 = result.rows.item(i).ASPEK2;
+
+                  //menghitung panjang karakter aspek1 dan aspek2
                   var panjang1 = result.rows.item(i).ASPEK1.length;
                   var panjang2 = result.rows.item(i).ASPEK2.length;
               }
               
-
+              //memotong2 aspek1 dan 2 (karena dipisahkan oleh tanda "|")
               for (var i = 0 ; i < panjang1; i++) {
                   if(target1[i] == "|"){
                     var dummy = target1[i];
@@ -1142,6 +1227,7 @@ function persentase(bnr,slh,idp){
                   }
               }
 
+              //memotong2 aspek1 dan 2 (karena dipisahkan oleh tanda "|")
               for (var i = 0 ; i < panjang2; i++) {
                 
                   if(target2[i] == "|"){
@@ -1161,6 +1247,7 @@ function persentase(bnr,slh,idp){
               }
           }
           
+        //memasukkan nilai ke tabel nilai
          ambilNilaiLaporan(index1, index2, bnr, slh);
       },errorHandler);
     },errorHandler,nullHandler);
@@ -1168,43 +1255,11 @@ function persentase(bnr,slh,idp){
 }
 
 
-//============================================ DISPLAY PERSENTASE ================================================
-/*
-function displayPersentase(){
-  RunBody();
-    db.transaction(function(transaction) {
-      transaction.executeSql('SELECT ID_NILAI, BENAR, SALAH FROM NILAI;',  [],
-        function(transaction, result) {
-          if (result != null && result.rows != null) {
-             
-              for (var i = 0; i < result.rows.length; i++) {
-                  idn[i] = result.rows.item(i).ID_NILAI;
-                  disbenar[i] = parseInt(result.rows.item(i).BENAR);
-                  dissalah[i] = parseInt(result.rows.item(i).SALAH);
-                  distotal[i] = parseInt(disbenar[i] + dissalah[i]);
-                  bentotal[i] = parseInt(disbenar[i] / distotal[i] * 100);
-                  idhtml[i] = 'a'+parseInt(i-1);
-                  //saltotal[i] = parseInt(dissalah[i] / distotal[i] * 100);
-
-              }
-
-              
-              for (var i = 0; i < 2; i++) {
-                 document.getElementById(idhtml[i]).setAttribute("aria-valuenow", bentotal[i]);
-
-              }
-              //alert(disbenar[31]);
-
-            }
-              
-      },errorHandler);
-    },errorHandler,nullHandler);
-}
-
-*/
-
 //======================================================== SET DEFAULT REWARD ====================================================
 
+/*
+  Untuk meng-set reward menjadi tidak dipilih semua.
+*/
 function setDefault(){
   RunBody();
   db.transaction(function(transaction) {
@@ -1222,7 +1277,10 @@ function setDefault(){
 }
 
 
-//======================================================= REWARD =================================================================
+//======================================================= REWARD =======================================
+/*
+  Untuk emmilih reward mana yang akan digunakan
+*/
 
   function reward(){
     setDefault();
@@ -1240,3 +1298,425 @@ function setDefault(){
     },errorHandler,nullHandler);
 
   }
+
+
+
+// ======================================= display hasil =================================================
+/*
+  Untuk menampilkan hasil dari query
+*/
+
+function displayhasil(duplevelsa, dupkategorida, duppilihanti){
+  
+  //mengambil benar, salah, persen, tanggal dari session storage
+  var benarsesi = sessionStorage.getItem('simpanbenar');
+  var salahsesi = sessionStorage.getItem('simpansalah');
+  var persensesi = sessionStorage.getItem('simpanpersen');
+  var tanggalsesi = sessionStorage.getItem('simpantanggal');
+  
+  var a = duplevelsa;
+  var b = dupkategorida;
+  var c = duppilihanti;
+  
+  
+ //menampilkan data hasil query
+  $('#tampilrincian').append('<tr class="recordTerapiTerstruktur" id="tampilrincian"><td width="15%">'+a+'</td><td width="15%">' + b + '</td><td width="20%">' + c + '</td><td width="10%">' + benarsesi + '</td><td width="10%">' + salahsesi + '</td><td width="7%">' + persensesi + '%</td><td width="23%">'+ tanggalsesi +'</td></tr>');
+
+
+}
+
+
+
+
+//========================================= Ambil nilai dari terapi ==============================
+
+function ambilnilai(panjangtarget, index, levelsatu, kategoridua, pilihantiga){
+
+    
+    var persen;
+    var benarsesi = sessionStorage.getItem('simpanbenar');
+    var salahsesi = sessionStorage.getItem('simpansalah');
+    var gabungsesi = sessionStorage.getItem('simpangabung');
+    var pjg = panjangtarget;
+
+    var duplevelsa = levelsatu;
+    var dupkategorida = kategoridua;
+    var duppilihanti = pilihantiga;
+    var iter = 0;
+
+    db.transaction(function(transaction) {
+      
+      transaction.executeSql('SELECT BENAR, SALAH, TANGGAL FROM NILAI WHERE ASPEK = ?;',  [gabungsesi],
+        function(transaction, result) {
+          if (result != null && result.rows != null) {      
+            for (var i = 0; i < result.rows.length; i++) {
+              
+              //apabila index masih nol, berarti baru masuk kesini, sehingga perlu adanya inisialisasi
+              if (index == 0) {
+                var benarsementara = 0;
+                sessionStorage.setItem("simpanbenar",benarsementara);
+                var salahsementara = 0;
+                sessionStorage.setItem("simpansalah",salahsementara);
+
+              }
+
+              //untuk mendapatkan benar salah dan gabung dari session storage
+              var benarsesi = parseInt(sessionStorage.getItem('simpanbenar'));
+              var salahsesi = parseInt(sessionStorage.getItem('simpansalah'));
+              var gabungsesi = sessionStorage.getItem('simpangabung');
+
+              //untuk mendapatkan benar dan salah dan tanggal dari database
+              var ambilbenar = result.rows.item(i).BENAR;
+              var ambilsalah = result.rows.item(i).SALAH;
+              var ambiltanggal = result.rows.item(i).TANGGAL;
+
+              //menambahkan benar database dan benar session storage.
+              benarfix = parseInt(benarsesi + ambilbenar);
+              salahfix = parseInt(salahsesi + ambilsalah);
+
+              //apabila sama-sama nol, maka persen = 0
+              if (benarfix==0 && salahfix==0) {
+                persen = 0;
+              }
+              else{
+                persen = parseInt(benarfix/(benarfix+salahfix)*100);
+
+              }
+
+              //menyimpan kembali pada session storage
+              sessionStorage.setItem("simpanbenar",benarfix);
+              sessionStorage.setItem("simpansalah",salahfix);
+              sessionStorage.setItem("simpantanggal",ambiltanggal);
+              sessionStorage.setItem("simpanpersen",persen);
+              
+
+            }
+           
+          }
+          
+          //apabila hanya 1 aspek (2 karakter), maka langsung ditampilkan
+          if (pjg==2) {
+            displayhasil(duplevelsa, dupkategorida, duppilihanti); 
+          }
+
+          //apabila lebih dari 1 aspek maka menunggu sampai semua aspek dihitung dulu
+          //iter penanda apabila sudah iter+1 sama dengan index maka akan di display hasilnya.
+          if (iter+1 == index) {
+            displayhasil(duplevelsa, dupkategorida, duppilihanti);  
+          };      
+         
+      },errorHandler);
+    },errorHandler,nullHandler);
+   
+
+}
+
+//======================================= Potong Aspek =========================================
+
+/*
+  Lanjutan dari AmbilTerapi()
+  Untuk memotong aspek menjadi bagian-bagian dan dipisahkan dari tanda "|"
+*/
+
+function potongaspek(panjangaspek, ambilaspek, levelsesi, kategorisesi, pilihansesi){
+    var count = 0;
+    var index = 0;
+    var panjangaspek = ambilaspek.length;
+    var tanda = 0;
+
+    var levelsatu = levelsesi;
+    var kategoridua = kategorisesi;
+    var pilihantiga = pilihansesi;
+    var panjangtarget = panjangaspek;
+
+    //memotong aspek menjadi bagian-bagian
+    for (var j = 0 ; j < panjangaspek; j++) {
+        if(ambilaspek[j] == "|"){
+          var dummy = ambilaspek[j];
+        }
+        else{
+          putus1[count] = ambilaspek[j];
+          count++;
+
+          if (count == 2) {
+            gabung1[index] = putus1[0] + putus1[1];
+            //menyimpan potongan aspek ke dalam session storage
+            sessionStorage.setItem("simpangabung",gabung1[index]);
+            
+            //memanggil ambilnilai untuk dilakukan penambahan nilai
+            ambilnilai(panjangtarget, index, levelsatu, kategoridua, pilihantiga);
+
+            index = index+1;
+            count= 0;          
+          }
+        }
+    }
+    tanda = tanda +1;
+
+}
+
+//======================================= Display Terapi Terstruktur =========================
+/*
+  Untuk menampilkan data ke halaman rincian terapi terstruktur
+*/
+  function AmbilTerapi(){
+    RunBody();
+
+    //untuk mencetak header tabel
+    $('#tampilrincian').html('');
+    $('#tampilrincian').append('<tr class="atributTerapiTerstruktur"><td width="15%">Level</td><td width="15%">Kategori</td><td width="20%">Nama</td><td width="10%">Benar</td><td width="10%">Salah</td><td width="7%">%</td><td width="23%">Tanggal Terakhir</td></tr>');
+
+    //untuk mengambil level dll yang digunakan untuk keperluan mengambil data dari aspek yang ada dalam terapi tersebut
+    db.transaction(function(transaction) 
+    {
+      transaction.executeSql('SELECT LEVEL,PILIHAN,KATEGORI_TANYATERAPI, ASPEK1 FROM TERAPI;',  [],
+        function(transaction, result) 
+        {
+          if (result != null && result.rows != null) 
+          {
+              
+              for (var i = 0; i < result.rows.length; i++) 
+              {
+                
+                //mengambil data level, kategori, pilihan, aspek dan panjang aspek
+                var lvl = result.rows.item(i).LEVEL;
+                var ambilkategori = result.rows.item(i).KATEGORI_TANYATERAPI;
+                var ambilpilihan = result.rows.item(i).PILIHAN;
+                var ambilaspek = result.rows.item(i).ASPEK1;
+                var panjangaspek = ambilaspek.length;
+
+                //menyimpan level, pilihan dan kategori ke dalam session storage
+                sessionStorage.setItem("simpanlevel",lvl);
+                sessionStorage.setItem("simpanpilihan",ambilpilihan);
+                sessionStorage.setItem("simpankategori",ambilkategori);
+
+                //apabila terapi tersebut tidak mempunyai aspek
+                if (ambilaspek == "") {
+                  //mengambil level, kategori dan pilihan dari session storage
+                  var levelsesi = sessionStorage.getItem('simpanlevel');
+                  var kategorisesi = sessionStorage.getItem('simpankategori');
+                  var pilihansesi = sessionStorage.getItem('simpanpilihan');
+
+                  //mengeset benar dan salah dan persen ke sesion strorage.
+                  var benarsementara = 0;
+                  sessionStorage.setItem("simpanbenar",benarsementara);
+                  var salahsementara = 0;
+                  sessionStorage.setItem("simpansalah",salahsementara);
+                  sessionStorage.setItem("simpanpersen","0");
+
+                  //langsung menuju ke fungsi display untuk menampilkan hasilnya
+                  displayhasil(levelsesi, kategorisesi, pilihansesi);
+                }
+                else{
+                  //mengambil level, kategori dan pilihan dari session storage
+                  var levelsesi = sessionStorage.getItem('simpanlevel');
+                  var kategorisesi = sessionStorage.getItem('simpankategori');
+                  var pilihansesi = sessionStorage.getItem('simpanpilihan');
+
+                  potongaspek(panjangaspek,ambilaspek, levelsesi, kategorisesi, pilihansesi);
+
+                }
+             
+                
+              }
+              
+          }
+        },errorHandler);
+    },errorHandler,nullHandler);
+  }
+
+
+
+
+//=========================================== Query yang Ada di dalam HTML ==================================================
+
+/*      
+==============================index.html=======================================
+
+  db.transaction(function(transaction) {
+
+  // untuk mengambil jumlah dan menyaring apakah user sudah pernah mendaftar atau belum
+   transaction.executeSql('SELECT NAMA FROM AKUN ;',  [],
+     function(transaction, result) {
+
+      if (result != null && result.rows != null) {
+          row = result.rows.length;
+          $('#jumlahakun').append(row +' Anak');
+
+          //apabila sudah pernah mendaftar maka tidak bisa masuk ke daftar.html
+          if(row>0){
+            alert("Edisi Bronze Hanya Tersedia untuk 1 User");
+          }
+          else{
+            window.location.href = "daftar.html";
+          }
+      }
+     },errorHandler);
+  },errorHandler,nullHandler);
+
+*/
+
+
+/* 
+======================== utama.html ===================================
+
+-------------------------evaluasi () -----------------------
+
+  db.transaction(function(transaction) {
+
+  //untuk mengetahui apakah user sudah pernah melakukan evaluasi pada bulan ini atau belum.
+  transaction.executeSql('SELECT waktu FROM LAPORAN ;',  [],
+   function(transaction, result) {
+
+    if (result != null && result.rows != null) {
+      var waktutes = result.rows.length;
+      
+      //apabila belum pernah melakukan evaluasi sama sekali
+      if (waktutes == 0) {
+        window.location.href = "halaman_utama/diagnosa.html";
+      }
+      
+      if (waktutes >= 1) {
+        //mengambil waktu terakhir dalam database
+        var row = result.rows.item(waktutes-1).waktu;
+        var rowLength = row.length;
+        var bulantes = Math.abs(parseInt(row[rowLength-6] + row[rowLength-7]));
+
+        //mengambil waktu sekarang
+        var now = new Date();
+        var monthNow = now.getMonth()+1;
+        
+        //apabila bulan tes sama dengan bulan sekarang
+        if ( bulantes == monthNow) {
+          alert('Anda sudah melakukan Evaluasi untuk bulan ini');
+        }
+        else
+        {                   
+          window.location.href = "halaman_utama/diagnosa.html";
+        }
+      }
+    }
+    
+   },errorHandler);
+  },errorHandler,nullHandler);
+
+
+-----------------------------------function terapi ()-------------------------------------
+
+    db.transaction(function(transaction) {
+
+    //untuk mencegah masuk ke terapi apabila user belum melakukan evaluasi
+     transaction.executeSql('SELECT waktu FROM LAPORAN ;',  [],
+       function(transaction, result) {
+
+        if (result != null && result.rows != null) {
+          var waktutes = result.rows.length;
+
+          //apabila tidak ada record dalam laporan
+          if (waktutes == 0) {
+            alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+            
+          }
+          else{
+            //mengambil waktu terakhir dalam record laporan
+            var row = result.rows.item(waktutes-1).waktu;
+            var rowLength = row.length;
+            var bulantes = Math.abs(parseInt(row[rowLength-6] + row[rowLength-7]));
+            
+            //mengambil waktu sekarang
+            var now = new Date();
+            var monthNow = now.getMonth()+1;
+
+            //jika bulan tes dan bulan sekarang berbeda, maka dicegah masuk terapi
+            if ( bulantes != monthNow) {
+              alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+            }
+            else
+            {
+              
+              window.location.href = "halaman_utama/kategori.html";
+            }
+
+          }
+
+        }
+        
+        
+       },errorHandler);
+    },errorHandler,nullHandler);
+
+
+----------------------------function laporan ()--------------------------------------
+
+    db.transaction(function(transaction) {
+
+    //untuk mencegah masuk ke laporan apabila user belum melakukan evaluasi
+     transaction.executeSql('SELECT ID_LAPORAN FROM LAPORAN ;',  [],
+       function(transaction, result) {
+
+        if (result != null && result.rows != null) {
+          var jmlrow = result.rows.length;
+
+          //apabila belum pernah melakukan evaluasi maka dicegah masuk ke laporan
+          if (jmlrow == 0) {
+            alert('Anda Belum Melakukan Evaluasi, silahkan lakukan evaluasi');
+          }
+          else{
+            window.location.href = "halaman_utama/halaman_laporan/laporan.html";
+          }
+
+        }
+        
+        
+       },errorHandler);
+    },errorHandler,nullHandler);
+
+*/
+
+
+/*  
+=============================== persentase.html ==================================================
+
+// untuk menampilkan persentase nilai yang diperoleh
+    RunBody();
+    db.transaction(function(transaction) {
+      //mengambil id, benar dan salah dari nilai
+      transaction.executeSql('SELECT ID_NILAI, BENAR, SALAH FROM NILAI;',  [],
+        function(transaction, result) {
+
+          var idn = [], disbenar = [], dissalah = [], distotal = [], bentotal = [], idhtml = [];
+          if (result != null && result.rows != null) {
+             
+              for (var i = 0; i < result.rows.length; i++) {
+
+                  //mengambil id, benar dan salah dari nilai
+                   idn[i] = result.rows.item(i).ID_NILAI;
+                   disbenar[i] = parseInt(result.rows.item(i).BENAR);
+                   dissalah[i] = parseInt(result.rows.item(i).SALAH);
+                   distotal[i] = parseInt(disbenar[i] + dissalah[i]);
+
+                   //apabila benar dan salah 0, maka total akan 0
+                   if (disbenar[i] == 0 && dissalah[i] == 0) {
+                      bentotal[i] = 0;
+                   }
+                   else{
+                    bentotal[i] = parseInt(disbenar[i] / distotal[i] * 100);  
+                   }
+                   idhtml[i] = 'a'+parseInt(i+1);
+                  //saltotal[i] = parseInt(dissalah[i] / distotal[i] * 100);
+
+              }
+              
+              //menampilkan nilai berupa grafik 
+              for (var i = 0; i < result.rows.length; i++) {
+                 document.getElementById(idhtml[i]).setAttribute("aria-valuenow", bentotal[i]);
+                 document.getElementById(idhtml[i]).style.width = bentotal[i]+'%';
+                 document.getElementById(idhtml[i]).innerHTML = bentotal[i]+'%';
+              }
+
+            }
+              
+      },errorHandler);
+    },errorHandler,nullHandler);
+
+*/

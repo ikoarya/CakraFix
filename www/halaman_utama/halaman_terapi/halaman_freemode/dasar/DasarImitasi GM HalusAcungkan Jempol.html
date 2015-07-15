@@ -43,12 +43,22 @@
       } , 2000);
       
     } // end upDate
+    var a=0;
+    sessionStorage.setItem('benarsimpan', a);
     function bagus(){
       document.getElementById("suarax").play();
-      imitasi();         
+      imitasi();  
+      a++;
+      //alert(a);
+      sessionStorage.setItem('benarsimpan', a);       
     }
+     var b=0;
+    sessionStorage.setItem('salahsimpan', b);
     function tidak(){
       document.getElementById("suaray").play();
+      b++;
+      //alert(b);
+      sessionStorage.setItem('salahsimpan', b);
     }
   </script>
 </head>
