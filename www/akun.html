@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SLIDE DEMO</title>
+		<link href="css/level.css" rel="stylesheet" type="text/css"  />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/flowtype.js"></script>
+		<script type="text/javascript">
+			function edit()
+			{
+				if (document.getElementById("edit").innerHTML == 'EDIT')
+				{
+					document.getElementById("nama").contentEditable ="true";
+					$('#nama').focus();
+					document.getElementById("edit").innerHTML = 'Selesai';
+				}
+
+				else if (document.getElementById("edit").innerHTML == 'Selesai')
+				{
+					document.getElementById("nama").contentEditable = "false";
+					document.getElementById("edit").innerHTML = 'EDIT';
+				}
+				
+			}
+		</script>
+		<style>
+		    [contenteditable="true"].single-line {
+		        white-space: nowrap;
+		        overflow: hidden;
+		    } 
+		    [contenteditable="true"].single-line br {
+		        display:none;
+
+		    }
+		    [contenteditable="true"].single-line * {
+		        display:inline;
+		        white-space:nowrap;
+		    }
+		    #nama:focus {
+		    	background-color: rgba(125,125,125,0.3);
+		    }
+		</style>
+	</head>
+
+	<body>
+		<div class="theFrame">
+			<iframe src="db.html"></iframe>
+		</div>
+		<div class="back-db">
+			<button id="hapus">Hapus</button>
+			<button id="edit" onclick="javascript:edit()">EDIT</button>
+
+
+			<img src="img/Pengaturan/Rekaman.png" />
+			<div id="tesss">
+				<h5 class="single-line" id="nama" contenteditable="false">APS</h5>
+				
+			</div>
+			<h5 class="single-line" id="ttl">24/10/1994</h5>
+			<h5 class="single-line" id="usia">20 tahun</h5>
+			<h5 class="single-line" id="jeniskelamin">Laki-laki</h5>
+		</div>
+
+	</body>
+	
+</html>
