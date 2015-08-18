@@ -193,8 +193,16 @@ button#hapus {
   margin-left: 0.5%;
 }
 
+button#edit {
+  float:left;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  margin-left: 0.5%;
+}
+
 .back-db {
-  background-image: url('../img/Akun/db.jpg');
+  background-image: url('../img/db.jpg');
   width: 75%;
   float: right;
   background-repeat: no-repeat;
@@ -219,7 +227,6 @@ button#hapus {
   padding: 0;
 
 }
-
 /********************************************************************************************************************
 CSS UNTUK HALAMAN REWARD*********************************************************************************************
 ********************************************************************************************************************/
