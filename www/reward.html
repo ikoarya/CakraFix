@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SLIDE DEMO</title>
+		<link href="css/level.css" rel="stylesheet" type="text/css"  />
+		
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/flowtype.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			function videoFunc() {
+				var vid = document.getElementById("benarsalah");
+				var sua = document.getElementById("benarsalah2");
+				var suaB = document.getElementById("menu-option3");
+				var suaS = document.getElementById("menu-option4");
+			
+				if (vid.style.display == 'none' && sua.style.display == 'none')
+				{
+					vid.style.display = 'block';
+				}
+				else if (vid.style.display == 'none' && sua.style.display == 'block')
+				{
+					if (suaB.style.display == 'block')
+						suaB.style.display = 'none';
+					else if (suaS.style.display == 'block')
+						suaS.style.display = 'none';
+					sua.style.display = 'none';
+					vid.style.display = 'block';
+				}
+			}
+
+			function videoBenarFunc() {
+				var vidB = document.getElementById("menu-option");
+				var vidS = document.getElementById("menu-option2");
+
+				if (vidB.style.display == 'none' && vidS.style.display == 'none')
+					vidB.style.display = 'block';
+				else if (vidB.style.display == 'none' && vidS.style.display == 'block')
+				{
+					vidS.style.display = 'none';
+					vidB.style.display = 'block';
+				}
+
+				filmed(1);
+			}
+
+			function videoSalahFunc() {
+				var vidB = document.getElementById("menu-option");
+				var vidS = document.getElementById("menu-option2");
+
+				if (vidS.style.display == 'none' && vidB.style.display == 'none')
+					vidS.style.display = 'block';
+				else if (vidS.style.display == 'none' && vidB.style.display == 'block')
+				{
+					vidB.style.display = 'none';
+					vidS.style.display = 'block';
+				}
+
+				filmed(2);
+			}
+
+			function suaraFunc() {
+				var vid = document.getElementById("benarsalah");
+				var sua = document.getElementById("benarsalah2");
+				var vidB = document.getElementById("menu-option");
+				var vidS = document.getElementById("menu-option2");
+
+				if (sua.style.display == 'none' && vid.style.display == 'none')
+				{
+					sua.style.display = 'block';
+				}
+				else if (sua.style.display == 'none' && vid.style.display == 'block')
+				{
+					if (vidB.style.display == 'block')
+						vidB.style.display = 'none';
+					else if (vidS.style.display == 'block')
+						vidS.style.display = 'none';
+					vid.style.display = 'none';
+					sua.style.display = 'block';
+				}
+			}
+
+			function suaraBenarFunc() {
+				var suaB = document.getElementById("menu-option3");
+				var suaS = document.getElementById("menu-option4");
+
+				if (suaB.style.display == 'none' && suaS.style.display == 'none')
+					suaB.style.display = 'block';
+				else if (suaB.style.display == 'none' && suaS.style.display == 'block')
+				{
+					suaS.style.display = 'none';
+					suaB.style.display = 'block';
+				}
+			}
+
+			function suaraSalahFunc() {
+				var suaB = document.getElementById("menu-option3");
+				var suaS = document.getElementById("menu-option4");
+
+				if (suaS.style.display == 'none' && suaB.style.display == 'none')
+					suaS.style.display = 'block';
+				else if (suaS.style.display == 'none' && suaB.style.display == 'block')
+				{
+					suaB.style.display = 'none';
+					suaS.style.display = 'block';
+				}
+			}
+
+			function sounded(value) {
+				var benar1 = $("#benar1")[0];
+				var benar2 = $("#benar2")[0];
+				var benar3 = $("#benar3")[0];
+				var salah1 = $("#salah1")[0];
+				var salah2 = $("#salah2")[0];
+
+				if (value == '0')
+					benar1.play();
+				else if (value == '1')
+					benar2.play();
+				else if (value == '2')
+					benar3.play();
+				else if (value == '3')
+					salah1.play();
+				else if (value == '4')
+					salah2.play();
+			}
+
+			function filmed(value) {
+				var benarvid = $("#vidbenar")[0];
+				var salahvid = $("#vidsalah")[0];
+
+				if (value == 1)
+					benarvid.play();
+				else if (value == 2)
+					salahvid.play();
+			}
+
+		</script>
+	</head>
+
+	<body bgcolor="#000000" >
+
+		<div class="theFrame">
+			<iframe src="db.html"></iframe>
+		</div>
+		<div class="back-db2">
+
+			<div class="figured">
+				<figure id="video" onclick="Javascript:videoFunc()">
+					<img src="img/Pengaturan/video.png" />
+					<figcaption>Video</figcaption>
+				</figure>
+				<figure id="suara" onclick="Javascript:suaraFunc()">
+					<img src="img/Pengaturan/suara.png" />
+					<figcaption>Suara</figcaption>
+				</figure>
+			</div>
+
+			<div id="benarsalah" style="display: none;">
+				<div style="display:inline;" onclick="Javascript:videoBenarFunc()">
+					<img src="img/Pengaturan/benar.png" />
+					<h6>Benar</h6>
+				</div>
+				<div style="display:inline;" onclick="Javascript:videoSalahFunc()">
+					<img src="img/Pengaturan/salah.png" />
+					<h6>Salah</h6>
+				</div>
+			</div>
+
+			<div id="benarsalah2" style="display: none;">
+				<div style="display:inline;" onclick="Javascript:suaraBenarFunc()">
+					<img src="img/Pengaturan/benar.png" />
+					<h6>Benar</h6>
+				</div>
+				<div style="display:inline;" onclick="Javascript:suaraSalahFunc()">
+					<img src="img/Pengaturan/salah.png" />
+					<h6>Salah</h6>
+				</div>
+			</div>
+
+			<div id="menu-option" style="display: none;">
+		
+				<div>
+					<video id="vidbenar" style="display:block;">
+						<source src="video/benar.mp4">
+					</video>
+				</div>
+				
+			</div>
+
+			<div id="menu-option2" style="display: none;">
+
+				<div>
+					<video id="vidsalah" style="display:block;">
+						<source src="video/salah.mp4">
+					</video>
+				</div>
+			</div>
+
+
+			<div id="menu-option3" style="display: none;">
+				<p>Pilih yang Sesuai:</p>
+				<select id="ddl" onchange="Javascript:sounded(this.value);">
+					<option></option>
+					<option value='0'><p>Bagus</p></option>
+					<option value='1'><p>Hebat</p></option>
+					<option value='2'><p>Pintar</p></option>
+				</select>
+			</div>
+			<div id="menu-option4" style="display: none;">
+				<p>Pilih yang Sesuai:</p>
+				<select id="ddl" onchange="Javascript:sounded(this.value);">
+					<option></option>
+					<option value='3'><p>Tidak</p></option>
+					<option value='4'><p>Bukan</p></option>
+				</select>
+			</div>
+		</div>
+
+		<audio id="benar1" preload="auto">
+			<source src="suara/Bagus.mp3">
+			<source src="suara/Bagus.wav">
+		</audio>
+		<audio id="benar2" preload="auto">
+			<source src="suara/Bagus.mp3">
+			<source src="suara/Bagus.wav">
+		</audio>
+		<audio id="salah1" preload="auto">
+			<source src="suara/Tidak.mp3">
+			<source src="suara/Tidak.wav">
+		</audio>
+<!--
+		<script type="text/javascript">
+			$('body').flowtype();
+		</script>
+-->
+	</body>
+</html>
