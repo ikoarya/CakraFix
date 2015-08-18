@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SLIDE DEMO</title>
+		<link href="css/level.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/flowtype.js"></script>
+		<script type="text/javascript">
+			function addAkun() {
+ 				var divTable = document.getElementById("akun");
+ 	
+ 				var myTable = document.createElement("table");
+ 				myTable.setAttribute("id", "tg");
+
+				var count = 1;
+
+				for (var i = 0; i < 5; i++) {
+				    var row = document.createElement("tr");
+				    if (count != 1)
+				    {
+				        var cell = document.createElement("td");
+				        var cellText = document.createTextNode("This is cell " + i);
+				        cell.appendChild(cellText);
+				    }
+				    else
+				    {
+				        var cell = document.createElement("td");
+				        cell.setAttribute("width", "15%");
+				        cell.setAttribute("rowspan", "5");
+				        var cellText = document.createTextNode("This is cell " + i);
+				        cell.appendChild(cellText);
+				        count = 0;
+				    }
+				    row.appendChild(cell);
+				    myTable.appendChild(row);
+				    divTable.appendChild(myTable);
+				}
+	//			myTable.appendChild(table);
+ 			}
+
+ 			function load() {
+			    console.log("Page load finished");
+			}
+		</script>
+	</head>
+
+	<body bgcolor="#000000">
+		
+		<div id="akun">
+			<table id="tg">
+			  <tbody>
+			  <tr>
+			  	<td width="15%" rowspan="5"><img width="100%" src="img/Pengaturan/rekaman.png" /></td>
+			  </tr>
+			  <tr>
+			    <td >{Nama}</td>
+			  </tr>
+			  <tr>
+			    <td>{TTL}</td>
+			  </tr>
+			  <tr>
+			    <td>{Usia}</td>
+			  </tr>
+			  <tr>
+			    <td>{JK}</td>
+			  </tr>
+			  </tbody>
+			  <!--NEXT PROFILE -->
+			 
+			</table>
+		</div>
+		<input type="button" id="add" value="Add" onclick="Javascript:addAkun()">
+		<script type="text/javascript">
+			$('body').flowtype();
+		</script>
+	</body>
+</html>
