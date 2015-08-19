@@ -6,7 +6,11 @@
 		<link href="css/level.css" rel="stylesheet" type="text/css"  />
 		<script src="js/jquery.min.js"></script>
 		<script src="js/flowtype.js"></script>
+		<script src="js/isiterapi.js"></script>
+		<script src="js/querycakra.js"></script>
 		<script type="text/javascript">
+			
+
 			function edit()
 			{
 				if (document.getElementById("edit").innerHTML == 'EDIT')
@@ -20,9 +24,18 @@
 				{
 					document.getElementById("nama").contentEditable = "false";
 					document.getElementById("edit").innerHTML = 'EDIT';
+					//kasih update
+					var nama = document.getElementById('nama').innerText;
+					alert(nama);
+					EditUser(nama);
+					//window.location.reload();
+					//alert("aku");
 				}
+				//var coba = document.getElementById('nama').innerText;
+				//alert(coba);
 				
 			}
+
 		</script>
 		<style>
 		    [contenteditable="true"].single-line {
@@ -43,25 +56,34 @@
 		</style>
 	</head>
 
-	<body bgcolor="#000000">
+	<body>
 		<div class="theFrame">
-			<iframe src="db.html"></iframe>
+			<iframe src="db.html" id="frameku"></iframe>
 		</div>
 		<div class="back-db">
-			<button id="hapus">Hapus</button>
+			<button id="hapus" onclick="javascript:HapusUser()">Hapus</button>		
 			<button id="edit" onclick="javascript:edit()">EDIT</button>
 
 
-			<img src="img/Pengaturan/Rekaman.png" />
-			<div id="tesss">
-				<h5 class="single-line" id="nama" contenteditable="false">APS</h5>
+			<div id="gambar">
 				
 			</div>
-			<h5 class="single-line" id="ttl">24/10/1994</h5>
-			<h5 class="single-line" id="usia">20 tahun</h5>
-			<h5 class="single-line" id="jeniskelamin">Laki-laki</h5>
+			<div id="tesss">
+				<h5 class="single-line" id="nama" contenteditable="false"></h5>
+				
+			</div>
+			<h5 class="single-line" id="ttl"></h5>
+			<h5 class="single-line" id="usia"></h5>
+			<h5 class="single-line" id="jeniskelamin"></h5>
 		</div>
 
+	<script type="text/javascript">
+		document.getElementById("gambar").innerHTML = localStorage.getItem("link");
+		document.getElementById("nama").innerHTML = localStorage.getItem("nama");
+		document.getElementById("usia").innerHTML = localStorage.getItem("umur");
+		document.getElementById("jeniskelamin").innerHTML = localStorage.getItem("jenkelamin");
+		document.getElementById("ttl").innerHTML = localStorage.getItem("tanggallahir");
+	</script>
 	</body>
 
 </html>
